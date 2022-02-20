@@ -1,0 +1,67 @@
+@import "../../scss/variables";
+#account_page {
+    margin: auto;
+    display: flex;
+    width: 90%;
+    align-items: center;
+    // margin: 2rem 0;
+    height: 100vh;
+    background-image: url(../../assets/images/account/45271.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.course-common-page {
+    margin: auto;
+    
+
+    .course-wrapper {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        height: 100%;
+        margin: auto;
+        height: 500px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+    .course {
+        background: #fff;
+        padding-top: 1rem;
+        width: 100%;
+        background-color: #154c79;
+        .form-account {
+            padding: 0 3rem;
+        }
+    }
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        .account-wrapper {
+            width: 70%;
+        }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+        .account-wrapper {
+            width: 80%;
+        }
+    }
+
+    @media only screen and (min-width: 577px) and (max-width: 767px) {
+        .course {
+            display: none;
+        }
+        .course {
+            width: 100%;
+        }
+        .account-wrapper {
+            width: 90%;
+        }
+    }
+    @media only screen and (max-width: 576px) {
+        .account-wrapper {
+            box-shadow: unset;
+            width: 100%;
+        }
+        .course {
+            width: 100%;
+        }
+    }
+}

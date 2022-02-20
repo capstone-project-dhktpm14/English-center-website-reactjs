@@ -1,0 +1,35 @@
+#content #header-branches {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: auto;
+  //background-color: aquamarine;
+  //border: #fff;
+}
+#content #header-branches #logo {
+  width: 20%;
+  //background: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    max-width: 150%;
+    max-height: 150%;
+  }
+}
+#content #header-branches .name {
+  //background: aquamarine;
+  padding-top: 1rem;
+  width: 80%;
+  padding: "0px";
+  font-size: large;
+  font-family: "Pacifico", cursive;
+  font-style: oblique;
+  justify-content: center;
+}
+
+
+.menu {
+  display: "flex";
+  justify-content: "center";
+}
