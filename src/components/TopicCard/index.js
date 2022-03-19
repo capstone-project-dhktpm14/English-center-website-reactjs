@@ -4,12 +4,15 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./style.scss";
 import imageNotFound from "assets/images/image-not-found.svg";
+import { TagOutlined } from '@ant-design/icons';
 
 function TopicCard(props) {
 	const { topic, maxCharacterCount } = props;
+	
 
 	const { url } = useLocation();
 	const { image, slug, name, description, additionalInfo } = topic;
+
 
 	const [isTruncated, setIsTruncated] = useState(true);
 
@@ -45,7 +48,9 @@ function TopicCard(props) {
 				) : (
 					<div className="topic-card__description">{description}</div>
 				)}
+				{/* <div className="topic-card__topic-info"><TagOutlined />{""}{additionalInfo}</div> */}
 				<div className="topic-card__additional-info">{additionalInfo}</div>
+
 			</div>
 		</div>
 	);

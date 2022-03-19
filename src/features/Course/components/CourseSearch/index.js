@@ -1,4 +1,5 @@
-import { Col, Divider, Input, Row, Select, Typography } from "antd";
+import { Col, Divider, Dropdown, Input, Row, Select, Typography } from "antd";
+import Checkbox from "antd/lib/checkbox/Checkbox";
 import PropTypes from "prop-types";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -20,8 +21,10 @@ function CourseSearch({ topics, onChange }) {
   const [topicSlug, setTopicSlug] = useState("");
   const typingTimeOutRef = useRef(null);
 
-  const handleTopicChange = (slug) => {
-    setTopicSlug(slug === 0 ? "" : slug);
+  const handleTopicChange = (checkedValues) => {
+    setTopicSlug(
+      checkedValues === 0 ? "" : checkedValues
+    );
   };
 
   const handleNameChange = (e) => {
@@ -41,46 +44,59 @@ function CourseSearch({ topics, onChange }) {
   return (
     <>
       <Divider></Divider>
-      <Col xs={24} sm={24} md={24} lg={10} xl={10}>
-        <Row align="middle" gutter={[8, 8]}>
-          <Col xs={24} sm={24} md={6} lg={6} xl={6}>
-            <Text strong style={{color:"white",fontSize:"15px"}} >Tên khóa học: </Text>
-          </Col>
-          <Col xs={24} sm={24} md={18} lg={18} xl={18}>
-            <Input
-              name="name"
-              style={{ width: "80%" }}
-              onChange={handleNameChange}
-            />
-          </Col>
-        </Row>
+      <Col xs={0} sm={0} md={11} lg={11} xl={11}></Col>
+      <Col xs={24} sm={4} md={3} lg={3} xl={3}>
+        &#160;&#160;
+        <Text
+          strong
+          style={{
+            color: "white",
+            fontSize: "20px",
+            textAlign: "right",
+            alignItems: "right",
+          }}
+        >
+          Lọc Theo:
+        </Text>
+      </Col>
+      <Col xs={24} sm={24} md={24} lg={12} xl={5}>
+        <Input
+          name="name"
+          style={{ width: "50%" }}
+          onChange={handleNameChange}
+          placeholder="Tìm Theo Tên"
+        />
       </Col>
 
-      <Col xs={24} sm={24} md={24} lg={10} xl={10}>
-        <Row align="middle" gutter={[8, 8]}>
-          <Col xs={24} sm={24} md={6} lg={6} xl={6}>
-            <Text strong style={{color:"white",fontSize:"15px"}}>Chủ đề: </Text>
-          </Col>
-          <Col xs={24} sm={24} md={18} lg={18} xl={18}>
-            <Select
-              defaultValue=""
-              style={{ width: "80%" }}
-              onChange={handleTopicChange}
-            >
-              <Option value="" key={-1}>
-                -- Tất cả --
+      <Col xs={24} sm={24} md={24} lg={12} xl={5}>
+        <Select
+          defaultValue=""
+          style={{ width: "50%" }}
+          onChange={handleTopicChange}
+        >
+          <Option value="" key={-1}>
+            -- Chủ Đề --
+          </Option>
+          {topics.map((topic, index) => {
+            const { name, slug } = topic;
+            return (
+              <Option value={slug} key={index}>
+                {name}
               </Option>
-              {topics.map((topic, index) => {
-                const { name, slug } = topic;
-                return (
-                  <Option value={slug} key={index}>
-                    {name}
-                  </Option>
-                );
-              })}
-            </Select>
-          </Col>
-        </Row>
+            );
+          })}
+        </Select>
+        {/* <Dropdown placement="bottomLeft" arrow>
+          {topics.map((topic, index) => {
+            const { name, slug } = topic;
+            return (
+              <Checkbox value={slug} onChange={handleTopicChange}>
+                {name}
+              </Checkbox>
+            );
+          })}
+        </Dropdown> */}
+       
       </Col>
     </>
   );

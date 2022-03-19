@@ -16,6 +16,12 @@ import WordPage from "./pages/WordPage";
 import "./style.scss";
 import TopicPage from "./pages/CoursePage/pages/TopicPage";
 import CourseDetailPage from "./pages/CoursePage/pages/CourseDetailPage";
+import Book from "./pages/Book";
+import RoutePage from "./pages/RoutePage";
+import ClassPage from "./pages/ClassPage";
+import Exam from "./pages/Exam";
+import { useDispatch } from "react-redux";
+import { setUser } from "app/globalSlice";
 
 const { Header, Content } = Layout;
 
@@ -23,6 +29,7 @@ Admin.propTypes = {};
 
 function Admin(props) {
   const history = useNavigate();
+  const dispatch = useDispatch();
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -36,6 +43,7 @@ function Admin(props) {
       onCancel: () => history("/"),
       content: "Logout success",
     });
+    dispatch(setUser(false));
     // window.location.reload();
   }
 
@@ -69,6 +77,10 @@ function Admin(props) {
               <Route path="/courses" element={<CoursePage />} />
               <Route path="/courses/topics" element={<TopicPage />} />
               <Route path="/courses/:slug" element={<CourseDetailPage />} />
+              <Route path="/exams/books" element={<Book />} />
+              <Route path="/routes/*" element={<RoutePage />} />
+              <Route path="/classes/*" element={<ClassPage />} />
+              <Route path="/exams/*" element={<Exam />} />
               {/* <Route path="/course/word" element={<WordPage />} /> */}
               <Route component={<NotFoundPage />} />
             </Routes>

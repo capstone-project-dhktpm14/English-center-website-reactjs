@@ -1,22 +1,38 @@
-import { Spin } from "antd";
+import Footer from "components/Footer";
 import Header from "components/Header";
+import NotFoundPage from "components/NotFoundPage";
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Route, Routes, useRouteMatch } from "react-router-dom";
+import { fetchBooks } from "./onlineExamSlice";
+import CheckInExam from "./pages/CheckInExam";
+import Checkout from "./pages/Checkout";
+import Examining from "./pages/Examining";
+import MainPage from "./pages/MainPage";
+import ResultPage from "./pages/ResultPage";
+import "./style.scss";
 
-//import './style.scss';
+OnlineExam.propTypes = {};
 
 function OnlineExam(props) {
-  const { url } = useLocation();
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    document.title = "Online Exam";
+    dispatch(fetchBooks());
   }, []);
 
   return (
-    <div>
-      <Header></Header>
-      <div id="account_page">test online</div>
+    <div className="exam_main">
+      {/* <Header></Header> */}
+      <Routes>
+        <Route path="/:testId/checkin" element={<CheckInExam />} />
+        <Route path="/:testId/examining" element={<Examining />} />
+        <Route path="/:testId/checkout" element={<Checkout />} />
+        <Route path="/:testId/result" element={<ResultPage />} />
+        <Route exact path="/" element={<MainPage />} />
+        <Route element={<NotFoundPage />} />
+      </Routes>
+      {/* <Footer></Footer> */}
     </div>
   );
 }

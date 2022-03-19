@@ -19,7 +19,6 @@ function UploadField(props) {
 			if (!file.url && !file.preview) {
 				file.preview = await commonFuc.getBase64(file.originFileObj);
 			}
-			// console.log({ info });
 			const lastItem = fileList.length - 1;
 			setFileList([{ ...fileList[lastItem], status: "done" }]);
 		}
@@ -28,6 +27,7 @@ function UploadField(props) {
 	const handleAction = (file) => {
 		const formData = new FormData();
 		formData.append(name, file);
+		console.log("file "+file)
 
 		const changeEvent = {
 			target: {
@@ -36,7 +36,7 @@ function UploadField(props) {
 			},
 		};
 
-		// console.log({ formData });
+		console.log("upload field",{ formData });
 		field.onChange(changeEvent);
 		isUploadFile = true;
 	};

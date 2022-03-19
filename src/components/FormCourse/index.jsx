@@ -23,7 +23,7 @@ function FormCourse() {
             <Text style={{ color: "#4d93ff" }}>ĐĂNG KÝ TƯ VẤN</Text>
           </Title>
           <Divider />
-          <div className="form-account">
+          <div className="form-course">
             <Formik
               initialValues={{ ...registryValues.initial }}
               onSubmit={(values) => handleRegistryCourse(values)}
@@ -40,7 +40,7 @@ function FormCourse() {
                             name="name"
                             component={InputField}
                             type="text"
-                            placeholder="Ví dụ: Trần Hoàng Phúc"
+                            placeholder="Ví dụ: Nguyễn Trần Nhật Hào"
                             maxLength={50}
                             titleCol={24}
                             inputCol={24}

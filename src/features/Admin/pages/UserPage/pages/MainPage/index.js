@@ -1,7 +1,5 @@
 import { PlusCircleOutlined } from "@ant-design/icons";
 import { Button, Col, Pagination, Row, Space } from "antd";
-
-
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import commonFuc from "utils/commonFuc";

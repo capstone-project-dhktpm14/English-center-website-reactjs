@@ -4,6 +4,7 @@ import { Button, Col, Input, Row, Space, Tag, Typography } from "antd";
 import { ErrorMessage } from "formik";
 import TagCustom from "components/TagCustom";
 import MyEditor from "components/MyEditor";
+import ReactQuill from "react-quill";
 
 const { Text } = Typography;
 
@@ -41,7 +42,6 @@ function EditorField({
         value: content,
       },
     };
-
     onChange(changeEvent);
   };
 

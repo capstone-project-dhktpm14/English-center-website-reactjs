@@ -12,7 +12,7 @@
 }
 .course-common-page {
     margin: auto;
-    
+    border-radius: 10%;
 
     .course-wrapper {
         display: flex;
@@ -20,17 +20,18 @@
         width: 90%;
         height: 100%;
         margin: auto;
-        height: 500px;
+        height: 410px;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10%;
     }
     .course {
         background: #fff;
         padding-top: 1rem;
         width: 100%;
         background-color: #154c79;
-        .form-account {
+        .form-course {
             padding: 0 3rem;
-        }
+        }border-radius: 10%;
     }
     @media only screen and (min-width: 992px) and (max-width: 1199px) {
         .account-wrapper {

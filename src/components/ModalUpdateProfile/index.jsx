@@ -153,6 +153,7 @@ function ModalUpdateProfile({ isVisible, onCancel, onOk, loading }) {
                       <p>Tên </p>
                       <FastField
                         name="name"
+                        disabled 
                         component={InputFieldNotTitle}
                         type="text"
                         maxLength={100}

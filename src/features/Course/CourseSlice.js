@@ -1,12 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import courseApi from "api/courseApi";
 
+
+
 const KEY = "course";
 
 export const fetchCourses = createAsyncThunk(
 	`${KEY}/fetchCourses`,
 	async (params, thunkApi) => {
-		const data = await courseApi.getCourses(params);
+		const data = await courseApi.igetCourses(params);
 		return data;
 	}
 );
