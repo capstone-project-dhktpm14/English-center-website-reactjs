@@ -26,3 +26,25 @@ export const classValues = {
     }),
 };
 
+export const scheduleValues = {
+    initial: {
+        date: "",
+        description: '',
+        room:'',
+        session:'',
+        status:"",
+        classId:"",
+    },
+
+    validationSchema: Yup.object().shape({
+        description: Yup.string().required("Mô tả không được bỏ trống"),
+        date: Yup.string().min(1,"Ngày không được bỏ trống"),
+        status:Yup.string().min(1,"Trạng thái không được bỏ trống"),
+        session:Yup.string().required("Sesson không được bỏ trống"),
+        room:Yup.string().required("Phòng không được bỏ trống"),
+        
+    }),
+};
+
+
+

@@ -27,16 +27,6 @@ const columns = [
     key: "description",
   },
   {
-    title: "Phòng ",
-    dataIndex: "room",
-    key: "room",
-  },
-  {
-    title: "Session ",
-    dataIndex: "session",
-    key: "session",
-  },
-  {
     title: "trang thai ",
     dataIndex: "status",
     key: "status",
@@ -60,7 +50,6 @@ function ClassTable(props) {
     await classAdminApi
       .fetchClass()
       .then((res) => setDataSource(res.data));
-    console.log("class 1s" + JSON.stringify(dataSource));
   };
 
   useEffect(() => {
@@ -74,8 +63,6 @@ function ClassTable(props) {
         amount: element.amount,
         description: element.description,
         status: element.status,
-        session: element.session,
-        room: element.room,
         stt: index + 1,
       };
       data.push(temp);

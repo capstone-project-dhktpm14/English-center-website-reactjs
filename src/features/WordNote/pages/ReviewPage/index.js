@@ -101,7 +101,7 @@ function ReviewPage(props) {
 					isReviewPage={true}
 					isError={isError}
 					wordNoteDetail={wordNoteDetail}
-					goBackUrl={`/wordnotes/${wordnoteId}`}
+					goBackUrl={`/wordnote/${wordnoteId}`}
 				/>
 				{isError ? (
 					<Result status="404" title="400" subTitle="An error has occurred" />

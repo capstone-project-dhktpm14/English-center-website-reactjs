@@ -90,7 +90,7 @@ function WordNoteCard(props) {
         isModalVisible={isConfirmVisible}
         setIsModalVisible={setIsConfirmVisible}
         handleOnOk={handleDelete}
-        content={`Bạn có chắc chắn muốn xóa wordnote này không?`}
+        content={`Bạn có muốn xóa wordnote này không?`}
         okText="Đồng ý"
         cancelText="Hủy"
       />

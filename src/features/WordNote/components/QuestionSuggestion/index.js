@@ -22,20 +22,6 @@ function QuestionSuggestion(props) {
 					<Title level={4}>{word.definition}</Title>
 				</Col>
 			</Row>
-
-			{/* <div className="review-question">
-				<div className="review-question__image">
-					<img
-						src={image}
-						alt={name}
-						onError={(e) => (e.target.src = imageNotFound)}
-					/>
-				</div>
-
-				<div className="review-question__definition">
-					<Title level={4}>{definition}</Title>
-				</div>
-			</div> */}
 		</div>
 	);
 }

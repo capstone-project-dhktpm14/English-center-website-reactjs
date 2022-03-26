@@ -86,7 +86,7 @@ function WordFillQuestion(props) {
 							onClick={() => handleDeleteClick()}
 							disabled={wordIndexes.length === 0 && true}
 						>
-							Len
+							Backspace
 						</button>
 					</Col>
 				</Row>

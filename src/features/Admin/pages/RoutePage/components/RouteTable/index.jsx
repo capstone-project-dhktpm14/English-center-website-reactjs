@@ -50,7 +50,8 @@ const columns = [
     dataIndex: "action",
     key: "action",
     align: "center",
-    render: (text, record) => <RouteAction routeId={record.key} />,
+    render: (text, record) => 
+    <RouteAction  routeId={record.key} />,
   },
 ];
 

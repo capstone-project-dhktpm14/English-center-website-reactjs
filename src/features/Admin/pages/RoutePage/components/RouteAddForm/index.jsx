@@ -120,7 +120,6 @@ function RouteAddForm(props) {
 
                 {(formikProps) => {
                     const { values, errors, touched, isSubmitting } = formikProps;
-                    //console.log({ values });
                     return (
                         <Form>
                             <Space size="large" direction="vertical" style={{ width: "100%" }}>

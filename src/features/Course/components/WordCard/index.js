@@ -37,7 +37,7 @@ function WordCard(props) {
 				closable: true,
 				maskClosable: true,
 				centered: true,
-				title: "Oops... Bạn cần phải đăng nhập để sử dụng chức năng này",
+				title: "Bạn cần phải đăng nhập để sử dụng chức năng này",
 			});
 		}
 	};

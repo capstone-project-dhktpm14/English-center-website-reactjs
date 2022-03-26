@@ -9,7 +9,7 @@ function MeaningCard(props) {
 	return (
 		<div className={isTranslate ? "box" : "box--large"}>
 			<div className="box__title">
-				{isTranslate ? "Translated by Google" : "Definition"}
+				{isTranslate ? "Translated" : "Definition"}
 			</div>
 
 			{definition.length > 0 && (

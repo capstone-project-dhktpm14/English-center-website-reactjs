@@ -4,6 +4,7 @@ import { Spin } from 'antd';
 import { useSelector } from 'react-redux';
 import { Route, Routes, Switch, useRouteMatch } from 'react-router';
 import MainPage from './pages/MainPage';
+import ClassDetail from './pages/ClassDetail';
 
 
 ClassPage.propTypes = {
@@ -17,6 +18,7 @@ function ClassPage(props) {
         <Spin spinning={isLoading}>
             <Routes>
                 <Route exact path="/" element={<MainPage/>} />
+                <Route exact path="/:id" element={<ClassDetail/>} />
             </Routes>
          </Spin>
     );

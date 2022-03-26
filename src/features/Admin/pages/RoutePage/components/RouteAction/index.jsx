@@ -34,10 +34,8 @@ function BookAction(props) {
             content: "Bạn có chắc chắn xóa không ?",
             async onOk() {
                 try {
-                    //await routeAdminApi.deleteRoute(routeId);
                     unwrapResult(await dispatch(deleteRoute({ routeId })));
-                    //await dispatch(deleteRoute(routeId));
-                    //unwrapResult(await dispatch(deleteRoute({ routeId })));
+                
                     message.success(`Xóa thành công`);
                 } catch (error) {
                     message.error("Xóa thất bại");

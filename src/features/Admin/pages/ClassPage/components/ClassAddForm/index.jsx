@@ -110,7 +110,6 @@ function RouteAddForm(props) {
   };
 
   const handleAddClass = async (classes, actions) => {
-    console.log("add" + JSON.stringify(classes));
     const serverResult = await classAdminApi.addClass(classes);
 
     if (serverResult.error) {

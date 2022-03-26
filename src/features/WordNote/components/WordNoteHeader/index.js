@@ -28,8 +28,7 @@ function WordNoteHeader(props) {
 						</Col>
 						<Col xs={14} sm={14} md={20} lg={20}>
 							<Title>
-								{/* {isError ? "Review" : `Review ${wordNoteDetail.name}`} */}
-								Ôn tập
+								Ôn tập từ vựng
 							</Title>
 						</Col>
 						<Col xs={6} sm={6} md={2} lg={2}></Col>
@@ -56,7 +55,7 @@ function WordNoteHeader(props) {
 										href={`${wordnoteId}/review`}
 										disabled={wordNoteDetail.words.length > 1 ? false : true}
 									>
-										Play game
+										Ôn Tập
 									</Button>
 								</Tooltip>
 							</Row>
