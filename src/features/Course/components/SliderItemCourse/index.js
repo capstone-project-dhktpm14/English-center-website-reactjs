@@ -35,6 +35,7 @@ function SliderItemCourse({ src, title, detail, slug, wordNumber }) {
       className="carousel-course--item"
       style={{
         background: `linear-gradient(rgba(75, 145, 255, 0.8), gray),url(${src}) no-repeat`,
+        backgroundSize: `cover`
       }}
     >
       <div className="course-img">
