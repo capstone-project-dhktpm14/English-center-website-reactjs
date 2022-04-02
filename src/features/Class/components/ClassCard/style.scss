@@ -75,13 +75,13 @@
 .class-card-header__right {
   opacity: 1;
   transition: all 0.5s ease-in-out 0s;
-  align-items: right;
-  text-align: right;
+  align-items: center;
+  text-align: center;
 }
 
 .class-card:hover .class-card-header__right {
   opacity: 1;
   transition: all 0.5s ease-in-out 0s;
-  align-items: right;
-  text-align: right;
+  align-items: center;
+  text-align: center;
 }

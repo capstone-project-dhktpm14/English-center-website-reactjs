@@ -11,18 +11,13 @@ import {
   PlusOutlined,
   ExclamationCircleOutlined,
 } from "@ant-design/icons";
-import { WORDNOTE_IMAGES } from "features/Class/constants";
 import classApi from "api/classApi";
 import meApi from "api/meApi";
 const { confirm, Text } = Modal;
 
 function ClassCard(props) {
   const { classes, maxCharacterCount, img } = props;
-  const { url } = useLocation();
-  const [modal, contextHolder] = Modal.useModal();
   const { id, slug, routeName, description, status, dateStart } = classes;
-  const [isConfirmVisible, setIsConfirmVisible] = useState(false);
-
   const [isTruncated, setIsTruncated] = useState(true);
   const [isRegistry, setIsRegistry] = useState(false);
   const [isFull, setIsFull] = useState(false);
@@ -90,7 +85,7 @@ function ClassCard(props) {
     <>
       <div className="class-card">
         <div className="class-card__image">
-          <Link to={`${slug}`}>
+          <Link to={``}>
             <img
               src={img}
               alt="Oops ... Not found"
