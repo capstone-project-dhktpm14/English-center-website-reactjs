@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import { Upload, Modal, Row, Col, Typography, Image } from "antd";
-import { PlusOutlined } from "@ant-design/icons";
-import axios from "axios";
-import commonFuc from "utils/commonFuc";
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { Upload, Modal, Row, Col, Typography, Image } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
+import axios from 'axios';
+import commonFuc from 'utils/commonFuc';
 
 const { Text } = Typography;
 
@@ -14,25 +14,34 @@ ImageField.propTypes = {
   isRequire: PropTypes.bool,
   heightPreview: PropTypes.number,
   widthPreview: PropTypes.number,
+  field: PropTypes.object,
 };
 
 ImageField.defaultProps = {
-  title: "",
+  title: '',
   titleCol: 24,
   inputCol: 24,
   isRequire: false,
   heightPreview: 400,
-  widthPreview: 500
+  widthPreview: 500,
 };
 
-function ImageField({ title, titleCol, inputCol, isRequire, field, widthPreview, heightPreview }) {
+function ImageField({
+  title,
+  titleCol,
+  inputCol,
+  isRequire,
+  field,
+  widthPreview,
+  heightPreview,
+}) {
   const { name, value } = field;
   const [fileList, setFileList] = useState([]);
   const [image, setImage] = useState(value);
 
   const handleChange = async (info) => {
     const { file } = info;
-    console.log(file)
+    console.log(file);
     console.log(file.url);
     console.log(file.preview);
 
@@ -45,7 +54,7 @@ function ImageField({ title, titleCol, inputCol, isRequire, field, widthPreview,
 
   const handleAction = (image) => {
     const formData = new FormData();
-    formData.append("image", image);
+    formData.append('image', image);
 
     const changeEvent = {
       target: {
@@ -65,7 +74,9 @@ function ImageField({ title, titleCol, inputCol, isRequire, field, widthPreview,
   );
 
   useEffect(() => {
-    if (value) setImage(value);
+    if (value) {
+      setImage(value);
+    }
   }, [value]);
 
   return (
@@ -86,7 +97,9 @@ function ImageField({ title, titleCol, inputCol, isRequire, field, widthPreview,
           {fileList.length >= 1 ? null : uploadButton}
         </Upload>
 
-        {image && <Image src={image} width={widthPreview} height={heightPreview} />}
+        {image && (
+          <Image src={image} width={widthPreview} height={heightPreview} />
+        )}
       </Col>
     </Row>
   );

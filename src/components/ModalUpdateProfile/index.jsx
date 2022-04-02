@@ -1,15 +1,15 @@
-import { unwrapResult } from "@reduxjs/toolkit";
-import { Col, Modal, Row, Select } from "antd";
-import meApi from "api/meApi";
-import { fetchUserProfile, setAvatarProfile, setUser } from "app/globalSlice";
-import UploadAvatar from "components/UploadAvatar";
-import InputFieldNotTitle from "customfield/InputFieldNotTitle";
-import { FastField, Form, Formik } from "formik";
-import PropTypes from "prop-types";
-import React, { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import * as Yup from "yup";
-import "./style.scss";
+import { unwrapResult } from '@reduxjs/toolkit';
+import { Col, Modal, Row, Select } from 'antd';
+import meApi from 'api/meApi';
+import { fetchUserProfile, setAvatarProfile, setUser } from 'app/globalSlice';
+import UploadAvatar from 'components/UploadAvatar';
+import InputFieldNotTitle from 'customfield/InputFieldNotTitle';
+import { FastField, Form, Formik } from 'formik';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import * as Yup from 'yup';
+import './style.scss';
 
 ModalUpdateProfile.propTypes = {
   isVisible: PropTypes.bool,
@@ -37,7 +37,7 @@ function ModalUpdateProfile({ isVisible, onCancel, onOk, loading }) {
   const refInitValue = useRef();
 
   const handleGetAvatar = (avatar) => {
-    console.log("avatar", avatar);
+    console.log('avatar', avatar);
     setAvatar(avatar);
   };
 
@@ -83,7 +83,7 @@ function ModalUpdateProfile({ isVisible, onCancel, onOk, loading }) {
       // }
       if (avatar) {
         const frmData = new FormData();
-        frmData.append("image", avatar);
+        frmData.append('image', avatar);
         const response = await meApi.updateAvatar(frmData);
         dispatch(setAvatarProfile(response.avatar));
       }
@@ -140,8 +140,8 @@ function ModalUpdateProfile({ isVisible, onCancel, onOk, loading }) {
             onSubmit={handleSubmit}
             validationSchema={Yup.object().shape({
               name: Yup.string()
-                .required("Tên không được bỏ trống")
-                .max(100, "Tên tối đa 100 kí tự"),
+                .required('Tên không được bỏ trống')
+                .max(100, 'Tên tối đa 100 kí tự'),
             })}
             enableReinitialize={true}
           >
@@ -153,7 +153,7 @@ function ModalUpdateProfile({ isVisible, onCancel, onOk, loading }) {
                       <p>Tên </p>
                       <FastField
                         name="name"
-                        disabled 
+                        disabled
                         component={InputFieldNotTitle}
                         type="text"
                         maxLength={100}

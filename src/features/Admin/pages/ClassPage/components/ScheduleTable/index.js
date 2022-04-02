@@ -1,9 +1,9 @@
-import { Table } from "antd";
-import Column from "antd/lib/table/Column";
-import PropTypes from "prop-types";
-import React from "react";
-import ScheduleAction from "../ScheduleAction";
-import ExamAction from "../ScheduleAction";
+import { Table } from 'antd';
+import Column from 'antd/lib/table/Column';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ScheduleAction from '../ScheduleAction';
+import ExamAction from '../ScheduleAction';
 
 function ScheduleTable(props) {
   const { setInitialValue, setIsModalVisible, setIsAddMode, schedules, query } =
@@ -26,11 +26,11 @@ function ScheduleTable(props) {
         key="action"
         align="center"
         render={(record, index) => {
-        //   {
-        //     {
-        //       console.log("rec " + JSON.stringify(record));
-        //     }
-        //   }
+          //   {
+          //     {
+          //       console.log("rec " + JSON.stringify(record));
+          //     }
+          //   }
           return (
             <ScheduleAction
               scheduleId={record.id}
@@ -48,7 +48,7 @@ function ScheduleTable(props) {
 }
 
 ScheduleTable.propTypes = {
-  exams: PropTypes.array,
+  schedules: PropTypes.array,
   setInitialValue: PropTypes.func,
   setIsModalVisible: PropTypes.func,
   setIsAddMode: PropTypes.func,
@@ -56,7 +56,7 @@ ScheduleTable.propTypes = {
 };
 
 ScheduleTable.defaultProps = {
-  exams: [],
+  schedules: [],
   setInitialValue: null,
   setIsModalVisible: null,
   setIsAddMode: null,

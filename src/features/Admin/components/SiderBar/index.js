@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   AliwangwangOutlined,
   FacebookOutlined,
@@ -8,10 +8,10 @@ import {
   LinkOutlined,
   CarryOutOutlined,
   InsertRowAboveOutlined,
-} from "@ant-design/icons";
-import { Menu, Layout } from "antd";
-import SubMenu from "antd/lib/menu/SubMenu";
-import { Link } from "react-router-dom";
+} from '@ant-design/icons';
+import { Menu, Layout } from 'antd';
+import SubMenu from 'antd/lib/menu/SubMenu';
+import { Link } from 'react-router-dom';
 
 const { Sider } = Layout;
 
@@ -21,7 +21,7 @@ function SiderBar(props) {
   return (
     <Sider collapsible>
       <div className="logo" />
-      <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
+      <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
         <Menu.Item key="1" icon={<UsergroupAddOutlined />}>
           <Link to="/admin"> Quản lý người dùng</Link>
         </Menu.Item>

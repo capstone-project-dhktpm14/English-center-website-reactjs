@@ -1,11 +1,11 @@
-import { Spin } from "antd";
-import NotFoundPage from "components/NotFoundPage";
-import React from "react";
-import { useSelector } from "react-redux";
-import { Route, Routes, useRouteMatch } from "react-router-dom";
-import MainPage from "./pages/MainPage";
-import ParagraphPage from "./pages/ParagraphPage";
-import QuestionPage from "./pages/QuestionPage";
+import { Spin } from 'antd';
+import NotFoundPage from 'components/NotFoundPage';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Route, Routes, useRouteMatch } from 'react-router-dom';
+import MainPage from './pages/MainPage';
+import ParagraphPage from './pages/ParagraphPage';
+import QuestionPage from './pages/QuestionPage';
 
 Exam.propTypes = {};
 

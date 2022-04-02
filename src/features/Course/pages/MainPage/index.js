@@ -1,25 +1,25 @@
-import { Carousel, Divider, Pagination, Row } from "antd";
-import Footer from "components/Footer";
+import { Carousel, Divider, Pagination, Row } from 'antd';
+import Footer from 'components/Footer';
 import {
   fetchCourses,
   fetchTopics,
-} from "features/Admin/pages/CoursePage/courseSlice";
-import CourseList from "features/Course/components/CourseList";
-import CourseSearch from "features/Course/components/CourseSearch";
-import SliderItemCourse from "features/Course/components/SliderItemCourse";
-import queryString from "query-string";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import "./style.scss";
+} from 'features/Admin/pages/CoursePage/courseSlice';
+import CourseList from 'features/Course/components/CourseList';
+import CourseSearch from 'features/Course/components/CourseSearch';
+import SliderItemCourse from 'features/Course/components/SliderItemCourse';
+import queryString from 'query-string';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import './style.scss';
 
 function MainPage(props) {
   const history = useNavigate();
   const [dataSlice, setDataSlice] = useState([]);
 
   const [query, setQuery] = useState({
-    name: "",
-    topicSlug: "",
+    name: '',
+    topicSlug: '',
     page: 0,
     size: 12,
   });
@@ -32,18 +32,18 @@ function MainPage(props) {
   const handleSearchChange = (queryValue) => {
     const { name, topicSlug } = queryValue;
     let params = {};
-    if (name !== "") {
+    if (name !== '') {
       params.name = encodeURIComponent(name);
     }
-    if (topicSlug !== "") {
+    if (topicSlug !== '') {
       params.topic = topicSlug;
     }
-    console.log("pểm "+JSON.stringify(params))
+    console.log('pểm ' + JSON.stringify(params));
     history({ search: queryString.stringify(params) });
 
     setQuery({ page: 0, size: 12, name, topicSlug });
 
-    console.log("que" +JSON.stringify(query))
+    console.log('que' + JSON.stringify(query));
   };
 
   const handlePageChange = (page, pageSize) => {
@@ -51,7 +51,7 @@ function MainPage(props) {
   };
 
   useEffect(() => {
-    document.title = "Khóa học từ vựng";
+    document.title = 'Khóa học từ vựng';
   }, []);
   // useEffect(() => {
   //   setDataSlice("");
@@ -68,30 +68,30 @@ function MainPage(props) {
   const data0 = [
     {
       image:
-        "https://freenice.net/wp-content/uploads/2021/08/hinh-ve-cute-de-thuong-ngo-nghinh-dang-yeu-dep-nhat.jpg",
-      name: "Product",
+        'https://freenice.net/wp-content/uploads/2021/08/hinh-ve-cute-de-thuong-ngo-nghinh-dang-yeu-dep-nhat.jpg',
+      name: 'Product',
       description:
-        "A collection of poems and rhyming songs for kids to practice their pronunciation. Age Range: 6 - 10 years.",
+        'A collection of poems and rhyming songs for kids to practice their pronunciation. Age Range: 6 - 10 years.',
     },
     {
       image:
-        "https://phunugioi.com/wp-content/uploads/2020/10/hinh-ve-be-meo-cute-dang-yeu-dang-uong-tra-sua.jpg",
-      name: "Animal",
+        'https://phunugioi.com/wp-content/uploads/2020/10/hinh-ve-be-meo-cute-dang-yeu-dang-uong-tra-sua.jpg',
+      name: 'Animal',
       description:
-        "A collection of poems and rhyming songs for kids to practice their pronunciation. Age Range: 6 - 10 years.",
+        'A collection of poems and rhyming songs for kids to practice their pronunciation. Age Range: 6 - 10 years.',
     },
     {
       image:
-        "https://freenice.net/wp-content/uploads/2021/08/hinh-ve-cute-de-thuong-ngo-nghinh-dang-yeu-dep-nhat.jpg",
-      name: "School",
+        'https://freenice.net/wp-content/uploads/2021/08/hinh-ve-cute-de-thuong-ngo-nghinh-dang-yeu-dep-nhat.jpg',
+      name: 'School',
       description:
-        "A collection of poems and rhyming songs for kids to practice their pronunciation. Age Range: 6 - 10 years.",
+        'A collection of poems and rhyming songs for kids to practice their pronunciation. Age Range: 6 - 10 years.',
     },
   ];
   return (
     <div className="course-wrapper">
       <div className="course-slide">
-        <br/>
+        <br />
         <Carousel autoplay>
           {data.map((ele, index) => (
             <SliderItemCourse

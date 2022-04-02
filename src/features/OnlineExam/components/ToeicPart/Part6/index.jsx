@@ -3,26 +3,31 @@ import React from 'react';
 import ShortPart from '../ShortPart';
 
 Part6.propTypes = {
-    data: PropTypes.array,
-    onAnswerSheetClick: PropTypes.func,
-    name: PropTypes.string,
+  data: PropTypes.array,
+  onAnswerSheetClick: PropTypes.func,
+  name: PropTypes.string,
+  scrollId: PropTypes.number,
 };
 
 Part6.defaultProps = {
-    data: [],
-    onAnswerSheetClick: null,
-    name: ''
-}
+  data: [],
+  onAnswerSheetClick: null,
+  name: '',
+};
 
 function Part6(props) {
-    const { data, onAnswerSheetClick, name, scrollId } = props;
+  const { data, onAnswerSheetClick, name, scrollId } = props;
 
-   
-    return (
-        <div id='top'>
-            <ShortPart data={data} onAnswerSheetClick={onAnswerSheetClick} name={name} /> :
-        </div>
-    );
+  return (
+    <div id="top">
+      <ShortPart
+        data={data}
+        onAnswerSheetClick={onAnswerSheetClick}
+        name={name}
+      />{' '}
+      :
+    </div>
+  );
 }
 
 export default Part6;

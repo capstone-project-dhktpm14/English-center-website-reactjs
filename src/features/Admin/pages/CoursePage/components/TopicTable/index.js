@@ -1,8 +1,8 @@
-import { Table } from "antd";
-import Column from "antd/lib/table/Column";
-import PropTypes from "prop-types";
-import React from "react";
-import TopicAction from "../TopicAction";
+import { Table } from 'antd';
+import Column from 'antd/lib/table/Column';
+import PropTypes from 'prop-types';
+import React from 'react';
+import TopicAction from '../TopicAction';
 
 function TopicTable(props) {
 	const { topics, setInitialValue, setIsModalVisible, setIsAddMode } = props;
@@ -11,7 +11,7 @@ function TopicTable(props) {
 			dataSource={topics}
 			pagination={false}
 			scroll={{ y: 420 }}
-			style={{ height: "490px" }}
+			style={{ height: '490px' }}
 		>
 			<Column
 				align="center"

@@ -1,8 +1,8 @@
-import { Table } from "antd";
-import Column from "antd/lib/table/Column";
-import PropTypes from "prop-types";
-import React from "react";
-import ExamAction from "../ExamAction";
+import { Table } from 'antd';
+import Column from 'antd/lib/table/Column';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ExamAction from '../ExamAction';
 
 function ExamTable(props) {
 	const { setInitialValue, setIsModalVisible, setIsAddMode, exams, query } =

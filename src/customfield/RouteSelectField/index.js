@@ -1,10 +1,10 @@
-import { Col, Row, Select, Tag, Typography } from "antd";
-import routeAdminApi from "api/routeAdminApi";
-import TagCustom from "components/TagCustom";
-import { ErrorMessage } from "formik";
-import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { Col, Row, Select, Tag, Typography } from 'antd';
+import routeAdminApi from 'api/admin/routeAdminApi';
+import TagCustom from 'components/TagCustom';
+import { ErrorMessage } from 'formik';
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const { Text } = Typography;
 
@@ -16,10 +16,11 @@ RouteSelectedField.propTypes = {
   isRequire: PropTypes.bool,
   titleCol: PropTypes.number,
   inputCol: PropTypes.number,
+  field: PropTypes.object,
 };
 
 RouteSelectedField.defaultProps = {
-  title: "",
+  title: '',
   options: [],
   isRequire: false,
   titleCol: 24,
@@ -46,7 +47,7 @@ function RouteSelectedField({
 
     field.onChange(changeEvent);
   };
-  const dataRoute=[];
+  const dataRoute = [];
   const [dataSource, setDataSource] = useState([]);
   const { routes } = useSelector((state) => state.route);
   useEffect(() => {
@@ -75,7 +76,7 @@ function RouteSelectedField({
           defaultValue={0}
           value={value}
           onChange={handleChange}
-          style={{ width: "100%" }}
+          style={{ width: '100%' }}
         >
           <Option value={0}>-- Chọn --</Option>
           {dataRoute.map((s, index) => (

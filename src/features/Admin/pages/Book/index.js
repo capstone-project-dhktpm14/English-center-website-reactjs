@@ -11,7 +11,7 @@ Book.propTypes = {
 };
 
 function Book(props) {
-    const { isLoading } = useSelector((state) => state.book)
+    const { isLoading } = useSelector((state) => state.book);
     
     return (
         // <Spin spinning={isLoading}>

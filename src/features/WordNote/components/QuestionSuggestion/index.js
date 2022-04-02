@@ -1,9 +1,9 @@
-import { Col, Row } from "antd";
-import Title from "antd/lib/typography/Title";
-import imageNotFound from "assets/images/image-not-found.svg";
-import PropTypes from "prop-types";
-import React from "react";
-import "./style.scss";
+import { Col, Row } from 'antd';
+import Title from 'antd/lib/typography/Title';
+import imageNotFound from 'assets/images/image-not-found.svg';
+import PropTypes from 'prop-types';
+import React from 'react';
+import './style.scss';
 
 function QuestionSuggestion(props) {
 	const { word } = props;

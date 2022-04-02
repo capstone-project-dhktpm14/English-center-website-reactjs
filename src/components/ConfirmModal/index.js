@@ -1,8 +1,8 @@
-import { WarningFilled } from "@ant-design/icons";
-import { Col, Modal, Row } from "antd";
-import Title from "antd/lib/typography/Title";
-import PropTypes from "prop-types";
-import React from "react";
+import { WarningFilled } from '@ant-design/icons';
+import { Col, Modal, Row } from 'antd';
+import Title from 'antd/lib/typography/Title';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 function ConfirmModal(props) {
 	const {
@@ -56,15 +56,15 @@ ConfirmModal.propTypes = {
 	width: PropTypes.number,
 };
 ConfirmModal.defaultProps = {
-	title: "",
+	title: '',
 	handleOnOk: null,
-	okText: "Ok",
-	cancelText: "Cancel",
-	content: "Are you sure?",
+	okText: 'Ok',
+	cancelText: 'Cancel',
+	content: 'Are you sure?',
 	isModalVisible: false,
 	setIsModalVisible: null,
 	contentSize: 4,
-	icon: <WarningFilled style={{ fontSize: "68px", color: "#faad14" }} />,
+	icon: <WarningFilled style={{ fontSize: '68px', color: '#faad14' }} />,
 	with: 300,
 };
 export default ConfirmModal;

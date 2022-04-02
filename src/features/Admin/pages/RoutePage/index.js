@@ -11,7 +11,7 @@ RoutePage.propTypes = {
 };
 
 function RoutePage(props) {
-    const { isLoading } = useSelector((state) => state.route)
+    const { isLoading } = useSelector((state) => state.route);
     
     return (
         <Spin spinning={isLoading}>

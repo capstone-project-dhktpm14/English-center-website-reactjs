@@ -1,6 +1,6 @@
-import axiosClient from "./axiosClient";
+import axiosClient from 'api/axiosClient';
 
-const BASE_URL = "/admin/exams/questions";
+const BASE_URL = '/admin/exams/questions';
 
 const questionApi = {
   fetchQuestions: (params) => {

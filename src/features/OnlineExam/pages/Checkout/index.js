@@ -1,23 +1,23 @@
-import { Button, Col, Modal, Row, Space, Table, Tag } from "antd";
-import Timer from "features/OnlineExam/components/Timer";
+import { Button, Col, Modal, Row, Space, Table, Tag } from 'antd';
+import Timer from 'features/OnlineExam/components/Timer';
 import {
 	setExamSelected,
 	setIsSubmit,
 	setScrollId,
 	setStatus,
 	setsubPartSelected,
-} from "features/OnlineExam/onlineExamSlice";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+} from 'features/OnlineExam/onlineExamSlice';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
 import checkStatusAnswer, {
 	checkSelectedAnswer,
-} from "utils/checkStatusAnswer";
+} from 'utils/checkStatusAnswer';
 import {
 	default as useLoadDataAfterRefresh,
 	default as useWindowUnloadEffect,
-} from "utils/useWindowUnloadEffect";
-import "./style.scss";
+} from 'utils/useWindowUnloadEffect';
+import './style.scss';
 Checkout.propTypes = {};
 
 function Checkout(props) {
@@ -29,38 +29,38 @@ function Checkout(props) {
 
 	const { answers, examSelected } = useSelector((state) => state.onlineExam);
 	const [result, setResult] = useState([
-		"Complete",
-		"Complete",
-		"Complete",
-		"Complete",
-		"Complete",
-		"Complete",
-		"Complete",
+		'Complete',
+		'Complete',
+		'Complete',
+		'Complete',
+		'Complete',
+		'Complete',
+		'Complete',
 	]);
 	const [selected, setSelected] = useState([
-		"Complete",
-		"Complete",
-		"Complete",
-		"Complete",
-		"Complete",
-		"Complete",
-		"Complete",
+		'Complete',
+		'Complete',
+		'Complete',
+		'Complete',
+		'Complete',
+		'Complete',
+		'Complete',
 	]);
 
 	useWindowUnloadEffect(() => {
-		localStorage.setItem("answers", JSON.stringify(answers));
+		localStorage.setItem('answers', JSON.stringify(answers));
 	}, true);
 	useEffect(() => {
-		document.title = "Nộp bài";
+		document.title = 'Nộp bài';
 		answers.forEach((element, index) => {
-			if (element.status === "") {
+			if (element.status === '') {
 				dispatch(setStatus(index));
 			}
 		});
 	}, []);
 
 	useEffect(() => {
-		document.getElementById(`top`).scrollIntoView();
+		document.getElementById('top').scrollIntoView();
 	}, []);
 
 	useEffect(() => {
@@ -77,40 +77,40 @@ function Checkout(props) {
 	const [modal, contextHolder] = Modal.useModal();
 
 	const config = {
-		title: "Do you really want to submit ?",
-		content: "Time is still",
+		title: 'Do you really want to submit ?',
+		content: 'Time is still',
 		onOk() {
 			history(`/exams/${testId}/result`);
 			dispatch(setIsSubmit(true));
-			localStorage.setItem("isSubmit", true);
+			localStorage.setItem('isSubmit', true);
 		},
 	};
 
 	const columns = [
 		{
-			title: "Question",
-			dataIndex: "question",
-			key: "question",
+			title: 'Question',
+			dataIndex: 'question',
+			key: 'question',
 		},
 		{
-			title: "Description",
-			dataIndex: "description",
-			key: "description",
+			title: 'Description',
+			dataIndex: 'description',
+			key: 'description',
 		},
 
 		{
-			title: "Did",
-			dataIndex: "selected",
-			key: "selected",
-			render: (selected) => <span style={{ color: "red" }}>{selected}</span>,
+			title: 'Did',
+			dataIndex: 'selected',
+			key: 'selected',
+			render: (selected) => <span style={{ color: 'red' }}>{selected}</span>,
 		},
 		{
-			title: "Status",
-			dataIndex: "status",
-			key: "status",
+			title: 'Status',
+			dataIndex: 'status',
+			key: 'status',
 			render: (status) => (
 				<>
-					<Tag color={status === "Complete" ? "green" : "volcano"} key={status}>
+					<Tag color={status === 'Complete' ? 'green' : 'volcano'} key={status}>
 						{status.toUpperCase()}
 					</Tag>
 				</>
@@ -118,9 +118,9 @@ function Checkout(props) {
 		},
 
 		{
-			title: "",
-			dataIndex: "detail",
-			key: "detail",
+			title: '',
+			dataIndex: 'detail',
+			key: 'detail',
 			render: (text, record, index) => (
 				<a onClick={() => handleDetailClick(text, record, index)}>{text}</a>
 			),
@@ -129,64 +129,64 @@ function Checkout(props) {
 
 	const data_listening = [
 		{
-			key: "1",
-			question: "1 - 6",
-			description: "Part I: Picture Description",
+			key: '1',
+			question: '1 - 6',
+			description: 'Part I: Picture Description',
 			selected: selected[0],
 			status: result[0],
 
-			detail: "Detail",
+			detail: 'Detail',
 		},
 		{
-			key: "2",
-			question: "7 - 31",
-			description: "Part II: Question - Response",
+			key: '2',
+			question: '7 - 31',
+			description: 'Part II: Question - Response',
 			selected: selected[1],
 			status: result[1],
-			detail: "Detail",
+			detail: 'Detail',
 		},
 		{
-			key: "3",
-			question: "32 - 70",
-			description: "Part III: Short Conversations",
+			key: '3',
+			question: '32 - 70',
+			description: 'Part III: Short Conversations',
 			selected: selected[2],
 			status: result[2],
-			detail: "Detail",
+			detail: 'Detail',
 		},
 		{
-			key: "4",
-			question: "71 - 100",
-			description: "Part IV: Short Talks",
+			key: '4',
+			question: '71 - 100',
+			description: 'Part IV: Short Talks',
 			selected: selected[3],
 			status: result[3],
-			detail: "Detail",
+			detail: 'Detail',
 		},
 	];
 
 	const data_reading = [
 		{
-			key: "5",
-			question: "101 - 130",
-			description: "Part V: Incomplete Sentences ",
+			key: '5',
+			question: '101 - 130',
+			description: 'Part V: Incomplete Sentences ',
 			selected: selected[4],
 			status: result[4],
-			detail: "Detail",
+			detail: 'Detail',
 		},
 		{
-			key: "6",
-			question: "131 - 146",
-			description: "Part VI: Incomplete Sentences ",
+			key: '6',
+			question: '131 - 146',
+			description: 'Part VI: Incomplete Sentences ',
 			selected: selected[5],
 			status: result[5],
-			detail: "Detail",
+			detail: 'Detail',
 		},
 		{
-			key: "7",
-			question: "147 - 200",
-			description: "Part VII: Reading Comprehension",
+			key: '7',
+			question: '147 - 200',
+			description: 'Part VII: Reading Comprehension',
 			selected: selected[6],
 			status: result[6],
-			detail: "Detail",
+			detail: 'Detail',
 		},
 	];
 
@@ -195,18 +195,18 @@ function Checkout(props) {
 	const handleBackClick = () => {
 		if (examSelected === 8) {
 			dispatch(setExamSelected(examSelected - 1));
-			localStorage.setItem("partSelected", examSelected - 1);
+			localStorage.setItem('partSelected', examSelected - 1);
 		}
 
 		history(`/exams/${testId}/examining`);
 	};
 
 	const handleDetailClick = (text, record, index) => {
-		localStorage.setItem("partSelected", record.key);
-		console.log("record key", record.key);
+		localStorage.setItem('partSelected', record.key);
+		console.log('record key', record.key);
 		dispatch(setExamSelected(record.key));
 		dispatch(setsubPartSelected(0));
-		dispatch(setScrollId("top"));
+		dispatch(setScrollId('top'));
 		history(`/exams/${testId}/examining`);
 	};
 
@@ -214,8 +214,8 @@ function Checkout(props) {
 		<div id="top">
 			<Timer page="checkout" />
 			<div className="checkout_wrapper">
-				<Space direction="vertical" style={{ width: "100%" }} size="large">
-					<div className="checkout_listening" style={{ border:"1px solid" }} >
+				<Space direction="vertical" style={{ width: '100%' }} size="large">
+					<div className="checkout_listening" style={{ border:'1px solid' }} >
 						<span className="topic">Listening</span>
 						<Table
 							dataSource={data_listening}
@@ -225,7 +225,7 @@ function Checkout(props) {
 						/>
 					</div>
 
-					<div className="checkout_reading" style={{ border:"1px solid" }}>
+					<div className="checkout_reading" style={{ border:'1px solid' }}>
 						<span className="topic">Reading</span>
 						<Table
 							dataSource={data_reading}

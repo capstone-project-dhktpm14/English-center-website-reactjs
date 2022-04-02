@@ -12,11 +12,11 @@ export const writeResultToAnswerSheet = (result) => {
     handleQuestion_complex(part6, resultSheet);
     handleQuestion_complex(part7, resultSheet);
 
-    console.log("newSheet", resultSheet);
+    console.log('newSheet', resultSheet);
 
     return resultSheet;
 
-}
+};
 
 export const writeTranScript = (result) => {
     const transcript = {
@@ -37,7 +37,7 @@ export const writeTranScript = (result) => {
 
     return transcript;
 
-}
+};
 
 
 
@@ -68,10 +68,10 @@ function handleQuestion_complex(part, resultSheet) {
 
             let obejct = { stt, selected, status, result };
             resultSheet.push(obejct);
-        })
+        });
 
 
-    })
+    });
 }
 
 
@@ -83,11 +83,11 @@ function handleQuestion_simple(part, resultSheet) {
         stt = element.question.stt;
         result = element.question.result;
         audio = element.question.audio;
-        scriptAudio = { a: element.question.a, b: element.question.b, c: element.question.c, d: element.question.d }
+        scriptAudio = { a: element.question.a, b: element.question.b, c: element.question.c, d: element.question.d };
 
         let obejct = { stt, selected, status, result, audio, scriptAudio };
         resultSheet.push(obejct);
 
 
-    })
+    });
 }

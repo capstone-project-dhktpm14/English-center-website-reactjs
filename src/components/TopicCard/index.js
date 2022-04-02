@@ -1,9 +1,9 @@
-import { Button } from "antd";
-import PropTypes from "prop-types";
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import "./style.scss";
-import imageNotFound from "assets/images/image-not-found.svg";
+import { Button } from 'antd';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import './style.scss';
+import imageNotFound from 'assets/images/image-not-found.svg';
 import { TagOutlined } from '@ant-design/icons';
 
 function TopicCard(props) {
@@ -17,7 +17,7 @@ function TopicCard(props) {
 	const [isTruncated, setIsTruncated] = useState(true);
 
 	const shortDescription = isTruncated
-		? description.slice(0, maxCharacterCount) + "..."
+		? description.slice(0, maxCharacterCount) + '...'
 		: description;
 
 	return (
@@ -41,7 +41,7 @@ function TopicCard(props) {
 						<div className="topic-card__description">
 							{shortDescription}
 							<Button type="link" onClick={() => setIsTruncated(!isTruncated)}>
-								{isTruncated ? "Show more >" : "Hide <"}
+								{isTruncated ? 'Show more >' : 'Hide <'}
 							</Button>
 						</div>
 					</>

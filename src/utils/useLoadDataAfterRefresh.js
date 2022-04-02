@@ -7,16 +7,16 @@ const useLoadDataAfterRefresh = () => {
     useEffect(() => {
         
         const tempAnswers = localStorage.getItem('answers');
-        if (tempAnswers !== "undefined" && tempAnswers !== null) {
+        if (tempAnswers !== 'undefined' && tempAnswers !== null) {
             const answers = JSON.parse(tempAnswers);
             dispatch(setAnswerAfterRefresh(answers));
         }
 
         return () => {
 
-        }
+        };
     }, []);
 
-}
+};
 
 export default useLoadDataAfterRefresh;

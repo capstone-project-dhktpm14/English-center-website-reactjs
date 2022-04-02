@@ -1,7 +1,7 @@
-import { Col, Divider, Dropdown, Input, Row, Select, Typography } from "antd";
-import Checkbox from "antd/lib/checkbox/Checkbox";
-import PropTypes from "prop-types";
-import React, { useEffect, useRef, useState } from "react";
+import { Col, Divider, Dropdown, Input, Row, Select, Typography } from 'antd';
+import Checkbox from 'antd/lib/checkbox/Checkbox';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
 
 const { Text } = Typography;
 const { Option } = Select;
@@ -17,12 +17,12 @@ ClassSearch.defaultProps = {
 };
 
 function ClassSearch({ routes, onChange }) {
-  const [name, setName] = useState("");
-  const [routeSlug, setRouteSlug] = useState("");
+  const [name, setName] = useState('');
+  const [routeSlug, setRouteSlug] = useState('');
   const typingTimeOutRef = useRef(null);
 
   const handleClassChange = (checkedValues) => {
-    setRouteSlug(checkedValues === 0 ? "" : checkedValues);
+    setRouteSlug(checkedValues === 0 ? '' : checkedValues);
   };
 
   const handleDateChange = (e) => {
@@ -48,10 +48,10 @@ function ClassSearch({ routes, onChange }) {
         <Text
           strong
           style={{
-            color: "white",
-            fontSize: "20px",
-            textAlign: "right",
-            alignItems: "right",
+            color: 'white',
+            fontSize: '20px',
+            textAlign: 'right',
+            alignItems: 'right',
           }}
         >
           Lọc Theo:
@@ -60,7 +60,7 @@ function ClassSearch({ routes, onChange }) {
       <Col xs={24} sm={24} md={24} lg={12} xl={5}>
         <Select
           defaultValue=""
-          style={{ width: "50%" }}
+          style={{ width: '50%' }}
           onChange={handleClassChange}
         >
           <Option value="" key={-1}>
@@ -80,7 +80,7 @@ function ClassSearch({ routes, onChange }) {
       <Col xs={24} sm={24} md={24} lg={12} xl={5}>
         <Select
           defaultValue=""
-          style={{ width: "50%" }}
+          style={{ width: '50%' }}
           onChange={handleClassChange}
         >
           <Option value="" key={-1}>

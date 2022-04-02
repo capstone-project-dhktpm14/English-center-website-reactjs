@@ -1,7 +1,7 @@
-import { Col, Divider, Dropdown, Input, Row, Select, Typography } from "antd";
-import Checkbox from "antd/lib/checkbox/Checkbox";
-import PropTypes from "prop-types";
-import React, { useEffect, useRef, useState } from "react";
+import { Col, Divider, Dropdown, Input, Row, Select, Typography } from 'antd';
+import Checkbox from 'antd/lib/checkbox/Checkbox';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
 
 const { Text } = Typography;
 const { Option } = Select;
@@ -17,13 +17,13 @@ CourseSearch.defaultProps = {
 };
 
 function CourseSearch({ topics, onChange }) {
-  const [name, setName] = useState("");
-  const [topicSlug, setTopicSlug] = useState("");
+  const [name, setName] = useState('');
+  const [topicSlug, setTopicSlug] = useState('');
   const typingTimeOutRef = useRef(null);
 
   const handleTopicChange = (checkedValues) => {
     setTopicSlug(
-      checkedValues === 0 ? "" : checkedValues
+      checkedValues === 0 ? '' : checkedValues
     );
   };
 
@@ -50,10 +50,10 @@ function CourseSearch({ topics, onChange }) {
         <Text
           strong
           style={{
-            color: "white",
-            fontSize: "20px",
-            textAlign: "right",
-            alignItems: "right",
+            color: 'white',
+            fontSize: '20px',
+            textAlign: 'right',
+            alignItems: 'right',
           }}
         >
           Lọc Theo:
@@ -62,7 +62,7 @@ function CourseSearch({ topics, onChange }) {
       <Col xs={24} sm={24} md={24} lg={12} xl={5}>
         <Input
           name="name"
-          style={{ width: "50%" }}
+          style={{ width: '50%' }}
           onChange={handleNameChange}
           placeholder="Tìm Theo Tên"
         />
@@ -71,7 +71,7 @@ function CourseSearch({ topics, onChange }) {
       <Col xs={24} sm={24} md={24} lg={12} xl={5}>
         <Select
           defaultValue=""
-          style={{ width: "50%" }}
+          style={{ width: '50%' }}
           onChange={handleTopicChange}
         >
           <Option value="" key={-1}>

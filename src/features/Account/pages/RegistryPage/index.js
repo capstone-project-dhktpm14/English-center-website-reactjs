@@ -1,4 +1,4 @@
-import { CloseCircleOutlined } from "@ant-design/icons";
+import { CloseCircleOutlined } from '@ant-design/icons';
 import {
   Button,
   Col,
@@ -9,24 +9,24 @@ import {
   Row,
   Tag,
   Typography,
-} from "antd";
-import loginApi from "api/loginApi";
-import IMAGE_ACCOUNT_PAGE from "assets/images/account/US-ENGLISH.png";
-import InputField from "customfield/InputField";
-import { setLoading } from "features/Account/accountSlice";
-import { registryValues } from "features/Account/initValues";
-import { FastField, Form, Formik } from "formik";
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
-import { Link } from "react-router-dom";
+} from 'antd';
+import loginApi from 'api/loginApi';
+import IMAGE_ACCOUNT_PAGE from 'assets/images/account/US-ENGLISH.png';
+import InputField from 'customfield/InputField';
+import { setLoading } from 'features/Account/accountSlice';
+import { registryValues } from 'features/Account/initValues';
+import { FastField, Form, Formik } from 'formik';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const RESEND_OTP_TIME_LIMIT = 60;
 const { Text, Title } = Typography;
 function RegistryPage(props) {
   const dispatch = useDispatch();
   let resendOTPTimerInterval;
-  const [isError, setError] = useState("");
+  const [isError, setError] = useState('');
   const history = useNavigate();
   //set time counter
   const [counter, setCounter] = useState(0);
@@ -35,21 +35,21 @@ function RegistryPage(props) {
 
   const openNotification = (mes) => {
     const args = {
-      message: mes ? mes : "Xác thực OTP để hoàn tất việc đăng ký",
+      message: mes ? mes : 'Xác thực OTP để hoàn tất việc đăng ký',
     };
     notification.info(args);
   };
 
   function success() {
     Modal.success({
-      content: "Đăng ký thành công !",
+      content: 'Đăng ký thành công !',
       onOk: () => {
-        console.log("click");
-        history("/account/login");
+        console.log('click');
+        history('/account/login');
       },
       onCancel: () => {
-        console.log("click");
-        history("/account/login");
+        console.log('click');
+        history('/account/login');
       },
     });
   }
@@ -68,7 +68,7 @@ function RegistryPage(props) {
         setCounter(RESEND_OTP_TIME_LIMIT);
         startResendOTPTimer();
       } catch (error) {
-        message.error("Đã có lỗi xảy ra");
+        message.error('Đã có lỗi xảy ra');
       }
     }
     dispatch(setLoading(false));
@@ -95,7 +95,9 @@ function RegistryPage(props) {
     try {
       await loginApi.forgot(username);
       openNotification(`Đã gửi lại mã OTP đến  ${username}`);
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
     dispatch(setLoading(false));
   };
 
@@ -112,11 +114,11 @@ function RegistryPage(props) {
   const handleConfirmAccount = async (username, otp) => {
     try {
       await loginApi.confirmAccount(username, otp);
-      console.log("success");
+      console.log('success');
       success();
     } catch (error) {
-      console.log("fail");
-      message.error("OTP không hợp lệ");
+      console.log('fail');
+      message.error('OTP không hợp lệ');
     }
   };
 
@@ -127,8 +129,8 @@ function RegistryPage(props) {
           <img src={IMAGE_ACCOUNT_PAGE} alt="zelo_forgot" />
         </div>
         <div className="account_right">
-          <Title level={2} style={{ textAlign: "center" }}>
-            <Text style={{ color: "#4d93ff" }}>Đăng Ký</Text>
+          <Title level={2} style={{ textAlign: 'center' }}>
+            <Text style={{ color: '#4d93ff' }}>Đăng Ký</Text>
           </Title>
           <Divider />
           <div className="form-account">
@@ -170,8 +172,8 @@ function RegistryPage(props) {
                               block
                               disabled={counter > 0 ? true : false}
                             >
-                              Gửi lại OTP{" "}
-                              {`${counter > 0 ? `sau ${counter}` : ""}`}
+                              Gửi lại OTP{' '}
+                              {`${counter > 0 ? `sau ${counter}` : ''}`}
                             </Button>
                           </Col>
                         </>
@@ -247,7 +249,7 @@ function RegistryPage(props) {
                           <Tag
                             color="error"
                             style={{
-                              fontWeight: "bold",
+                              fontWeight: 'bold',
                             }}
                             icon={<CloseCircleOutlined />}
                           >
@@ -255,7 +257,7 @@ function RegistryPage(props) {
                           </Tag>
                         </Col>
                       ) : (
-                        ""
+                        ''
                       )}
 
                       <Col span={24}>

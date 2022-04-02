@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Col, Row, List, Typography } from "antd";
-import { Link } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Col, Row, List, Typography } from 'antd';
+import { Link } from 'react-router-dom';
 
 const { Title } = Typography;
 
@@ -12,7 +12,7 @@ TestPartList.propTypes = {
 
 TestPartList.defaultProps = {
   books: [],
-  numberPart: "1",
+  numberPart: '1',
 };
 
 function TestPartList({ books, numberPart }) {
@@ -32,7 +32,7 @@ function TestPartList({ books, numberPart }) {
                   <List.Item>
                     <Link
                       to={`/parts/test/${item.slug}/${numberPart}`}
-                      style={{ fontWeight: "bold" }}
+                      style={{ fontWeight: 'bold' }}
                     >
                       {index + 1}. {`Part ${numberPart}`} - {item.name}
                     </Link>

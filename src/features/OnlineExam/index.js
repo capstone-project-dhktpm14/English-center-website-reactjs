@@ -1,16 +1,16 @@
-import Footer from "components/Footer";
-import Header from "components/Header";
-import NotFoundPage from "components/NotFoundPage";
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Route, Routes, useRouteMatch } from "react-router-dom";
-import { fetchBooks } from "./onlineExamSlice";
-import CheckInExam from "./pages/CheckInExam";
-import Checkout from "./pages/Checkout";
-import Examining from "./pages/Examining";
-import MainPage from "./pages/MainPage";
-import ResultPage from "./pages/ResultPage";
-import "./style.scss";
+import Footer from 'components/Footer';
+import Header from 'components/Header';
+import NotFoundPage from 'components/NotFoundPage';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Route, Routes, useRouteMatch } from 'react-router-dom';
+import { fetchBooks } from './onlineExamSlice';
+import CheckInExam from './pages/CheckInExam';
+import Checkout from './pages/Checkout';
+import Examining from './pages/Examining';
+import MainPage from './pages/MainPage';
+import ResultPage from './pages/ResultPage';
+import './style.scss';
 
 OnlineExam.propTypes = {};
 

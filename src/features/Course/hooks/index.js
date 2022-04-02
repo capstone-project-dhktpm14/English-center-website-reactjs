@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 export function useWordNoteOptions(wordnotes) {
 	const { wordNotes } = useSelector((state) => state.wordnote);

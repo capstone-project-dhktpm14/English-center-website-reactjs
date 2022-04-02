@@ -1,6 +1,6 @@
-import { Col, Input, Row, Select, Typography } from "antd";
-import PropTypes from "prop-types";
-import React, { useEffect, useRef, useState } from "react";
+import { Col, Input, Row, Select, Typography } from 'antd';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
 
 const { Text } = Typography;
 const { Option } = Select;
@@ -16,12 +16,12 @@ CourseSearch.defaultProps = {
 };
 
 function CourseSearch({ topics, onChange }) {
-	const [name, setName] = useState("");
-	const [topicSlug, setTopicSlug] = useState("");
+	const [name, setName] = useState('');
+	const [topicSlug, setTopicSlug] = useState('');
 	const typingTimeOutRef = useRef(null);
 
 	const handleTopicChange = (slug) => {
-		setTopicSlug(slug === 0 ? "" : slug);
+		setTopicSlug(slug === 0 ? '' : slug);
 	};
 
 	const handleNameChange = (e) => {
@@ -48,7 +48,7 @@ function CourseSearch({ topics, onChange }) {
 					<Col xs={24} sm={24} md={18} lg={18} xl={18}>
 						<Input
 							name="name"
-							style={{ width: "80%" }}
+							style={{ width: '80%' }}
 							onChange={handleNameChange}
 						/>
 					</Col>
@@ -63,7 +63,7 @@ function CourseSearch({ topics, onChange }) {
 					<Col xs={24} sm={24} md={18} lg={18} xl={18}>
 						<Select
 							defaultValue={0}
-							style={{ width: "80%" }}
+							style={{ width: '80%' }}
 							onChange={handleTopicChange}
 						>
 							<Option value={0} key={-1}>

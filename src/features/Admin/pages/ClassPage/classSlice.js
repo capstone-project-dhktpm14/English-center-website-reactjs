@@ -1,12 +1,12 @@
-import classAdminApi from "api/classAdminApi";
-import { useLocation, useParams } from "react-router";
-import { classValues, scheduleValues } from "./initialAndValidateValues";
+import classAdminApi from 'api/admin/classAdminApi';
+import { useLocation, useParams } from 'react-router';
+import { classValues, scheduleValues } from './initialAndValidateValues';
 
-const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
-const KEY = "classes";
+const { createSlice, createAsyncThunk } = require('@reduxjs/toolkit');
+const KEY = 'classes';
 
 export const fetchClasses = createAsyncThunk(
-  "fetchClasses",
+  'fetchClasses',
   async (params, thunk) => {
     const data = await classAdminApi.fetchClass();
     return data;
@@ -14,7 +14,7 @@ export const fetchClasses = createAsyncThunk(
 );
 
 export const deleteClass = createAsyncThunk(
-  "deleteClass",
+  'deleteClass',
   async (params, thunk) => {
     const { classId } = params;
     const data = await classAdminApi.deleteRoute(classId);
@@ -34,7 +34,7 @@ export const fetchSchedules = createAsyncThunk(
 );
 
 export const deleteSchedule = createAsyncThunk(
-  "deleteSchedule",
+  'deleteSchedule',
   async (params, thunk) => {
     const { scheduleId } = params;
     const data = await classAdminApi.deleteSchedule(scheduleId);
@@ -94,7 +94,6 @@ const classSlice = createSlice({
   extraReducers: {
     //class
 
-    
     [fetchClasses.rejected]: (state, action) => {
       state.isLoading = false;
     },

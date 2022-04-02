@@ -1,6 +1,6 @@
-import axiosClient from "./axiosClient";
+import axiosClient from './axiosClient';
 
-const BASE_ENDPOINT = "/user/word-note-categories";
+const BASE_ENDPOINT = '/user/word-note-categories';
 
 const wordNoteApi = {
 	getWordNotes: () => {

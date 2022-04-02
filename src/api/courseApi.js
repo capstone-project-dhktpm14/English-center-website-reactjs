@@ -1,18 +1,18 @@
-import axiosClient from "./axiosClient";
+import axiosClient from './axiosClient';
 
 const courseApi = {
 	getCourses: (params) => {
-		const url = "/courses";
+		const url = '/courses';
 		return axiosClient.get(url, { params });
 	},
 
 	getCourseWords: (params) => {
-		const url = "/course-words";
+		const url = '/course-words';
 		return axiosClient.get(url, { params });
 	},
 
 	getTopics: () => {
-		const url = "/courses/topics";
+		const url = '/courses/topics';
 		return axiosClient.get(url);
 	},
 

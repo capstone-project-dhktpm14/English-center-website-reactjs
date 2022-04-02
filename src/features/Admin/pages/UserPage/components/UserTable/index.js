@@ -1,14 +1,14 @@
-import { Table, Tag } from "antd";
-import Column from "antd/lib/table/Column";
-import PropTypes from "prop-types";
-import React from "react";
-import UserAction from "../UserAction";
+import { Table, Tag } from 'antd';
+import Column from 'antd/lib/table/Column';
+import PropTypes from 'prop-types';
+import React from 'react';
+import UserAction from '../UserAction';
 
 function UserTable(props) {
 	const { users, query, setIsUpdateUserRole, setUser } = props;
 
 	const handleRoleName = (roleName) =>
-		roleName.replaceAll("ROLE_", "").toLowerCase();
+		roleName.replaceAll('ROLE_', '').toLowerCase();
 
 	return (
 		<Table dataSource={users} pagination={false}>
@@ -32,11 +32,11 @@ function UserTable(props) {
 							<Tag
 								key={index}
 								color={
-									roleName === "admin"
-										? "magenta"
-										: roleName === "user"
-										? "green"
-										: "cyan"
+									roleName === 'admin'
+										? 'magenta'
+										: roleName === 'user'
+										? 'green'
+										: 'cyan'
 								}
 							>
 								{roleName}

@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { PlusOutlined } from "@ant-design/icons";
-import { Typography } from "antd";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { PlusOutlined } from '@ant-design/icons';
+import { Typography } from 'antd';
 
 const { Title } = Typography;
 
@@ -11,7 +11,7 @@ ModalTitle.propTypes = {
 };
 
 ModalTitle.defaultProps = {
-	title: "Thêm mới",
+	title: 'Thêm mới',
 	icon: <PlusOutlined />,
 };
 
@@ -19,7 +19,7 @@ function ModalTitle(props) {
 	const { title, icon } = props;
 
 	return (
-		<Title level={4} className="common-color" style={{ color: "#007c7e" }}>
+		<Title level={4} className="common-color" style={{ color: '#007c7e' }}>
 			{icon} &nbsp;
 			{title.toUpperCase()}
 		</Title>

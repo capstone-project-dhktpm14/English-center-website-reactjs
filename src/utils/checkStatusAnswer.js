@@ -21,7 +21,7 @@ const checkStatusAnswer = (answers) => {
     checkAnswerPart(answers_part7, status);
 
     return status;
-}
+};
 
 
 function checkSelectedAnswer(answers) {
@@ -63,7 +63,7 @@ function checkSelected(part, selected) {
 
 function checkAnswerPart(answers_part, status) {
     let flag = 0;
-    let subStatus = "Complete";
+    let subStatus = 'Complete';
     answers_part.forEach(answer => {
         if (answer.status === '' || answer.status === 'yet') {
             flag += 1;
@@ -75,7 +75,7 @@ function checkAnswerPart(answers_part, status) {
         subStatus = 'Incomplete';
     }
     status.push(subStatus);
-};
+}
 
 export default checkStatusAnswer;
 export { checkSelectedAnswer };

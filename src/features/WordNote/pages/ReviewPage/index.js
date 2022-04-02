@@ -1,4 +1,4 @@
-import { Button, Progress, Result } from "antd";
+import { Button, Progress, Result } from 'antd';
 import {
 	AnswerCheckBar,
 	completeSound,
@@ -8,19 +8,19 @@ import {
 	WordFillQuestion,
 	WordNoteHeader,
 	wrongAnswer,
-} from "features/WordNote/common";
+} from 'features/WordNote/common';
 import {
 	getWordNoteDetail,
 	getWordNoteReview,
-} from "features/WordNote/wordNoteSlice";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import "./style.scss";
+} from 'features/WordNote/wordNoteSlice';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import './style.scss';
 
 let audio;
 const playAudio = (url) => {
-	if (audio) audio.pause();
+	if (audio) {audio.pause();}
 	audio = new Audio(url);
 	audio.load();
 	audio.play();
@@ -91,7 +91,7 @@ function ReviewPage(props) {
 		const values = { type: questionType, ids: null };
 		dispatch(getWordNoteDetail(wordnoteId));
 		dispatch(getWordNoteReview({ wordnoteId, values }));
-		document.title = "Ôn tập từ vựng";
+		document.title = 'Ôn tập từ vựng';
 	}, []);
 
 	return (

@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Button, Col, Divider, Row, Tooltip } from "antd";
-import Title from "antd/lib/typography/Title";
-import GoBackButton from "../GoBackButton";
-import { PlaySquareOutlined } from "@ant-design/icons";
-import { useRouteMatch,useLocation,useParams } from "react-router-dom";
-import "./style.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Button, Col, Divider, Row, Tooltip } from 'antd';
+import Title from 'antd/lib/typography/Title';
+import GoBackButton from '../GoBackButton';
+import { PlaySquareOutlined } from '@ant-design/icons';
+import { useRouteMatch,useLocation,useParams } from 'react-router-dom';
+import './style.scss';
 
 function WordNoteHeader(props) {
 	const { isMainPage, isReviewPage, isError, goBackUrl, wordNoteDetail, } =
@@ -14,7 +14,7 @@ function WordNoteHeader(props) {
 	const { url } = useLocation();
 	return (
 		<div className="word-note-container__header">
-			<Row justify={isMainPage ? "start" : "space-around"} align="middle">
+			<Row justify={isMainPage ? 'start' : 'space-around'} align="middle">
 				{isMainPage ? (
 					<Col>
 						{/* Main page */}
@@ -41,7 +41,7 @@ function WordNoteHeader(props) {
 						</Col>
 						<Col xs={14} sm={14} md={20} lg={20}>
 							<Title>
-								{isError ? "Chi tiết wordnote" : wordNoteDetail.name}
+								{isError ? 'Chi tiết wordnote' : wordNoteDetail.name}
 							</Title>
 						</Col>
 						<Col xs={6} sm={6} md={2} lg={2}>
@@ -80,7 +80,7 @@ WordNoteHeader.defaultProps = {
 	isMainPage: false,
 	isReviewPage: false,
 	isError: false,
-	goBackUrl: "/",
+	goBackUrl: '/',
 	wordNoteDetail: {},
 };
 

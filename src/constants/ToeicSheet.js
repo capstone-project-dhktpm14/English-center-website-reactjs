@@ -1008,7 +1008,7 @@ const titlEachPart = {
     PART5: 'Part V: Incomplete Sentences',
     PART6: 'Part VI: Incomplete Sentences',
     PART7: 'Part VII: Reading omprehension',
-}
+};
 
 
 export { titlEachPart, answers };

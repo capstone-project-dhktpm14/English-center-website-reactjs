@@ -1,8 +1,8 @@
-import axiosClient from "./axiosClient";
+import axiosClient from './axiosClient';
 
 const routeApi = {
 	getRoutes: (params) => {
-		const url = "/routes";
+		const url = '/routes';
 		return axiosClient.get(url, { params });
 	},
 

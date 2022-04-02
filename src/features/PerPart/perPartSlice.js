@@ -1,8 +1,8 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import bookApi from "api/bookApi";
-import examApi from "api/examApi";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import bookApi from 'api/bookApi';
+import examApi from 'api/examApi';
 
-const KEY = "perPart";
+const KEY = 'perPart';
 
 export const fetchBooks = createAsyncThunk(
   `${KEY}/fetchBooks`,

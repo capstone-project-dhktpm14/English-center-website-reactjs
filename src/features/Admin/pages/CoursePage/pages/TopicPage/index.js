@@ -1,16 +1,16 @@
-import { PlusCircleOutlined } from "@ant-design/icons";
-import { Button, Space } from "antd";
+import { PlusCircleOutlined } from '@ant-design/icons';
+import { Button, Space } from 'antd';
 // import TopicModal from "features/Course/components/TopicModal";
 // import TopicTable from "features/Course/components/TopicTable";
 // import { fetchTopics } from "features/Course/courseSlice";
 // import { topicValues } from "features/Course/initialAndValidateValues";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import TopicModal from "../../components/TopicModal";
-import TopicTable from "../../components/TopicTable";
-import { fetchTopics } from "../../courseSlice";
-import { topicValues } from "../../initialAndValidateValues";
-import "./style.scss";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import TopicModal from '../../components/TopicModal';
+import TopicTable from '../../components/TopicTable';
+import { fetchTopics } from '../../courseSlice';
+import { topicValues } from '../../initialAndValidateValues';
+import './style.scss';
 
 function TopicPage(props) {
 	const { topics } = useSelector((state) => state.course);
@@ -33,7 +33,7 @@ function TopicPage(props) {
 
 	return (
 		<div className="topic-page">
-			<Space direction="vertical"  style={{ width: "100%",textAlign:"left" }} size="large">
+			<Space direction="vertical"  style={{ width: '100%',textAlign:'left' }} size="large">
 				<div className="topic-button--add">
 					<Button
 						type="primary"

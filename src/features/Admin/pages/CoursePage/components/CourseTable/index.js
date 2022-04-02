@@ -1,8 +1,8 @@
-import { Table } from "antd";
-import Column from "antd/lib/table/Column";
-import PropTypes from "prop-types";
-import React from "react";
-import CourseAction from "../CourseAction";
+import { Table } from 'antd';
+import Column from 'antd/lib/table/Column';
+import PropTypes from 'prop-types';
+import React from 'react';
+import CourseAction from '../CourseAction';
 
 function CourseTable(props) {
 	const {

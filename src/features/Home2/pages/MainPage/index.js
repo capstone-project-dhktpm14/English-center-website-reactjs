@@ -6,51 +6,51 @@ import {
   PlayCircleOutlined,
   ReadOutlined,
   StarOutlined,
-} from "@ant-design/icons";
-import { Carousel, Divider } from "antd";
-import AboutImage from "assets/image/about-main-page.svg";
-import BackToTopButton from "components/BackToTopButton";
-import Footer from "components/Footer";
-import FormCourse from "components/FormCourse";
-import Header from "components/Header";
-import SliderItem from "features/Home2/components/SliderItem";
-import SliderReview from "features/Home2/components/SliderReview";
+} from '@ant-design/icons';
+import { Carousel, Divider } from 'antd';
+import AboutImage from 'assets/image/about-main-page.svg';
+import BackToTopButton from 'components/BackToTopButton';
+import Footer from 'components/Footer';
+import FormCourse from 'components/FormCourse';
+import Header from 'components/Header';
+import SliderItem from 'features/Home2/components/SliderItem';
+import SliderReview from 'features/Home2/components/SliderReview';
 
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import "./style.scss";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import './style.scss';
 MainPage.propTypes = {};
 
 function MainPage(props) {
   useEffect(() => {
-    document.title = "Trang chủ";
+    document.title = 'Trang chủ';
   }, []);
   const contentStyle = {
-    height: "160px",
-    color: "#fff",
-    lineHeight: "160px",
-    textAlign: "center",
-    background: "#364d79",
+    height: '160px',
+    color: '#fff',
+    lineHeight: '160px',
+    textAlign: 'center',
+    background: '#364d79',
   };
 
   const data = [
     {
       image:
-        "https://www.anhngumshoa.com/uploads/images/resize/750x750/slide/web.jpg",
-      title: "Nguyễn Trần Nhật Hào",
-      detail: "Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều",
+        'https://www.anhngumshoa.com/uploads/images/resize/750x750/slide/web.jpg',
+      title: 'Nguyễn Trần Nhật Hào',
+      detail: 'Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều',
     },
     {
       image:
-        "https://www.anhngumshoa.com/uploads/images/resize/750x750/slide/web.jpg",
-      title: "Vũ Văn Khải",
-      detail: "Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều",
+        'https://www.anhngumshoa.com/uploads/images/resize/750x750/slide/web.jpg',
+      title: 'Vũ Văn Khải',
+      detail: 'Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều',
     },
     {
       image:
-        "https://www.anhngumshoa.com/uploads/images/resize/750x750/slide/web.jpg",
-      title: "Nguyễn Trần Nhật Hào",
-      detail: "Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều",
+        'https://www.anhngumshoa.com/uploads/images/resize/750x750/slide/web.jpg',
+      title: 'Nguyễn Trần Nhật Hào',
+      detail: 'Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều',
     },
   ];
   return (
@@ -67,7 +67,7 @@ function MainPage(props) {
               cho bài thi TOEIC chính thức, hoặc đơn giản là để cải thiện kỹ
               năng tiếng Anh của bạn, giúp theo dõi hiệu suất của bạn nhằm giúp
               bạn biết điểm mạnh, điểm yếu của mình và những gì bạn cần tập
-              trung hơn để có kết quả tốt nhất.{" "}
+              trung hơn để có kết quả tốt nhất.{' '}
             </p>
             <Link to="/exams">
               <button>Khám phá</button>
@@ -117,13 +117,13 @@ function MainPage(props) {
           <div className="content-about-section">
             <h3>
               Hãy nâng cao trình độ tiếng anh của bạn qua các bài học trên
-              website của chúng tôi{" "}
+              website của chúng tôi{' '}
             </h3>
             <p>
               Các bài học trên website đều là miễn phí, bên cạnh đó còn có các
               gói từ vựng và video được chia theo topic giúp bạn dễ dàng tiếp
               cận những chủ đề yêu thích làm cho việc học tiếng anh của bạn trở
-              nên dễ dàng{" "}
+              nên dễ dàng{' '}
             </p>
             <Link to="/course">
               <button>Tìm hiểu</button>
@@ -133,14 +133,14 @@ function MainPage(props) {
             <FormCourse></FormCourse>
           </div>
         </div>
-      </div>{" "}
+      </div>{' '}
       <Divider></Divider>
       <div className="review-section" id="review-section">
         <h1 className="heading">Đánh giá của người dùng</h1>
         <h3 className="title">Người dùng nói gì về chúng tôi ? </h3>
         <div className="slide">
           <Carousel autoplay
-            style={{ width: "500px" }}
+            style={{ width: '500px' }}
           >
             {data.map((ele, index) => (
               <SliderItem

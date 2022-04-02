@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ButtonCustom from "../ButtonCustom";
-import { Col, Row } from "antd";
+import React from 'react';
+import PropTypes from 'prop-types';
+import ButtonCustom from '../ButtonCustom';
+import { Col, Row } from 'antd';
 
 EmptyButton.propTypes = {
   number: PropTypes.number,
@@ -13,7 +13,7 @@ EmptyButton.propTypes = {
   onAnswerClick: null,
 };
 
-const STT_CHAR = ["A", "B", "C", "D"];
+const STT_CHAR = ['A', 'B', 'C', 'D'];
 
 function EmptyButton({ number, onAnswerClick }) {
   const renderButton = (number) => {

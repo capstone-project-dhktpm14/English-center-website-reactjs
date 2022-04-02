@@ -1,11 +1,11 @@
-import { Button, Col, Row } from "antd";
-import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
-import "./style.scss";
+import { Button, Col, Row } from 'antd';
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import './style.scss';
 
 function QuizQuestion(props) {
 	const { word, setUserAnswer } = props;
-	const answerLabel = ["A", "B", "C", "D"];
+	const answerLabel = ['A', 'B', 'C', 'D'];
 	const [selectedAnswer, setSelectedAnswer] = useState(null);
 
 	useEffect(() => {
@@ -25,7 +25,7 @@ function QuizQuestion(props) {
 						<Button
 							shape="round"
 							size="large"
-							type={selectedAnswer === index ? "primary" : "default"}
+							type={selectedAnswer === index ? 'primary' : 'default'}
 							onClick={() => handleOnClick(index)}
 						>{`${answerLabel[index]}. ${value}`}</Button>
 					</Col>

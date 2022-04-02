@@ -1,6 +1,6 @@
-import { Button } from "antd";
-import PropTypes from "prop-types";
-import React from "react";
+import { Button } from 'antd';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 ButtonCustom.propTypes = {
   content: PropTypes.string.isRequired,
@@ -9,14 +9,14 @@ ButtonCustom.propTypes = {
 };
 
 ButtonCustom.defaultProps = {
-  content: "",
-  type: "default",
+  content: '',
+  type: 'default',
   onClick: null,
 };
 
 function ButtonCustom({ content, type, onClick }) {
   const handleClick = () => {
-    if (!onClick) return;
+    if (!onClick) {return;}
 
     onClick();
   };
@@ -28,10 +28,10 @@ function ButtonCustom({ content, type, onClick }) {
         shape="round"
         size="large"
         style={{
-          width: "100%",
-          padding: "20px 0px",
-          height: "auto",
-          textAlign: "center",
+          width: '100%',
+          padding: '20px 0px',
+          height: 'auto',
+          textAlign: 'center',
         }}
         onClick={handleClick}
       >

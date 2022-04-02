@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import { Button, Col, Pagination, Row, Space } from "antd";
-import { PlusCircleOutlined } from "@ant-design/icons";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { Button, Col, Pagination, Row, Space } from 'antd';
+import { PlusCircleOutlined } from '@ant-design/icons';
+import { useDispatch, useSelector } from 'react-redux';
 
-import RouteTable from "../../components/ClassTable";
-import RouteAddForm from "../../components/ClassAddForm";
-import { fetchClasses, fetchSchedules, setSchedules } from "../../classSlice";
-import ScheduleTable from "../../components/ScheduleTable";
-import ScheduleModal from "../../components/ScheduleModal";
-import commonFuc from "utils/commonFuc";
-import { examValues } from "features/Admin/pages/Exam/initialAndValidateValues";
-import classAdminApi from "api/classAdminApi";
-import { matchPath, useLocation, useParams } from "react-router";
-import { scheduleValues } from "../../initialAndValidateValues";
+import RouteTable from '../../components/ClassTable';
+import RouteAddForm from '../../components/ClassAddForm';
+import { fetchClasses, fetchSchedules, setSchedules } from '../../classSlice';
+import ScheduleTable from '../../components/ScheduleTable';
+import ScheduleModal from '../../components/ScheduleModal';
+import commonFuc from 'utils/commonFuc';
+import { examValues } from 'features/Admin/pages/Exam/initialAndValidateValues';
+import classAdminApi from 'api/admin/classAdminApi';
+import { matchPath, useLocation, useParams } from 'react-router';
+import { scheduleValues } from '../../initialAndValidateValues';
 ClassDetail.propTypes = {};
 
 function ClassDetail(props) {
@@ -26,8 +26,8 @@ function ClassDetail(props) {
   const { schedulesPage } = useSelector((state) => state.classes);
 
   const [query, setQuery] = useState({
-    dateFrom: "",
-    dateTo: "",
+    dateFrom: '',
+    dateTo: '',
     page: 0,
     size: 10,
   });
@@ -77,7 +77,7 @@ function ClassDetail(props) {
         {/* <ExamSearch books={books} onChange={handleSearchChange} /> */}
       </Row>
 
-      <Space direction="vertical" style={{ width: "100%" }}>
+      <Space direction="vertical" style={{ width: '100%' }}>
         <div className="course-main-page__table">
           <ScheduleTable
             schedules={commonFuc.addSTTForList(
@@ -90,7 +90,7 @@ function ClassDetail(props) {
             query={query}
           />
         </div>
-        <div style={{ textAlign: "right" }}>
+        <div style={{ textAlign: 'right' }}>
           <Pagination
             current={dataSource.page + 1}
             total={dataSource.totalPages * 10}

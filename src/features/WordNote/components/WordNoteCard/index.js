@@ -1,16 +1,21 @@
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
-import { Button, Space, Tooltip, Typography } from "antd";
-import ConfirmModal from "components/ConfirmModal";
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
+import { Button, Space, Tooltip, Typography } from 'antd';
+import ConfirmModal from 'components/ConfirmModal';
 import {
   deleteWordNote,
   fetchWordNotes,
-} from "features/WordNote/wordNoteSlice";
-import PropTypes from "prop-types";
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate, useLocation, useRouteMatch, Link } from "react-router-dom";
-import WordNoteForm from "../WordNoteForm";
-import "./style.scss";
+} from 'features/WordNote/wordNoteSlice';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import {
+  useNavigate,
+  useLocation,
+  useRouteMatch,
+  Link,
+} from 'react-router-dom';
+import WordNoteForm from '../WordNoteForm';
+import './style.scss';
 
 function WordNoteCard(props) {
   const { Title } = Typography;
@@ -22,7 +27,7 @@ function WordNoteCard(props) {
   const history = useNavigate();
 
   const style = {
-    borderRadius: "50%",
+    borderRadius: '50%',
   };
 
   const handleDelete = async () => {
@@ -31,7 +36,7 @@ function WordNoteCard(props) {
   };
 
   function handleOnClick() {
-    history(`${wordNote.id}`)
+    history(`${wordNote.id}`);
   }
 
   return (
@@ -49,7 +54,7 @@ function WordNoteCard(props) {
             <div>{wordNote.wordNumber} words</div>
           </div>
           <div className="word-note-card__action">
-			  {/* delete & edit */}
+            {/* delete & edit */}
             <Space wrap align="center">
               <Tooltip title="Xóa">
                 <Button
@@ -90,7 +95,7 @@ function WordNoteCard(props) {
         isModalVisible={isConfirmVisible}
         setIsModalVisible={setIsConfirmVisible}
         handleOnOk={handleDelete}
-        content={`Bạn có muốn xóa wordnote này không?`}
+        content={'Bạn có muốn xóa wordnote này không?'}
         okText="Đồng ý"
         cancelText="Hủy"
       />
@@ -104,6 +109,6 @@ WordNoteCard.propTypes = {
 };
 WordNoteCard.defaultProps = {
   wordNote: {},
-  image: "",
+  image: '',
 };
 export default WordNoteCard;

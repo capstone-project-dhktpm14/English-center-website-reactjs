@@ -1,15 +1,15 @@
-import { InfoCircleOutlined } from "@ant-design/icons";
-import { Button, Space } from "antd";
-import Modal from "antd/lib/modal/Modal";
-import Title from "antd/lib/typography/Title";
-import imageNotFound from "assets/images/image-not-found.svg";
-import AudioButton from "components/AudioButton";
-import ModalTitle from "components/ModalTitle";
-import PropTypes from "prop-types";
-import React from "react";
-import { wordValues } from "../../initialAndValidateValues";
-import MeaningCard from "../MeaningCard";
-import "./style.scss";
+import { InfoCircleOutlined } from '@ant-design/icons';
+import { Button, Space } from 'antd';
+import Modal from 'antd/lib/modal/Modal';
+import Title from 'antd/lib/typography/Title';
+import imageNotFound from 'assets/images/image-not-found.svg';
+import AudioButton from 'components/AudioButton';
+import ModalTitle from 'components/ModalTitle';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { wordValues } from '../../initialAndValidateValues';
+import MeaningCard from '../MeaningCard';
+import './style.scss';
 
 function WordDetailModal(props) {
 	const { isDetailViewMode, setIsDetailViewMode, word } = props;
@@ -23,7 +23,7 @@ function WordDetailModal(props) {
 			title={<ModalTitle title="Xem chi tiết" icon={<InfoCircleOutlined />} />}
 			visible={isDetailViewMode}
 			footer={
-				<Button style={{ marginRight: "8px" }} onClick={handleCancel}>
+				<Button style={{ marginRight: '8px' }} onClick={handleCancel}>
 					Thoát
 				</Button>
 			}
@@ -44,7 +44,7 @@ function WordDetailModal(props) {
 								<Space>
 									<AudioButton
 										audioUrl={word.sound}
-										color={"#28a745"}
+										color={'#28a745'}
 										toolTip="Nghe"
 									/>
 									<span>{word.name}</span>

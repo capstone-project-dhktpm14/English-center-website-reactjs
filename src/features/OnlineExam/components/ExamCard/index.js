@@ -12,7 +12,7 @@ ExamCard.defaultProps = {
     listTest: [],
     onClick: null,
 
-}
+};
 
 
 

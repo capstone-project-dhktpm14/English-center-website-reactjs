@@ -10,30 +10,30 @@ const dateUtils = {
 
         //  tính năm
         if (nowTempt.getFullYear() - date.getFullYear() > 0)
-            return `${date.getDate()}/${
+            {return `${date.getDate()}/${
                 date.getMonth() + 1
-            }/${date.getFullYear()}`;
+            }/${date.getFullYear()}`;}
 
         const dateWasMinus7day = nowTempt.setDate(nowTempt.getDate() - 7);
 
         if (date < dateWasMinus7day)
-            return `0${date.getDate()}/${date.getMonth() + 1}`.slice(-2);
+            {return `0${date.getDate()}/${date.getMonth() + 1}`.slice(-2);}
 
         const now = new Date();
         const numberMiliseconds = now - date;
 
         // tính ngày
         const day = Math.floor(numberMiliseconds / DAY_MILISECONDS);
-        if (day > 0) return `0${day}`.slice(-2) + ` ngày`;
+        if (day > 0) {return `0${day}`.slice(-2) + ' ngày';}
         // `0${date.getHours()}`.slice(-2);
 
         // tính giờ
         const hour = Math.floor(numberMiliseconds / HOURSE_MILISECONDS);
-        if (hour > 0) return `0${hour}`.slice(-2) + ` giờ`;
+        if (hour > 0) {return `0${hour}`.slice(-2) + ' giờ';}
 
         // tính phút
         const minute = Math.floor(numberMiliseconds / MINUTE_MILISECONDS);
-        if (minute > 0) return `0${minute}`.slice(-2) + ` phút`;
+        if (minute > 0) {return `0${minute}`.slice(-2) + ' phút';}
 
         return 'Vài giây';
     },

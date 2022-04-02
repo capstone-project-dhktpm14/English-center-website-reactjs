@@ -1,16 +1,16 @@
-import { LeftCircleFilled, LeftCircleOutlined } from "@ant-design/icons";
-import { useHover } from "ahooks";
-import { Tooltip } from "antd";
-import Title from "antd/lib/typography/Title";
-import PropTypes from "prop-types";
-import React, { useRef } from "react";
+import { LeftCircleFilled, LeftCircleOutlined } from '@ant-design/icons';
+import { useHover } from 'ahooks';
+import { Tooltip } from 'antd';
+import Title from 'antd/lib/typography/Title';
+import PropTypes from 'prop-types';
+import React, { useRef } from 'react';
 import {
 	Route,
 	Routes,
 	useHistory,
 	useLocation,
 	useNavigate,
-  } from "react-router";
+  } from 'react-router';
 
 function GoBackButton(props) {
 	const { href, tooltip } = props;
@@ -42,8 +42,8 @@ GoBackButton.propTypes = {
 	tooltip: PropTypes.string,
 };
 GoBackButton.defaultProps = {
-	href: "/",
-	tooltip: "Go back",
+	href: '/',
+	tooltip: 'Go back',
 };
 
 export default GoBackButton;

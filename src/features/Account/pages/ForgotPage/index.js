@@ -1,4 +1,4 @@
-import { CloseCircleOutlined } from "@ant-design/icons";
+import { CloseCircleOutlined } from '@ant-design/icons';
 import {
   Button,
   Col,
@@ -9,24 +9,24 @@ import {
   Row,
   Tag,
   Typography,
-} from "antd";
-import loginApi from "api/loginApi";
-import IMAGE_ACCOUNT_PAGE from "assets/images/account/US-ENGLISH.png";
-import InputField from "customfield/InputField";
-import { setLoading } from "features/Account/accountSlice";
-import { forgotValues } from "features/Account/initValues";
-import { FastField, Form, Formik } from "formik";
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
-import { Link } from "react-router-dom";
+} from 'antd';
+import loginApi from 'api/loginApi';
+import IMAGE_ACCOUNT_PAGE from 'assets/images/account/US-ENGLISH.png';
+import InputField from 'customfield/InputField';
+import { setLoading } from 'features/Account/accountSlice';
+import { forgotValues } from 'features/Account/initValues';
+import { FastField, Form, Formik } from 'formik';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const RESEND_OTP_TIME_LIMIT = 60;
 const { Text, Title } = Typography;
 function ForgotPage(props) {
   const dispatch = useDispatch();
   let resendOTPTimerInterval;
-  const [isError, setError] = useState("");
+  const [isError, setError] = useState('');
   const history = useNavigate();
   //set time counter
   const [counter, setCounter] = useState(0);
@@ -43,25 +43,25 @@ function ForgotPage(props) {
 
   function success() {
     Modal.success({
-      content: "Cập nhật tài khoản thành công !",
+      content: 'Cập nhật tài khoản thành công !',
       onOk: () => {
-        history("/account/login");
+        history('/account/login');
       },
       onCancel: () => {
-        history("/account/login");
+        history('/account/login');
       },
     });
   }
 
   const handleForgot = async (values) => {
     dispatch(setLoading(true));
-    const { username, password, otp} = values;
+    const { username, password, otp } = values;
     console.log(values);
 
     if (isSubmit) {
       try {
         // if (account.actived) {
-          console.log(username, password, otp);
+        console.log(username, password, otp);
         await loginApi.confirmPassword(username, password, otp);
         // } else {
         //   await loginApi.confirmAccount(username, otpValue);
@@ -69,7 +69,7 @@ function ForgotPage(props) {
         // }
         success();
       } catch (error) {
-        message.error("OTP không hợp lệ");
+        message.error('OTP không hợp lệ');
       }
     } else {
       try {
@@ -81,7 +81,7 @@ function ForgotPage(props) {
         openNotification(username);
         setIsSubmit(true);
       } catch (error) {
-        message.error("Tài khoản không tồn tại");
+        message.error('Tài khoản không tồn tại');
       }
     }
 
@@ -120,7 +120,9 @@ function ForgotPage(props) {
     try {
       await loginApi.resetOtp(username);
       openNotification(`Đã gửi lại mã OTP đến  ${username}`);
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
     dispatch(setLoading(false));
   };
 
@@ -131,8 +133,8 @@ function ForgotPage(props) {
           <img src={IMAGE_ACCOUNT_PAGE} alt="zelo_forgot" />
         </div>
         <div className="account_right">
-          <Title level={2} style={{ textAlign: "center" }}>
-            <Text style={{ color: "#4d93ff" }}>Quên Mật Khẩu</Text>
+          <Title level={2} style={{ textAlign: 'center' }}>
+            <Text style={{ color: '#4d93ff' }}>Quên Mật Khẩu</Text>
           </Title>
           <Divider />
           <div className="form-account">
@@ -153,8 +155,8 @@ function ForgotPage(props) {
                       <Col span={24}>
                         <Text
                           style={{
-                            color: "#08aeea",
-                            textAlign: "center",
+                            color: '#08aeea',
+                            textAlign: 'center',
                           }}
                         >
                           Nhập email/SĐT để nhận mã xác thực
@@ -210,8 +212,8 @@ function ForgotPage(props) {
                                 handleResendOTP(formikProps.values.username)
                               }
                             >
-                              Gửi lại OTP{" "}
-                              {`${counter > 0 ? `sau ${counter}` : ""}`}
+                              Gửi lại OTP{' '}
+                              {`${counter > 0 ? `sau ${counter}` : ''}`}
                             </Button>
                           </Col>
 
@@ -248,7 +250,7 @@ function ForgotPage(props) {
                           <Tag
                             color="error"
                             style={{
-                              fontWeight: "bold",
+                              fontWeight: 'bold',
                             }}
                             icon={<CloseCircleOutlined />}
                           >
@@ -256,7 +258,7 @@ function ForgotPage(props) {
                           </Tag>
                         </Col>
                       ) : (
-                        ""
+                        ''
                       )}
                     </Row>
                   </Form>

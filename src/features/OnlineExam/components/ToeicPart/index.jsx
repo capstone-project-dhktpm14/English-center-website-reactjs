@@ -1,5 +1,5 @@
-import { CaretLeftFilled, CaretRightFilled } from "@ant-design/icons";
-import { Button, Col, Row } from "antd";
+import { CaretLeftFilled, CaretRightFilled } from '@ant-design/icons';
+import { Button, Col, Row } from 'antd';
 import {
   fetchExam,
   setExamSelected,
@@ -7,20 +7,20 @@ import {
   setScrollId,
   setsubPartSelected,
   writeAnswerSheet,
-} from "features/OnlineExam/onlineExamSlice";
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import useLoadExamSelectedAfterRefresh from "utils/useLoadExamSelectedAfterRefresh";
-import useWindowUnloadEffect from "utils/useWindowUnloadEffect";
-import Part1 from "./Part1";
-import Part2 from "./Part2";
-import Part3 from "./Part3";
-import Part4 from "./Part4";
-import Part5 from "./Part5";
-import Part6 from "./Part6";
-import Part7 from "./Part7";
-import "./style.scss";
+} from 'features/OnlineExam/onlineExamSlice';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import useLoadExamSelectedAfterRefresh from 'utils/useLoadExamSelectedAfterRefresh';
+import useWindowUnloadEffect from 'utils/useWindowUnloadEffect';
+import Part1 from './Part1';
+import Part2 from './Part2';
+import Part3 from './Part3';
+import Part4 from './Part4';
+import Part5 from './Part5';
+import Part6 from './Part6';
+import Part7 from './Part7';
+import './style.scss';
 
 ToeicPart.propTypes = {};
 
@@ -56,27 +56,27 @@ function ToeicPart(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    let check = localStorage.getItem("isSubmit");
-    if (check !== "undefined" && check !== null) {
+    let check = localStorage.getItem('isSubmit');
+    if (check !== 'undefined' && check !== null) {
       dispatch(setIsSubmit(check));
     }
   }, []);
-  console.log("part 3 main " + part3Audio);
-  console.log("part 1 main " + JSON.stringify(part1));
+  console.log('part 3 main ' + part3Audio);
+  console.log('part 1 main ' + JSON.stringify(part1));
   useEffect(() => {}, []);
 
   useEffect(() => {
     if (examSelected === 8 && isSubmit === false) {
       history(`/exams/${testId}/checkout`);
 
-      console.log("lệnh nàyh bị lỗi nè");
+      console.log('lệnh nàyh bị lỗi nè');
     }
-    console.log("question", part1);
+    console.log('question', part1);
   }, [examSelected]);
 
   useEffect(() => {
     console.log(
-      "fetch exam",
+      'fetch exam',
       dispatch(
         fetchExam({
           slug: testId,
@@ -91,37 +91,37 @@ function ToeicPart(props) {
   }, []);
 
   useEffect(() => {
-    console.log("effect", scrollId);
+    console.log('effect', scrollId);
     document.getElementById(`${scrollId}`).scrollIntoView();
   }, [subPartSelected]);
 
   function handlePreviousClick() {
     if (examSelected === 2) {
       dispatch(setExamSelected(examSelected - 1));
-      dispatch(setScrollId("top"));
+      dispatch(setScrollId('top'));
       return;
     }
 
     if (subPartSelected === 0) {
       dispatch(setExamSelected(examSelected - 1));
-      dispatch(setScrollId("top"));
+      dispatch(setScrollId('top'));
       if (examSelected === 4) {
         dispatch(setsubPartSelected(part3MaxPage));
-        dispatch(setScrollId("top"));
+        dispatch(setScrollId('top'));
       }
       if (examSelected === 5) {
         dispatch(setsubPartSelected(part4MaxPage));
-        dispatch(setScrollId("top"));
+        dispatch(setScrollId('top'));
       }
       if (examSelected === 7) {
         dispatch(setsubPartSelected(part6MaxPage));
-        dispatch(setScrollId("top"));
+        dispatch(setScrollId('top'));
       }
       return;
     }
 
     dispatch(setsubPartSelected(subPartSelected - 1));
-    dispatch(setScrollId("top"));
+    dispatch(setScrollId('top'));
   }
   function handleNextClick() {
     // if (examSelected == 7) {
@@ -135,10 +135,10 @@ function ToeicPart(props) {
     }
 
     if (examSelected === 1 || examSelected === 2 || examSelected === 5) {
-      console.log("Next");
+      console.log('Next');
       dispatch(setExamSelected(examSelected + 1));
       dispatch(setsubPartSelected(0));
-      dispatch(setScrollId("top"));
+      dispatch(setScrollId('top'));
       return;
     }
     if (
@@ -149,10 +149,10 @@ function ToeicPart(props) {
     ) {
       dispatch(setExamSelected(examSelected + 1));
       dispatch(setsubPartSelected(0));
-      dispatch(setScrollId("top"));
+      dispatch(setScrollId('top'));
     } else {
       dispatch(setsubPartSelected(subPartSelected + 1));
-      dispatch(setScrollId("top"));
+      dispatch(setScrollId('top'));
     }
   }
 
@@ -220,8 +220,8 @@ function ToeicPart(props) {
   }
 
   useWindowUnloadEffect(() => {
-    localStorage.setItem("partSelected", examSelected);
-    localStorage.setItem("Transcript", transcript);
+    localStorage.setItem('partSelected', examSelected);
+    localStorage.setItem('Transcript', transcript);
   }, true);
 
   const disabled = examSelected == 1 ? true : false;

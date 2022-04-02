@@ -12,7 +12,7 @@ ClassPage.propTypes = {
 };
 
 function ClassPage(props) {
-    const { isLoading } = useSelector((state) => state.classes)
+    const { isLoading } = useSelector((state) => state.classes);
     
     return (
         <Spin spinning={isLoading}>

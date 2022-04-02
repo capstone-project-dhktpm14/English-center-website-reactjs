@@ -1,18 +1,18 @@
-import {  ClockCircleOutlined,FieldTimeOutlined  } from "@ant-design/icons";
-import { Button, Space } from "antd";
-import bookApi from "api/bookApi";
-import { refreshStore } from "features/OnlineExam/onlineExamSlice";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import "./style.scss";
+import {  ClockCircleOutlined,FieldTimeOutlined  } from '@ant-design/icons';
+import { Button, Space } from 'antd';
+import bookApi from 'api/bookApi';
+import { refreshStore } from 'features/OnlineExam/onlineExamSlice';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import './style.scss';
 CheckInExam.propTypes = {};
 
 function CheckInExam(props) {
   const { setExam } = useSelector((state) => state.onlineExam);
   const dispatch = useDispatch();
   const history = useNavigate();
-  const [examTitle, setExamTitle] = useState("");
+  const [examTitle, setExamTitle] = useState('');
   const { testId } = useParams();
   const [book, setBook] = useState([]);
 

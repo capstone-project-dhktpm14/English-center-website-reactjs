@@ -19,8 +19,8 @@ function AnswerSheet(props) {
     const { examSelected } = useSelector(state => state.onlineExam);
     const [activeKey, setActiveKey] = useState(examSelected.toString());
     useEffect(() => {
-        setActiveKey(examSelected.toString())
-    }, [examSelected])
+        setActiveKey(examSelected.toString());
+    }, [examSelected]);
 
 
 
@@ -55,7 +55,7 @@ function AnswerSheet(props) {
     return (
         <div >
             <Affix offsetTop={60}  >
-                <Collapse style={{borderRadius:"5px"}} accordion activeKey={activeKey} onChange={handleChange} expandIconPosition={expandIconPosition} >
+                <Collapse style={{borderRadius:'5px'}} accordion activeKey={activeKey} onChange={handleChange} expandIconPosition={expandIconPosition} >
 
                     <Panel header="Part 1" key="1" extra={<SoundOutlined />}>
                         <SubAnswer title={titlEachPart.PART1} data={answers_part1} />

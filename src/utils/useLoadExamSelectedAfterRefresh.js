@@ -9,12 +9,12 @@ const useLoadExamSelectedAfterRefresh = () => {
     useEffect(() => {
         const part = localStorage.getItem('partSelected');
         const transcript = localStorage.getItem('transcript');
-        if (part !== "undefined" && part !== null) {
+        if (part !== 'undefined' && part !== null) {
 
             dispatch(setExamSelected(parseInt(part)));
         }
 
-        if (transcript !== "undefined" && transcript !== null) {
+        if (transcript !== 'undefined' && transcript !== null) {
 
             const tempTranscript = JSON.parse(transcript);
             dispatch(setTranScript(tempTranscript));
@@ -23,9 +23,9 @@ const useLoadExamSelectedAfterRefresh = () => {
 
         return () => {
 
-        }
+        };
     }, []);
-}
+};
 
 export default useLoadExamSelectedAfterRefresh;
 

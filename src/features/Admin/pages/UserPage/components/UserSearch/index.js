@@ -1,11 +1,11 @@
-import { Col, Input, Row, Typography } from "antd";
-import PropTypes from "prop-types";
-import React, { useEffect, useRef, useState } from "react";
+import { Col, Input, Row, Typography } from 'antd';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
 
 const { Text } = Typography;
 
 function UserSearch({ onChange }) {
-	const [username, setUsername] = useState("");
+	const [username, setUsername] = useState('');
 	const typingTimeOutRef = useRef(null);
 
 	const handleUserNameChange = (e) => {
@@ -32,7 +32,7 @@ function UserSearch({ onChange }) {
 					<Col xs={24} sm={24} md={18} lg={18} xl={18}>
 						<Input
 							name="name"
-							style={{ width: "80%" }}
+							style={{ width: '80%' }}
 							onChange={handleUserNameChange}
 						/>
 					</Col>

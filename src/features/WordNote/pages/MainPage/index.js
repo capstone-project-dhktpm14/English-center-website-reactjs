@@ -1,16 +1,16 @@
-import { AppstoreAddOutlined } from "@ant-design/icons";
-import { Col, Row, Space, Typography } from "antd";
+import { AppstoreAddOutlined } from '@ant-design/icons';
+import { Col, Row, Space, Typography } from 'antd';
 import {
 	BackToTopButton,
 	WordNoteCard,
 	WordNoteForm,
 	WordNoteHeader,
-} from "features/WordNote/common";
-import { WORDNOTE_IMAGES } from "features/WordNote/constants";
-import { fetchWordNotes } from "features/WordNote/wordNoteSlice";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import "./style.scss";
+} from 'features/WordNote/common';
+import { WORDNOTE_IMAGES } from 'features/WordNote/constants';
+import { fetchWordNotes } from 'features/WordNote/wordNoteSlice';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import './style.scss';
 
 function MainPage(props) {
 	const { wordNotes } = useSelector((state) => state.wordnote);
@@ -21,7 +21,7 @@ function MainPage(props) {
 
 	useEffect(() => {
 		dispatch(fetchWordNotes());
-		document.title = "Wordnote";
+		document.title = 'Wordnote';
 	}, []);
 	return (
 		<div id="word-note-main-page">

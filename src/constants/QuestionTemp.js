@@ -690,7 +690,7 @@ const test = {
     part4: [
         {
             paragraph: audio,
-            image: "",
+            image: '',
 
             questions: [
 
@@ -728,7 +728,7 @@ const test = {
         },
         {
             paragraph: audio,
-            image: "",
+            image: '',
 
             questions: [
 
@@ -1343,7 +1343,7 @@ const test = {
     ],
     part6: [
         {
-            paragraph: "Philadelphia's PH11—TV invites you to download our new traffic app for your mobile device. The app (1).......... the station's traffic coverage. Use it to get traffic news if you are away from your television and are unable to watch our traffic reports. (2)........... Plus, you can program your daily commute into the app to receive personalized alerts (3).......... on your mobile device when any traffic—related event occurs along your route. Avoid traffic delays by downloading the PH11—TV traffic app today, (4).......... tune in to our live broadcast beginning at 5:00 A.M. and 4:00 P.M. daily.",
+            paragraph: 'Philadelphia\'s PH11—TV invites you to download our new traffic app for your mobile device. The app (1).......... the station\'s traffic coverage. Use it to get traffic news if you are away from your television and are unable to watch our traffic reports. (2)........... Plus, you can program your daily commute into the app to receive personalized alerts (3).......... on your mobile device when any traffic—related event occurs along your route. Avoid traffic delays by downloading the PH11—TV traffic app today, (4).......... tune in to our live broadcast beginning at 5:00 A.M. and 4:00 P.M. daily.',
             image: '',
 
             questions: [
@@ -1390,7 +1390,7 @@ const test = {
             ]
         },
         {
-            paragraph: "Philadelphia's PH11—TV invites you to download our new traffic app for your mobile device. The app (1).......... the station's traffic coverage. Use it to get traffic news if you are away from your television and are unable to watch our traffic reports. (2)........... Plus, you can program your daily commute into the app to receive personalized alerts (3).......... on your mobile device when any traffic—related event occurs along your route. Avoid traffic delays by downloading the PH11—TV traffic app today, (4).......... tune in to our live broadcast beginning at 5:00 A.M. and 4:00 P.M. daily.",
+            paragraph: 'Philadelphia\'s PH11—TV invites you to download our new traffic app for your mobile device. The app (1).......... the station\'s traffic coverage. Use it to get traffic news if you are away from your television and are unable to watch our traffic reports. (2)........... Plus, you can program your daily commute into the app to receive personalized alerts (3).......... on your mobile device when any traffic—related event occurs along your route. Avoid traffic delays by downloading the PH11—TV traffic app today, (4).......... tune in to our live broadcast beginning at 5:00 A.M. and 4:00 P.M. daily.',
             image: '',
 
             questions: [
@@ -1437,7 +1437,7 @@ const test = {
             ]
         },
         {
-            paragraph: "Philadelphia's PH11—TV invites you to download our new traffic app for your mobile device. The app (1).......... the station's traffic coverage. Use it to get traffic news if you are away from your television and are unable to watch our traffic reports. (2)........... Plus, you can program your daily commute into the app to receive personalized alerts (3).......... on your mobile device when any traffic—related event occurs along your route. Avoid traffic delays by downloading the PH11—TV traffic app today, (4).......... tune in to our live broadcast beginning at 5:00 A.M. and 4:00 P.M. daily.",
+            paragraph: 'Philadelphia\'s PH11—TV invites you to download our new traffic app for your mobile device. The app (1).......... the station\'s traffic coverage. Use it to get traffic news if you are away from your television and are unable to watch our traffic reports. (2)........... Plus, you can program your daily commute into the app to receive personalized alerts (3).......... on your mobile device when any traffic—related event occurs along your route. Avoid traffic delays by downloading the PH11—TV traffic app today, (4).......... tune in to our live broadcast beginning at 5:00 A.M. and 4:00 P.M. daily.',
             image: imagePart34,
 
             questions: [
@@ -1484,7 +1484,7 @@ const test = {
             ]
         },
         {
-            paragraph: "Philadelphia's PH11—TV invites you to download our new traffic app for your mobile device. The app (1).......... the station's traffic coverage. Use it to get traffic news if you are away from your television and are unable to watch our traffic reports. (2)........... Plus, you can program your daily commute into the app to receive personalized alerts (3).......... on your mobile device when any traffic—related event occurs along your route. Avoid traffic delays by downloading the PH11—TV traffic app today, (4).......... tune in to our live broadcast beginning at 5:00 A.M. and 4:00 P.M. daily.",
+            paragraph: 'Philadelphia\'s PH11—TV invites you to download our new traffic app for your mobile device. The app (1).......... the station\'s traffic coverage. Use it to get traffic news if you are away from your television and are unable to watch our traffic reports. (2)........... Plus, you can program your daily commute into the app to receive personalized alerts (3).......... on your mobile device when any traffic—related event occurs along your route. Avoid traffic delays by downloading the PH11—TV traffic app today, (4).......... tune in to our live broadcast beginning at 5:00 A.M. and 4:00 P.M. daily.',
             image: imagePart34,
 
             questions: [
@@ -1534,7 +1534,7 @@ const test = {
     ],
     part7: [
         {
-            paragraph: "",
+            paragraph: '',
             image: imagePart34,
 
             questions: [
@@ -1562,7 +1562,7 @@ const test = {
             ]
         },
         {
-            paragraph: "The Zachary Township Floral Garden (ZTFG) is seeking a creative and career—oriented person to join our dynamic team. Duties include helping to design, publicize, and market ZTFG activities to schools and media outlets in the surrounding community. Qualifications include proficiency in office and design software and previous experience in a graphic design firm. Flexible work schedule. To apply, email a cover letter, resume, and two professional references to jobs@ztfg.org by May 5. To learn more, stop by any morning Monday through Friday for a tour of the garden.",
+            paragraph: 'The Zachary Township Floral Garden (ZTFG) is seeking a creative and career—oriented person to join our dynamic team. Duties include helping to design, publicize, and market ZTFG activities to schools and media outlets in the surrounding community. Qualifications include proficiency in office and design software and previous experience in a graphic design firm. Flexible work schedule. To apply, email a cover letter, resume, and two professional references to jobs@ztfg.org by May 5. To learn more, stop by any morning Monday through Friday for a tour of the garden.',
             image: '',
 
             questions: [
@@ -1590,7 +1590,7 @@ const test = {
             ]
         },
         {
-            paragraph: "*MEMO To: All Employees From: Don Wunder, Director of Facilities  Subject: Chanti Workspaces Date: February 11 In a special partnership with Chanti Workspaces, five standing desks will be available to employees on a trial basis from February 20 to March 15. Standing desks allow you to stand comfortably while working. We will use the new Chanti B45 model, which is adjustable, so you can alternate between sitting and standing at the perfect height for you. Research suggests that standing desks can negate some of the harmful physical effects of sitting too much. They may also improve mood and overall health. Those wishing to take advantage of this opportunity should contact me. If we have more interest than desks, the recipients will be those who contact me ﬁrst. Those using the desks will be asked to take a survey about their experience to help us determine whether we should make standing desks available to all employees.",
+            paragraph: '*MEMO To: All Employees From: Don Wunder, Director of Facilities  Subject: Chanti Workspaces Date: February 11 In a special partnership with Chanti Workspaces, five standing desks will be available to employees on a trial basis from February 20 to March 15. Standing desks allow you to stand comfortably while working. We will use the new Chanti B45 model, which is adjustable, so you can alternate between sitting and standing at the perfect height for you. Research suggests that standing desks can negate some of the harmful physical effects of sitting too much. They may also improve mood and overall health. Those wishing to take advantage of this opportunity should contact me. If we have more interest than desks, the recipients will be those who contact me ﬁrst. Those using the desks will be asked to take a survey about their experience to help us determine whether we should make standing desks available to all employees.',
             image: '',
 
             questions: [
@@ -1619,7 +1619,7 @@ const test = {
         },
 
         {
-            paragraph: "*MEMO To: All Employees From: Don Wunder, Director of Facilities  Subject: Chanti Workspaces Date: February 11 In a special partnership with Chanti Workspaces, five standing desks will be available to employees on a trial basis from February 20 to March 15. Standing desks allow you to stand comfortably while working. We will use the new Chanti B45 model, which is adjustable, so you can alternate between sitting and standing at the perfect height for you. Research suggests that standing desks can negate some of the harmful physical effects of sitting too much. They may also improve mood and overall health. Those wishing to take advantage of this opportunity should contact me. If we have more interest than desks, the recipients will be those who contact me ﬁrst. Those using the desks will be asked to take a survey about their experience to help us determine whether we should make standing desks available to all employees.",
+            paragraph: '*MEMO To: All Employees From: Don Wunder, Director of Facilities  Subject: Chanti Workspaces Date: February 11 In a special partnership with Chanti Workspaces, five standing desks will be available to employees on a trial basis from February 20 to March 15. Standing desks allow you to stand comfortably while working. We will use the new Chanti B45 model, which is adjustable, so you can alternate between sitting and standing at the perfect height for you. Research suggests that standing desks can negate some of the harmful physical effects of sitting too much. They may also improve mood and overall health. Those wishing to take advantage of this opportunity should contact me. If we have more interest than desks, the recipients will be those who contact me ﬁrst. Those using the desks will be asked to take a survey about their experience to help us determine whether we should make standing desks available to all employees.',
             image: '',
 
             questions: [
@@ -2213,6 +2213,6 @@ const test = {
     ]
 
 
-}
+};
 
 export default test;

@@ -15,4 +15,4 @@ export const handleAnswer = (answers) => {
     return obj;
 
 
-}
+};

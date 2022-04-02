@@ -1,15 +1,15 @@
-import { Divider } from "antd";
-import Title from "antd/lib/typography/Title";
-import NotFoundPage from "components/NotFoundPage";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import ParagraphDetailModal from "../../components/ParagraphDetailModal";
-import ParagraphModal from "../../components/ParagraphModal";
-import ParagraphTable from "../../components/ParagraphTable";
-import { fetchQuestions } from "../../examSlice";
-import { useQuery } from "../../hooks";
-import { paragraphValues } from "../../initialAndValidateValues";
+import { Divider } from 'antd';
+import Title from 'antd/lib/typography/Title';
+import NotFoundPage from 'components/NotFoundPage';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import ParagraphDetailModal from '../../components/ParagraphDetailModal';
+import ParagraphModal from '../../components/ParagraphModal';
+import ParagraphTable from '../../components/ParagraphTable';
+import { fetchQuestions } from '../../examSlice';
+import { useQuery } from '../../hooks';
+import { paragraphValues } from '../../initialAndValidateValues';
 
 ParagraphPage.propTypes = {};
 
@@ -24,12 +24,12 @@ function ParagraphPage(props) {
 	const [initialValue, setInitialValue] = useState(paragraphValues.initial);
 	const [isDetailViewMode, setIsDetailViewMode] = useState(false);
 
-	const examId = +query.get("examId");
-	const type = +query.get("part");
+	const examId = +query.get('examId');
+	const type = +query.get('part');
 
 	//chuyển hướng trang
 	useEffect(() => {
-		if (typeof examId === "number" && typeof type === "number") {
+		if (typeof examId === 'number' && typeof type === 'number') {
 			if (type < 1) {
 				history(`/admin/exams/questions?examId=${examId}&part=1`);
 			} else if (type > 7) {
@@ -47,7 +47,7 @@ function ParagraphPage(props) {
 	return examId && type ? (
 		<div>
 			<Divider orientation="left">
-				<Title level={3}>{`Part ${query.get("part")}`} ParagraphPage</Title>
+				<Title level={3}>{`Part ${query.get('part')}`} ParagraphPage</Title>
 			</Divider>
 			<ParagraphTable
 				paragraphs={questions}

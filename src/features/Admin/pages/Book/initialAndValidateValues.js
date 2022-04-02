@@ -1,14 +1,14 @@
-import { message } from "antd";
-import * as Yup from "yup";
+import { message } from 'antd';
+import * as Yup from 'yup';
 
 export const bookValues = {
     initial: {
-        name: "",
+        name: '',
         image: ''
     },
 
     validationSchema: Yup.object().shape({
-        name: Yup.string().required("Tên không được bỏ trống"),
+        name: Yup.string().required('Tên không được bỏ trống'),
         
     }),
 };

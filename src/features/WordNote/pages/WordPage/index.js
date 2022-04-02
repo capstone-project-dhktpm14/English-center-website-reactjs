@@ -1,9 +1,9 @@
-import { Empty, Result } from "antd";
-import { WordList, WordNoteHeader } from "features/WordNote/common";
-import { getWordNoteDetail } from "features/WordNote/wordNoteSlice";
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Empty, Result } from 'antd';
+import { WordList, WordNoteHeader } from 'features/WordNote/common';
+import { getWordNoteDetail } from 'features/WordNote/wordNoteSlice';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 function WordPage(props) {
 	const { wordnoteId } = useParams();
@@ -11,7 +11,7 @@ function WordPage(props) {
 	const { isError, wordNoteDetail } = useSelector((state) => state.wordnote);
 
 	useEffect(() => {
-		document.title = wordNoteDetail.name || "Wordnote";
+		document.title = wordNoteDetail.name || 'Wordnote';
 	});
 
 	useEffect(() => {
@@ -24,7 +24,7 @@ function WordPage(props) {
 			<WordNoteHeader
 				isError={isError}
 				wordNoteDetail={wordNoteDetail}
-				goBackUrl={"/wordnote"}
+				goBackUrl={'/wordnote'}
 			/>
 
 			{isError ? (

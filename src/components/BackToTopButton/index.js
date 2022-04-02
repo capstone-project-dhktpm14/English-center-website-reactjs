@@ -1,7 +1,7 @@
-import { UpOutlined } from "@ant-design/icons";
-import { BackTop, Tooltip } from "antd";
-import React from "react";
-import "./style.scss";
+import { UpOutlined } from '@ant-design/icons';
+import { BackTop, Tooltip } from 'antd';
+import React from 'react';
+import './style.scss';
 
 function BackToTopButton() {
 	return (

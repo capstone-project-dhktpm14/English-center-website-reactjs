@@ -1,11 +1,11 @@
-import { Col, Result, Row } from "antd";
-import BackToTopButton from "components/BackToTopButton";
-import TopicCard from "components/TopicCard";
-import { WORDNOTE_IMAGES } from "features/Class/constants";
-import PropTypes from "prop-types";
-import React from "react";
-import ClassCard from "../ClassCard";
-import "./style.scss";
+import { Col, Result, Row } from 'antd';
+import BackToTopButton from 'components/BackToTopButton';
+import TopicCard from 'components/TopicCard';
+import { WORDNOTE_IMAGES } from 'features/Class/constants';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ClassCard from '../ClassCard';
+import './style.scss';
 
 function ClassList(props) {
   const { classes } = props;
@@ -38,6 +38,6 @@ ClassList.propTypes = {
 ClassList.defaultProps = {
   classes: [],
   isRegistry: false,
-  isStatus: "",
+  isStatus: '',
 };
 export default ClassList;

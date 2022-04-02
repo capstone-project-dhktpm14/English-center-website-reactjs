@@ -1,10 +1,10 @@
-import { Checkbox, Empty, message, notification } from "antd";
-import Modal from "antd/lib/modal/Modal";
-import { addToWordNote } from "features/WordNote/wordNoteSlice";
-import PropTypes from "prop-types";
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Checkbox, Empty, message, notification } from 'antd';
+import Modal from 'antd/lib/modal/Modal';
+import { addToWordNote } from 'features/WordNote/wordNoteSlice';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function WordNoteModal(props) {
 	const { isModalVisible, setIsModalVisible, wordNoteOptions, wordId } = props;
@@ -30,9 +30,9 @@ function WordNoteModal(props) {
 
 	const openNotificationWithIcon = (type) => {
 		notification[type]({
-			message: "Warning",
-			description: "Bạn cần phải chọn ít nhất 1 wordnote để thêm",
-			style: { backgroundColor: "#ffeeb0" },
+			message: 'Warning',
+			description: 'Bạn cần phải chọn ít nhất 1 wordnote để thêm',
+			style: { backgroundColor: '#ffeeb0' },
 		});
 	};
 
@@ -48,15 +48,15 @@ function WordNoteModal(props) {
 			}
 
 			setIsModalVisible(false);
-			message.success("Đã thêm vào wordnote");
+			message.success('Đã thêm vào wordnote');
 		} else {
-			openNotificationWithIcon("warning");
+			openNotificationWithIcon('warning');
 		}
 	};
 
 	return (
 		<Modal
-			title={"Thêm từ vào wordnote"}
+			title={'Thêm từ vào wordnote'}
 			centered
 			visible={isModalVisible}
 			onCancel={handleCancelModal}

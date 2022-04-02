@@ -1,14 +1,14 @@
-import { Col, Result, Row } from "antd";
-import BackToTopButton from "components/BackToTopButton";
-import TopicCard from "components/TopicCard";
-import PropTypes from "prop-types";
-import React from "react";
-import "./style.scss";
+import { Col, Result, Row } from 'antd';
+import BackToTopButton from 'components/BackToTopButton';
+import TopicCard from 'components/TopicCard';
+import PropTypes from 'prop-types';
+import React from 'react';
+import './style.scss';
 
 function CourseList(props) {
   const { courses } = props;
 
-  return  courses.length > 0 ? (
+  return courses.length > 0 ? (
     <Row justify="start" height="800px" gutter={[36, 24]}>
       {courses.map((course, index) => {
         const topic = {

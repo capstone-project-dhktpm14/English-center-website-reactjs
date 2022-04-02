@@ -1,5 +1,5 @@
-import { HomeOutlined, StarTwoTone } from "@ant-design/icons";
-import { Button, Space, Table } from "antd";
+import { HomeOutlined, StarTwoTone } from '@ant-design/icons';
+import { Button, Space, Table } from 'antd';
 import {
 	fetchResult,
 	refreshStore,
@@ -7,16 +7,16 @@ import {
 	setScrollId,
 	setsubPartSelected,
 	writeResultToExam,
-} from "features/OnlineExam/onlineExamSlice";
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import { handleAnswer } from "utils/handleDataAnswer";
+} from 'features/OnlineExam/onlineExamSlice';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import { handleAnswer } from 'utils/handleDataAnswer';
 import {
 	writeResultToAnswerSheet,
 	writeTranScript,
-} from "utils/writeResultToAnswerSheet";
-import "./style.scss";
+} from 'utils/writeResultToAnswerSheet';
+import './style.scss';
 ResultPage.propTypes = {};
 
 function ResultPage(props) {
@@ -40,7 +40,7 @@ function ResultPage(props) {
 	const history = useNavigate();
 
 	useEffect(() => {
-		document.title = "Kết quả";
+		document.title = 'Kết quả';
 		dispatch(
 			fetchResult({
 				slug: testId,
@@ -50,40 +50,40 @@ function ResultPage(props) {
 	}, []);
 
 	useEffect(() => {
-		document.getElementById(`top`).scrollIntoView();
+		document.getElementById('top').scrollIntoView();
 	}, []);
 
 	const handleDetailClick = (text, record, index) => {
-		localStorage.setItem("partSelected", record.key);
+		localStorage.setItem('partSelected', record.key);
 		dispatch(setExamSelected(record.key));
 		dispatch(setsubPartSelected(0));
-		dispatch(setScrollId("top"));
+		dispatch(setScrollId('top'));
 		history(`/exams/${testId}/examining`);
 	};
 
 	const columns = [
 		{
-			title: "Question",
-			dataIndex: "question",
-			key: "question",
+			title: 'Question',
+			dataIndex: 'question',
+			key: 'question',
 		},
 		{
-			title: "Description",
-			dataIndex: "description",
-			key: "description",
-		},
-
-		{
-			title: "Number of correct",
-			dataIndex: "correct",
-			key: "correct",
-			render: (selected) => <span style={{ color: "red" }}>{selected}</span>,
+			title: 'Description',
+			dataIndex: 'description',
+			key: 'description',
 		},
 
 		{
-			title: "",
-			dataIndex: "detail",
-			key: "detail",
+			title: 'Number of correct',
+			dataIndex: 'correct',
+			key: 'correct',
+			render: (selected) => <span style={{ color: 'red' }}>{selected}</span>,
+		},
+
+		{
+			title: '',
+			dataIndex: 'detail',
+			key: 'detail',
 			render: (text, record, index) => (
 				<a onClick={() => handleDetailClick(text, record, index)}>{text}</a>
 			),
@@ -92,68 +92,68 @@ function ResultPage(props) {
 
 	const data_listening = [
 		{
-			key: "1",
-			question: "1 - 6",
-			description: "Part I: Picture Description",
+			key: '1',
+			question: '1 - 6',
+			description: 'Part I: Picture Description',
 			correct: `${part1Number}/6`,
-			detail: "Detail",
+			detail: 'Detail',
 		},
 		{
-			key: "2",
-			question: "7 - 31",
-			description: "Part II: Question - Response",
+			key: '2',
+			question: '7 - 31',
+			description: 'Part II: Question - Response',
 			correct: `${part2Number}/25`,
-			detail: "Detail",
+			detail: 'Detail',
 		},
 		{
-			key: "3",
-			question: "32 - 70",
-			description: "Part III: Short Conversations",
+			key: '3',
+			question: '32 - 70',
+			description: 'Part III: Short Conversations',
 			correct: `${part3Number}/39`,
-			detail: "Detail",
+			detail: 'Detail',
 		},
 		{
-			key: "4",
-			question: "71 - 100",
-			description: "Part IV: Short Talks",
+			key: '4',
+			question: '71 - 100',
+			description: 'Part IV: Short Talks',
 			correct: `${part4Number}/30`,
-			detail: "Detail",
+			detail: 'Detail',
 		},
 	];
 
 	const data_reading = [
 		{
-			key: "5",
-			question: "101 - 130",
-			description: "Part V: Incomplete Sentences ",
+			key: '5',
+			question: '101 - 130',
+			description: 'Part V: Incomplete Sentences ',
 			correct: `${part5Number}/30`,
-			detail: "Detail",
+			detail: 'Detail',
 		},
 		{
-			key: "6",
-			question: "131 - 146",
-			description: "Part VI: Incomplete Sentences ",
+			key: '6',
+			question: '131 - 146',
+			description: 'Part VI: Incomplete Sentences ',
 			correct: `${part6Number}/16`,
-			detail: "Detail",
+			detail: 'Detail',
 		},
 		{
-			key: "7",
-			question: "147 - 200",
-			description: "Part VII: Reading Comprehension",
+			key: '7',
+			question: '147 - 200',
+			description: 'Part VII: Reading Comprehension',
 			correct: `${part7Number}/54`,
-			detail: "Detail",
+			detail: 'Detail',
 		},
 	];
 
 	const handleExitClick = () => {
 		dispatch(refreshStore());
-		history("/");
+		history('/');
 	};
 
 	return (
 		<div id="top">
 			<div className="result_wrapper">
-				<Space direction="vertical" style={{ width: "100%" }} size="large">
+				<Space direction="vertical" style={{ width: '100%' }} size="large">
 					<div className="result_infomation">
 						<span className="result_title_test">ETS - 2020</span>
 						<span className="result_info_additional">
@@ -163,13 +163,13 @@ function ResultPage(props) {
 
 					<div className="result_total_score">
 						<span>
-							{" "}
-							<StarTwoTone /> Total Score:{" "}
+							{' '}
+							<StarTwoTone /> Total Score:{' '}
 						</span>
 						<span>{listenPoint + readPoint}</span>
 					</div>
 
-					<div className="result_listening" style={{ border:"1px solid" }}>
+					<div className="result_listening" style={{ border:'1px solid' }}>
 						<div className="result_header">
 							<span className="topic">Listening({listenNumber}/100)</span>
 							<span className="topic sub-score">Score {listenPoint}/495</span>
@@ -183,7 +183,7 @@ function ResultPage(props) {
 						/>
 					</div>
 
-					<div className="result_reading" style={{ border:"1px solid" }}>
+					<div className="result_reading" style={{ border:'1px solid' }}>
 						<div className="result_header">
 							<span className="topic">Reading({readNumber}/100)</span>
 							<span className="topic sub-score">Score {readPoint}/495</span>
@@ -202,7 +202,7 @@ function ResultPage(props) {
 							onClick={handleExitClick}
 							icon={<HomeOutlined />}
 							size="large"
-							style={{ padding: "0 3rem" }}
+							style={{ padding: '0 3rem' }}
 						>
 							Exit
 						</Button>

@@ -1,18 +1,18 @@
 // import { faBackspace } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Col, Row } from "antd";
-import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
-import "./style.scss";
+import { Col, Row } from 'antd';
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import './style.scss';
 
 function WordFillQuestion(props) {
 	const { word, setUserAnswer } = props;
 	const [wordIndexes, setWordIndexes] = useState([]);
 	const [suggestions, setSuggestions] = useState([]);
 	const [spaceClickedCount, setSpaceClickedCount] = useState(0);
-	const numberOfSpaces = word.name.split(" ").length - 1;
+	const numberOfSpaces = word.name.split(' ').length - 1;
 
-	const alphabet = "abcdefghijklmnopqrstuvwxyz";
+	const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
 	const randomCharacter = () => {
 		let newSuggestions = [...word.suggestions];
@@ -28,8 +28,8 @@ function WordFillQuestion(props) {
 
 	const handleAnswer = (wordIndexes) => {
 		const answer = Array.from(wordIndexes, (i) =>
-			i === -1 ? " " : suggestions[i]
-		).join("");
+			i === -1 ? ' ' : suggestions[i]
+		).join('');
 
 		setUserAnswer(answer);
 	};
@@ -59,7 +59,7 @@ function WordFillQuestion(props) {
 	useEffect(() => {
 		setWordIndexes([]);
 		setSpaceClickedCount(0);
-		setUserAnswer("");
+		setUserAnswer('');
 		randomCharacter();
 	}, [word]);
 
@@ -71,7 +71,7 @@ function WordFillQuestion(props) {
 						<Row className="dashed" justify="center" gutter={[8, 8]}>
 							{wordIndexes.map((value, index) => (
 								<Col key={index}>
-									<div className={`btn btn--normal answer`}>
+									<div className={'btn btn--normal answer'}>
 										{value === -1 ? <span>&#160;</span> : suggestions[value]}
 									</div>
 								</Col>
@@ -81,7 +81,7 @@ function WordFillQuestion(props) {
 					<Col span={3} offset={1}>
 						<button
 							className={`btn btn--normal ${
-								wordIndexes.length === 0 && "disable"
+								wordIndexes.length === 0 && 'disable'
 							}`}
 							onClick={() => handleDeleteClick()}
 							disabled={wordIndexes.length === 0 && true}
@@ -100,7 +100,7 @@ function WordFillQuestion(props) {
 								<Col key={index}>
 									<button
 										className={`btn btn--normal ${
-											wordIndexes.includes(index) && "hide disable"
+											wordIndexes.includes(index) && 'hide disable'
 										}`}
 										onClick={() => handleOnClick(index)}
 										disabled={wordIndexes.includes(index) && true}
@@ -115,7 +115,7 @@ function WordFillQuestion(props) {
 								<Col span={8}>
 									<button
 										className={`btn btn--normal ${
-											spaceClickedCount >= numberOfSpaces && "disable hide"
+											spaceClickedCount >= numberOfSpaces && 'disable hide'
 										} space`}
 										onClick={() => handleOnClick(-1)}
 										disabled={spaceClickedCount === numberOfSpaces && true}

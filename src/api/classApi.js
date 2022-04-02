@@ -1,10 +1,10 @@
-import axiosClient from "./axiosClient";
+import axiosClient from './axiosClient';
 const BASE_URL = '/classes';
 
 const classApi = {
     //class
     fetchClass: (params) => {
-        console.log("api h "+JSON.stringify(params))
+        console.log('api h '+JSON.stringify(params));
         return axiosClient.get('/classes',params);
     },
 

@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Col, Row } from "antd";
-import BackToTopButton from "components/BackToTopButton";
-import WordCard from "../WordCard";
-import { useSelector } from "react-redux";
-import { useWordNoteIds, useWordNoteOptions } from "features/Course/hooks";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Col, Row } from 'antd';
+import BackToTopButton from 'components/BackToTopButton';
+import WordCard from '../WordCard';
+import { useSelector } from 'react-redux';
+import { useWordNoteIds, useWordNoteOptions } from 'features/Course/hooks';
 
 function WordList(props) {
 	const { data, isWordNote, wordnoteId } = props;

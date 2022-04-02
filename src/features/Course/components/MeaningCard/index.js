@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import './style.scss';
 
 function MeaningCard(props) {
@@ -7,9 +7,9 @@ function MeaningCard(props) {
 	const { isTranslate, definition, example } = props;
 
 	return (
-		<div className={isTranslate ? "box" : "box--large"}>
+		<div className={isTranslate ? 'box' : 'box--large'}>
 			<div className="box__title">
-				{isTranslate ? "Translated" : "Definition"}
+				{isTranslate ? 'Translated' : 'Definition'}
 			</div>
 
 			{definition.length > 0 && (
@@ -30,7 +30,7 @@ MeaningCard.propTypes = {
 };
 MeaningCard.defaultProps = {
 	isTranslate: false,
-	definition: "",
-	example: "",
+	definition: '',
+	example: '',
 };
 export default MeaningCard;
