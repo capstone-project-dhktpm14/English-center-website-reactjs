@@ -38,9 +38,12 @@ function MainPage(props) {
     if (topicSlug !== "") {
       params.topic = topicSlug;
     }
+    console.log("pểm "+JSON.stringify(params))
     history({ search: queryString.stringify(params) });
 
     setQuery({ page: 0, size: 12, name, topicSlug });
+
+    console.log("que" +JSON.stringify(query))
   };
 
   const handlePageChange = (page, pageSize) => {

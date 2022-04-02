@@ -1,0 +1,87 @@
+.class-card {
+  position: relative;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #fff;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  min-height: 300px;
+  transition: all 0.3s ease-in-out 0s;
+
+  &__image {
+    // width: 276px;
+    height: 155px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+  }
+
+  &__content {
+    padding: 0px;
+  }
+
+  &__title {
+    padding: 5px;
+    text-align: left;
+
+    a {
+      color: black;
+      font-weight: bold;
+      font-size: 1.8rem;
+      white-space: pre-wrap;
+    }
+  }
+
+  &__description {
+    font-size: 1rem;
+    text-align: left;
+    padding: 5px;
+
+    color: black;
+
+    button {
+      padding: 0px;
+    }
+  }
+  &__additional-info {
+    text-align: left;
+    padding: 5px;
+
+    color: black;
+  }
+
+  &__full {
+    text-align: center;
+    padding: 5px;
+    font-size: larger;
+    color: red;
+  }
+  &__topic-info {
+    text-align: left;
+    padding: 5px;
+
+    color: rgba(0, 0, 0, 0.5);
+  }
+  &:hover {
+    box-shadow: rgba(24, 144, 255, 0.5) 0px 5px 15px;
+    transform: scale(1.01);
+  }
+}
+.class-card-header__right {
+  opacity: 1;
+  transition: all 0.5s ease-in-out 0s;
+  align-items: right;
+  text-align: right;
+}
+
+.class-card:hover .class-card-header__right {
+  opacity: 1;
+  transition: all 0.5s ease-in-out 0s;
+  align-items: right;
+  text-align: right;
+}

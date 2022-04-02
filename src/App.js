@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import Home2 from "./features/Home2";
 import Admin from "./features/Admin";
 import Account from "./features/Account";
-import Teacher from "./features/Teacher";
+import Class from "./features/Class";
 import Course from "./features/Course";
 import Blog from "./features/Blog";
 import Translate from "./features/Translate";
@@ -57,7 +57,7 @@ function App() {
           <Route path="admin/*" element={<Admin />} />
           <Route path="course/*" element={<Course />} />
           <Route path="wordnote/*" element={<WordNote />} />
-          <Route path="teacher/" element={<Teacher />} />
+          <Route path="classes/" element={<Class />} />
           <Route path="exams/*" element={<OnlineExam />} />
           <Route path="parts/*" element={<PerPart />} />
           <Route path="aboutme/" element={<Blog />} />

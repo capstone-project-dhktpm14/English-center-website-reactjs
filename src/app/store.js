@@ -13,7 +13,7 @@ import perPart from "features/PerPart/perPartSlice"
 import route from "features/Admin/pages/RoutePage/routeSlice"
 import routeClient from "features/Route1/routeSlice"
 import classes from "features/Admin/pages/ClassPage/classSlice"
-
+import classClient from "features/Class/classSlice"
 
 const rootReducer = {
   global,
@@ -30,6 +30,7 @@ const rootReducer = {
   route,
   routeClient,
   classes,
+  classClient,
 };
 
 const store = configureStore({

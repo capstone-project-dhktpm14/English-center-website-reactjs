@@ -40,7 +40,7 @@ function Route(props) {
       data.push(temp);
     });
   }
-  console.log("dts" + JSON.stringify(data));
+ 
 
   return (
     <>

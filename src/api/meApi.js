@@ -9,6 +9,10 @@ const meApi = {
         const url = '/me/image';
         return axiosClient.put(url, file);
     },
+    fetchClassOfUser: () => {
+        const url = '/me/classes';
+        return axiosClient.get(url);
+    },
 };
 
 export default meApi;

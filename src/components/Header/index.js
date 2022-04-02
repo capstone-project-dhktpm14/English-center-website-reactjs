@@ -98,16 +98,13 @@ function Header(props) {
           <Menu.Item key="HOME2" icon={<HomeOutlined />}>
             <Link to="/">Home</Link>
           </Menu.Item>
-          <Menu.Item key="ABOUTME" icon={<FileProtectOutlined />}>
-            <Link to="/aboutme">Về Chúng tôi</Link>
-          </Menu.Item>
           {isLogin && (
             <Menu.Item key="WORDNOTE" icon={<UnorderedListOutlined />}>
               <Link to="/wordnote">Word Note</Link>
             </Menu.Item>
           )}
-          <Menu.Item key="TEACHER" icon={<TeamOutlined />}>
-            <Link to="/teacher">Giáo viên</Link>
+          <Menu.Item key="CLASS" icon={<TeamOutlined />}>
+            <Link to="/classes">Lớp học</Link>
           </Menu.Item>
           <Route title="Khoá học"></Route>
           <Menu.Item key="COURS" icon={<BookOutlined />}>
@@ -155,10 +152,6 @@ function Header(props) {
                   </Menu.Item>
                 </Menu.ItemGroup>
               </SubMenu>
-
-              <Menu.Item key="Translate" icon={<ProfileOutlined />}>
-                <Link to="/translate">Tra từ</Link>
-              </Menu.Item>
             </SubMenu>
           )}
 
