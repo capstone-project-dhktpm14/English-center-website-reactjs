@@ -13,58 +13,62 @@ import { topicValues } from '../../initialAndValidateValues';
 import './style.scss';
 
 function TopicPage(props) {
-	const { topics } = useSelector((state) => state.course);
+  const { topics } = useSelector((state) => state.course);
 
-	const [isModalVisible, setIsModalVisible] = useState(false);
-	const [isAddMode, setIsAddMode] = useState(true);
-	const [initialValue, setInitialValue] = useState(topicValues.initial);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isAddMode, setIsAddMode] = useState(true);
+  const [initialValue, setInitialValue] = useState(topicValues.initial);
 
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-	useEffect(() => {
-		dispatch(fetchTopics());
-	}, []);
+  useEffect(() => {
+    dispatch(fetchTopics());
+  }, []);
 
-	const handleOnClick = () => {
-		setIsModalVisible(true);
-		setIsAddMode(true);
-		setInitialValue(topicValues.initial);
-	};
+  const handleOnClick = () => {
+    setIsModalVisible(true);
+    setIsAddMode(true);
+    setInitialValue(topicValues.initial);
+  };
 
-	return (
-		<div className="topic-page">
-			<Space direction="vertical"  style={{ width: '100%',textAlign:'left' }} size="large">
-				<div className="topic-button--add">
-					<Button
-						type="primary"
-						icon={<PlusCircleOutlined />}
-						size="mediunm"
-						onClick={handleOnClick}
-					>
-						Thêm chủ đề mới
-					</Button>
-				</div>
+  return (
+    <div className="topic-page">
+      <Space
+        direction="vertical"
+        style={{ width: '100%', textAlign: 'left' }}
+        size="large"
+      >
+        <div className="topic-button--add">
+          <Button
+            type="primary"
+            icon={<PlusCircleOutlined />}
+            size="mediunm"
+            onClick={handleOnClick}
+          >
+            Thêm chủ đề mới
+          </Button>
+        </div>
 
-				<div className="topic-table">
-					<TopicTable
-						setInitialValue={setInitialValue}
-						setIsModalVisible={setIsModalVisible}
-						setIsAddMode={setIsAddMode}
-						topics={topics}
-					/>
-				</div>
-			</Space>
+        <div className="topic-table">
+          <TopicTable
+            setInitialValue={setInitialValue}
+            setIsModalVisible={setIsModalVisible}
+            setIsAddMode={setIsAddMode}
+            topics={topics}
+          />
+        </div>
+      </Space>
 
-			{isModalVisible && (
-				<TopicModal
-					isModalVisible={isModalVisible}
-					setIsModalVisible={setIsModalVisible}
-					isAddMode={isAddMode}
-					initialValue={initialValue}
-				/>
-			)}
-		</div>
-	);
+      {isModalVisible && (
+        <TopicModal
+          isModalVisible={isModalVisible}
+          setIsModalVisible={setIsModalVisible}
+          isAddMode={isAddMode}
+          initialValue={initialValue}
+        />
+      )}
+    </div>
+  );
 }
 
 export default TopicPage;

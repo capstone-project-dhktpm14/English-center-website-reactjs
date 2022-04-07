@@ -11,7 +11,6 @@ import MainPage from './pages/MainPage';
 import ReviewPage from './pages/ReviewPage';
 import WordPage from './pages/WordPage';
 
-
 import './style.scss';
 
 function WordNote(props) {

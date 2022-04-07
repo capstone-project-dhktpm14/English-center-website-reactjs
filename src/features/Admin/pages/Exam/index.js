@@ -10,24 +10,20 @@ import QuestionPage from './pages/QuestionPage';
 Exam.propTypes = {};
 
 function Exam(props) {
-	// const { url } = useRouteMatch();
-	const { isLoading } = useSelector((state) => state.exam);
+  // const { url } = useRouteMatch();
+  const { isLoading } = useSelector((state) => state.exam);
 
-	return (
-		<Spin spinning={isLoading}>
-			<Routes>
-				<Route exact path="/" element={<MainPage/>} />
-				<Route exact path="/questions" element={<QuestionPage/>} />
-				<Route exact path="/paragraphs" element={<ParagraphPage/>} />
-				<Route
-					exact
-					path="/paragraphs/questions"
-					element={<QuestionPage/>}
-				/>
-				<Route component={<NotFoundPage/>} />
-			</Routes>
-		</Spin>
-	);
+  return (
+    <Spin spinning={isLoading}>
+      <Routes>
+        <Route exact path="/" element={<MainPage />} />
+        <Route exact path="/questions" element={<QuestionPage />} />
+        <Route exact path="/paragraphs" element={<ParagraphPage />} />
+        <Route exact path="/paragraphs/questions" element={<QuestionPage />} />
+        <Route component={<NotFoundPage />} />
+      </Routes>
+    </Spin>
+  );
 }
 
 export default Exam;

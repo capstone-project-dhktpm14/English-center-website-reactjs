@@ -6,7 +6,11 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import RouteTable from '../../components/ClassTable';
 import RouteAddForm from '../../components/ClassAddForm';
-import { fetchClasses, setClassDefault, setClassFormVisible } from '../../classSlice';
+import {
+  fetchClasses,
+  setClassDefault,
+  setClassFormVisible,
+} from '../../classSlice';
 MainPage.propTypes = {};
 
 function MainPage(props) {

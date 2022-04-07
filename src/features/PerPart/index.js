@@ -11,7 +11,6 @@ import FinishPage from './pages/FinishPage';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
-
 PerPart.propTypes = {};
 
 function PerPart(props) {

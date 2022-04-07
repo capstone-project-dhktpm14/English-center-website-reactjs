@@ -21,9 +21,16 @@ function TestPartList({ books, numberPart }) {
       <Row gutter={[24, 24]}>
         {books.map((bookEle, index) => {
           const { name, exams } = bookEle;
-          
+
           return (
-            <Col xl={{ span: 12 }} lg={{ span: 12 }} md={{ span: 24 }} sm={{ span: 24 }} xs={{ span: 24 }} key={index}>
+            <Col
+              xl={{ span: 12 }}
+              lg={{ span: 12 }}
+              md={{ span: 24 }}
+              sm={{ span: 24 }}
+              xs={{ span: 24 }}
+              key={index}
+            >
               <List
                 header={<Title level={5}>{name}</Title>}
                 bordered

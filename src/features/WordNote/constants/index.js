@@ -10,14 +10,14 @@ import cover8 from 'assets/images/cover8.jpg';
 import cover9 from 'assets/images/cover9.jpg';
 
 export const WORDNOTE_IMAGES = [
-	cover0,
-	cover1,
-	cover2,
-	cover3,
-	cover4,
-	cover5,
-	cover6,
-	cover7,
-	cover8,
-	cover9,
+  cover0,
+  cover1,
+  cover2,
+  cover3,
+  cover4,
+  cover5,
+  cover6,
+  cover7,
+  cover8,
+  cover9,
 ];

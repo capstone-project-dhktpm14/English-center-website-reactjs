@@ -38,19 +38,22 @@ function MainPage(props) {
       image:
         'https://www.anhngumshoa.com/uploads/images/resize/750x750/slide/web.jpg',
       title: 'Nguyễn Trần Nhật Hào',
-      detail: 'Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều',
+      detail:
+        'Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều',
     },
     {
       image:
         'https://www.anhngumshoa.com/uploads/images/resize/750x750/slide/web.jpg',
       title: 'Vũ Văn Khải',
-      detail: 'Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều',
+      detail:
+        'Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều',
     },
     {
       image:
         'https://www.anhngumshoa.com/uploads/images/resize/750x750/slide/web.jpg',
       title: 'Nguyễn Trần Nhật Hào',
-      detail: 'Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều',
+      detail:
+        'Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều',
     },
   ];
   return (
@@ -78,7 +81,7 @@ function MainPage(props) {
             {/* <FormCourse></FormCourse> */}
           </div>
         </div>
-		<div className="box-container">
+        <div className="box-container">
           <div className="box">
             <div className="box-icon">
               <ReadOutlined />
@@ -139,9 +142,7 @@ function MainPage(props) {
         <h1 className="heading">Đánh giá của người dùng</h1>
         <h3 className="title">Người dùng nói gì về chúng tôi ? </h3>
         <div className="slide">
-          <Carousel autoplay
-            style={{ width: '500px' }}
-          >
+          <Carousel autoplay style={{ width: '500px' }}>
             {data.map((ele, index) => (
               <SliderItem
                 key={index}

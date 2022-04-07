@@ -17,12 +17,12 @@ function CoursePage(props) {
   const { isLoading } = useSelector((state) => state.course);
   return (
     <Spin spinning={isLoading}>
-    <Routes>
-      <Route path="/" element={<MainPage />} />
-      <Route path="/topics" element={<TopicPage />} />
-      <Route path="/:slug" element={<CourseDetailPage />} />
-      <Route element={<NotFoundPage />} /> 
-    </Routes>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/topics" element={<TopicPage />} />
+        <Route path="/:slug" element={<CourseDetailPage />} />
+        <Route element={<NotFoundPage />} />
+      </Routes>
     </Spin>
   );
 }

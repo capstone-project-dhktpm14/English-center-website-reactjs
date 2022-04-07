@@ -4,7 +4,9 @@ import { Button, Space } from 'antd';
 import { PlusCircleOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  fetchRoutes, setRouteDefault, setRouteFormVisible,
+  fetchRoutes,
+  setRouteDefault,
+  setRouteFormVisible,
 } from '../../routeSlice';
 import RouteTable from '../../components/RouteTable';
 import RouteAddForm from '../../components/RouteAddForm';

@@ -40,7 +40,6 @@ function Route(props) {
       data.push(temp);
     });
   }
- 
 
   return (
     <>

@@ -102,9 +102,9 @@ function Timer(props) {
     title: 'Do you really want to leave the test ?',
     content: 'Time is still',
     onOk() {
-        history(`/exams/${testId}/checkout`);
+      history(`/exams/${testId}/checkout`);
     },
-};
+  };
 
   const handleOnClick = () => {
     history(`/exams/${testId}/checkout`);
@@ -175,7 +175,12 @@ function Timer(props) {
                 sm={{ span: 8 }}
                 xs={{ span: 0 }}
               >
-                <Button style={{borderRadius:'5px'}} onClick={handleOnClick} size="large" block>
+                <Button
+                  style={{ borderRadius: '5px' }}
+                  onClick={handleOnClick}
+                  size="large"
+                  block
+                >
                   <SolutionOutlined /> <b>Checkout</b>
                 </Button>
               </Col>

@@ -17,7 +17,7 @@ function Course(props) {
         <Routes>
           <Route exact path="/" element={<MainPage />} />
           <Route exact path="/:slug" element={<TopicPage />} />
-          <Route element={<NotFoundPage/>} />
+          <Route element={<NotFoundPage />} />
         </Routes>
       </div>
       {/* <Footer /> */}

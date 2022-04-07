@@ -20,7 +20,6 @@ function Route1(props) {
           <Route element={<NotFoundPage />} />
         </Routes>
       </div>
-      
     </Spin>
   );
 }

@@ -1,4 +1,4 @@
-import {  ClockCircleOutlined,FieldTimeOutlined  } from '@ant-design/icons';
+import { ClockCircleOutlined, FieldTimeOutlined } from '@ant-design/icons';
 import { Button, Space } from 'antd';
 import bookApi from 'api/bookApi';
 import { refreshStore } from 'features/OnlineExam/onlineExamSlice';
@@ -20,15 +20,14 @@ function CheckInExam(props) {
     document.title = examTitle;
   });
 
-//   const getBooks = async () => {
-//     setBook(await bookApi.fetchBook());
-//     console.log(book);
-//   };
-
+  //   const getBooks = async () => {
+  //     setBook(await bookApi.fetchBook());
+  //     console.log(book);
+  //   };
 
   useEffect(() => {
     if (setExam.length > 0) {
-		setExam.find((c) => {
+      setExam.find((c) => {
         let temp = c.exams.find((b) => b.slug === testId);
         if (temp !== null && temp !== undefined) {
           setExamTitle(temp.name);
@@ -58,11 +57,11 @@ function CheckInExam(props) {
               &nbsp; Tổng thời gian: 120
             </span>
             <span className="checkin-exam_info--time">
-            <FieldTimeOutlined />
+              <FieldTimeOutlined />
               &nbsp; Listening: 45
             </span>
             <span className="checkin-exam_info--time">
-            <FieldTimeOutlined />
+              <FieldTimeOutlined />
               &nbsp; Reading : 75
             </span>
           </Space>

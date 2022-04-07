@@ -24,7 +24,9 @@ function MyEditor({ content, placeholder, onChange }) {
   let quillObj;
 
   const handleChange = (content) => {
-    if (!onChange) {return;}
+    if (!onChange) {
+      return;
+    }
     onChange(content);
   };
 

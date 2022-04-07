@@ -7,39 +7,39 @@ import { useSelector } from 'react-redux';
 import { useWordNoteIds, useWordNoteOptions } from 'features/Course/hooks';
 
 function WordList(props) {
-	const { data, isWordNote, wordnoteId } = props;
-	const { wordNotes } = useSelector((state) => state.wordnote);
+  const { data, isWordNote, wordnoteId } = props;
+  const { wordNotes } = useSelector((state) => state.wordnote);
 
-	const wordNoteOptions = useWordNoteOptions(wordNotes);
+  const wordNoteOptions = useWordNoteOptions(wordNotes);
 
-	return (
-		<>
-			<Row justify="start" gutter={[36, 24]}>
-				{data.length > 0 &&
-					data.map((word, index) => (
-						<Col key={index} xs={24} sm={24} md={12} lg={12}>
-							<WordCard
-								word={word}
-								wordNoteOptions={wordNoteOptions}
-								isWordNote={isWordNote}
-								wordnoteId={wordnoteId}
-							/>
-						</Col>
-					))}
-			</Row>
-			<BackToTopButton />
-		</>
-	);
+  return (
+    <>
+      <Row justify="start" gutter={[36, 24]}>
+        {data.length > 0 &&
+          data.map((word, index) => (
+            <Col key={index} xs={24} sm={24} md={12} lg={12}>
+              <WordCard
+                word={word}
+                wordNoteOptions={wordNoteOptions}
+                isWordNote={isWordNote}
+                wordnoteId={wordnoteId}
+              />
+            </Col>
+          ))}
+      </Row>
+      <BackToTopButton />
+    </>
+  );
 }
 
 WordList.propTypes = {
-	data: PropTypes.array,
-	isWordNote: PropTypes.bool,
-	wordnoteId: PropTypes.number,
+  data: PropTypes.array,
+  isWordNote: PropTypes.bool,
+  wordnoteId: PropTypes.number,
 };
 WordList.defaultProps = {
-	data: [],
-	isWordNote: false,
-	wordnoteId: 0,
+  data: [],
+  isWordNote: false,
+  wordnoteId: 0,
 };
 export default WordList;

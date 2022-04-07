@@ -23,7 +23,7 @@ function Examining(props) {
   return (
     <div className="wrapper">
       <Header></Header>
-     
+
       <Row gutter={[16, 16]}>
         <Col span={24}>{isSubmit ? '' : <Timer />}</Col>
       </Row>

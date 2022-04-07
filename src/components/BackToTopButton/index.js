@@ -4,15 +4,15 @@ import React from 'react';
 import './style.scss';
 
 function BackToTopButton() {
-	return (
-		<Tooltip title="Back to top">
-			<BackTop>
-				<div className="back-top">
-					<UpOutlined />
-				</div>
-			</BackTop>
-		</Tooltip>
-	);
+  return (
+    <Tooltip title="Back to top">
+      <BackTop>
+        <div className="back-top">
+          <UpOutlined />
+        </div>
+      </BackTop>
+    </Tooltip>
+  );
 }
 
 export default BackToTopButton;

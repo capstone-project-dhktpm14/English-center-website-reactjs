@@ -22,9 +22,7 @@ function CourseSearch({ topics, onChange }) {
   const typingTimeOutRef = useRef(null);
 
   const handleTopicChange = (checkedValues) => {
-    setTopicSlug(
-      checkedValues === 0 ? '' : checkedValues
-    );
+    setTopicSlug(checkedValues === 0 ? '' : checkedValues);
   };
 
   const handleNameChange = (e) => {
@@ -96,7 +94,6 @@ function CourseSearch({ topics, onChange }) {
             );
           })}
         </Dropdown> */}
-       
       </Col>
     </>
   );

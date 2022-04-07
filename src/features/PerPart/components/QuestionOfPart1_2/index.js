@@ -59,7 +59,12 @@ function QuestionOfPart1_2({ question }) {
       <Space direction="vertical" style={{ width: '100%' }} size="middle">
         {type == 1 && (
           <div className="image">
-            <Image width="100%" height="300px" src={content} style={{ objectFit: 'contain' }} />
+            <Image
+              width="100%"
+              height="300px"
+              src={content}
+              style={{ objectFit: 'contain' }}
+            />
           </div>
         )}
 
@@ -82,15 +87,45 @@ function QuestionOfPart1_2({ question }) {
         <div className="buttons">
           {choice ? (
             <Row gutter={[8, 24]}>
-              <Col xl={{ span: 12 }} lg={{ span: 12 }} md={{ span: 24 }} sm={{ span: 24 }} xs={{ span: 24 }}>{renderQuestionAnswer('a', a)}</Col>
+              <Col
+                xl={{ span: 12 }}
+                lg={{ span: 12 }}
+                md={{ span: 24 }}
+                sm={{ span: 24 }}
+                xs={{ span: 24 }}
+              >
+                {renderQuestionAnswer('a', a)}
+              </Col>
 
-              <Col xl={{ span: 12 }} lg={{ span: 12 }} md={{ span: 24 }} sm={{ span: 24 }} xs={{ span: 24 }}>{renderQuestionAnswer('b', b)}</Col>
+              <Col
+                xl={{ span: 12 }}
+                lg={{ span: 12 }}
+                md={{ span: 24 }}
+                sm={{ span: 24 }}
+                xs={{ span: 24 }}
+              >
+                {renderQuestionAnswer('b', b)}
+              </Col>
 
-              <Col xl={type === 1 ? { span: 12 } : { span: 24 }} lg={type === 1 ? { span: 12 } : { span: 24 }} md={{ span: 24 }} sm={{ span: 24 }} xs={{ span: 24 }}>
+              <Col
+                xl={type === 1 ? { span: 12 } : { span: 24 }}
+                lg={type === 1 ? { span: 12 } : { span: 24 }}
+                md={{ span: 24 }}
+                sm={{ span: 24 }}
+                xs={{ span: 24 }}
+              >
                 {renderQuestionAnswer('c', c)}
               </Col>
 
-              <Col xl={{ span: 12 }} lg={{ span: 12 }} md={{ span: 24 }} sm={{ span: 24 }} xs={{ span: 24 }}>{renderQuestionAnswer('d', d)}</Col>
+              <Col
+                xl={{ span: 12 }}
+                lg={{ span: 12 }}
+                md={{ span: 24 }}
+                sm={{ span: 24 }}
+                xs={{ span: 24 }}
+              >
+                {renderQuestionAnswer('d', d)}
+              </Col>
             </Row>
           ) : (
             <EmptyButton

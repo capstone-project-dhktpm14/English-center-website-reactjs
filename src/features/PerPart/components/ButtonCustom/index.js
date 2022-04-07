@@ -16,7 +16,9 @@ ButtonCustom.defaultProps = {
 
 function ButtonCustom({ content, type, onClick }) {
   const handleClick = () => {
-    if (!onClick) {return;}
+    if (!onClick) {
+      return;
+    }
 
     onClick();
   };
