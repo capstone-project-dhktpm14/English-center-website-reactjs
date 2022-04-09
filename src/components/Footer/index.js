@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './style.scss';
-import { FacebookOutlined, GoogleOutlined } from '@ant-design/icons';
+// import { FacebookOutlined, GoogleOutlined } from '@ant-design/icons';
 
 Footer.propTypes = {
   data: PropTypes.object,
@@ -10,7 +10,7 @@ Footer.propTypes = {
 
 Footer.defaultProps = {};
 
-function Footer({ data }) {
+function Footer() {
   return (
     <div className="footer">
       <p className="footer_name">

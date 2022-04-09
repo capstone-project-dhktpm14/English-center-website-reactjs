@@ -44,16 +44,13 @@ function MainPage(props) {
     if (dateTo !== '') {
       params.dateTo = dateTo;
     }
-    console.log('pểm ' + JSON.stringify(params));
     history({ search: queryString.stringify(params) });
     setQuery({
       ...query,
-      dateFrom: '',
-      dateTo: '',
+      dateFrom: dateFrom,
+      dateTo: dateTo,
       routeSlug: routeSlug,
     });
-    // setQuery({ routeSlug, dateFrom, dateTo, page: 0, size: 12 });
-    console.log('que' + JSON.stringify(query));
   };
 
   const handlePageChange = (page, pageSize) => {
@@ -69,9 +66,6 @@ function MainPage(props) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    // classApi.fetchClass(query).then((res) => setDataClass(res.data));
-    // console.log("quẻy " + JSON.stringify(query));
-    // console.log("data class " + JSON.stringify(dataClass));
     dispatch(fetchClasses(query));
   }, [query]);
   if (dataSource.length > 0) {

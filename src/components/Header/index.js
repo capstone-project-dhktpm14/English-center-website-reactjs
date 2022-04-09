@@ -17,24 +17,24 @@ import Route from 'components/Route';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import IMAGE_ACCOUNT_PAGE from './img/logo.png';
+import IMAGE_ACCOUNT_PAGE from '../../assets/images/header/logo_1.png';
 import './style.scss';
 
 Header.propTypes = {};
 
 Header.defaultProps = {};
 
-function Header(props) {
+function Header() {
   const { SubMenu } = Menu;
   const dispatch = useDispatch();
   const history = useNavigate();
   const [current, setCurrent] = useState('');
   const [isModalUpdateProfileVisible, setIsModalUpdateProfileVisible] =
     useState(false);
-  const [avatar, setAvatar] = useState(null);
-  const [name, setName] = useState();
+  // const [avatar, setAvatar] = useState(null);
+  // const [name, setName] = useState();
   const [confirmLoading, setConfirmLoading] = useState(false);
-  const { user } = useSelector((state) => state.global);
+  // const { user } = useSelector((state) => state.global);
   const [account, setAccount] = useState();
   const { isLogin } = useSelector((state) => state.global);
 
@@ -66,7 +66,7 @@ function Header(props) {
     setIsModalUpdateProfileVisible(value);
   };
 
-  const handleOklModalUpdateProfile = (value) => {
+  const handleOklModalUpdateProfile = () => {
     setConfirmLoading(true);
     setConfirmLoading(false);
     setIsModalUpdateProfileVisible(false);

@@ -5,7 +5,7 @@ const classApi = {
   //class
   fetchClass: (params) => {
     console.log('api h ' + JSON.stringify(params));
-    return axiosClient.get('/classes', params);
+    return axiosClient.get('/classes', {params});
   },
 
   addSchedule: (params) => {
