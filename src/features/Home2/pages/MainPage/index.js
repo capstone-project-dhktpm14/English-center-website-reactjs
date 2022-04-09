@@ -1,20 +1,15 @@
 import {
   AppstoreOutlined,
-  CarryOutOutlined,
-  FileSearchOutlined,
-  FormOutlined,
   PlayCircleOutlined,
   ReadOutlined,
-  StarOutlined,
 } from "@ant-design/icons";
 import { Carousel, Divider } from "antd";
 import AboutImage from "assets/image/about-main-page.svg";
 import BackToTopButton from "components/BackToTopButton";
-import Footer from "components/Footer";
+
 import FormCourse from "components/FormCourse";
 import Header from "components/Header";
 import SliderItem from "features/Home2/components/SliderItem";
-import SliderReview from "features/Home2/components/SliderReview";
 
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -38,19 +33,22 @@ function MainPage(props) {
       image:
         "https://www.anhngumshoa.com/uploads/images/resize/750x750/slide/web.jpg",
       title: "Nguyễn Trần Nhật Hào",
-      detail: "Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều",
+      detail:
+        "Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều",
     },
     {
       image:
         "https://www.anhngumshoa.com/uploads/images/resize/750x750/slide/web.jpg",
       title: "Vũ Văn Khải",
-      detail: "Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều",
+      detail:
+        "Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều",
     },
     {
       image:
         "https://www.anhngumshoa.com/uploads/images/resize/750x750/slide/web.jpg",
       title: "Nguyễn Trần Nhật Hào",
-      detail: "Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều",
+      detail:
+        "Mình rất thích phần mềm, nó giúp mình học tốt hơn. Cảm ơn người đã tạo ra nó rất nhiều",
     },
   ];
   return (
@@ -78,7 +76,7 @@ function MainPage(props) {
             {/* <FormCourse></FormCourse> */}
           </div>
         </div>
-		<div className="box-container">
+        <div className="box-container">
           <div className="box">
             <div className="box-icon">
               <ReadOutlined />
@@ -91,18 +89,19 @@ function MainPage(props) {
             <div className="box-icon">
               <PlayCircleOutlined />
             </div>
-            <h3>luyện nghe</h3>
-            <p>
-              Luyện nghe từ vựng và các câu qua các được hỗ trợ video trên
-              website
-            </p>
+            <Link to="/exams">
+              <h3>Luyện thi</h3>
+            </Link>
+            <p>Luyện tập các bài thi toeic được hỗ trợ trên website</p>
           </div>
 
           <div className="box">
             <div className="box-icon">
               <AppstoreOutlined />
             </div>
-            <h3>Từ vựng</h3>
+            <Link to="/course">
+              <h3>Từ vựng</h3>
+            </Link>
             <p>Học từ vựng qua các chủ đề phổ biến có kèm hình ảnh minh họa</p>
           </div>
         </div>
@@ -139,9 +138,7 @@ function MainPage(props) {
         <h1 className="heading">Đánh giá của người dùng</h1>
         <h3 className="title">Người dùng nói gì về chúng tôi ? </h3>
         <div className="slide">
-          <Carousel autoplay
-            style={{ width: "500px" }}
-          >
+          <Carousel autoplay style={{ width: "500px" }}>
             {data.map((ele, index) => (
               <SliderItem
                 key={index}

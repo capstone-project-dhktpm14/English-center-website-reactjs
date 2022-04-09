@@ -6,8 +6,8 @@ import { FacebookOutlined, GoogleOutlined } from "@ant-design/icons";
 
 function Footer({ data }) {
   return (
-    <div class="footer">  
-    <p class ="footer_name"> Anh ngữ SUNRISE - Đào tạo TOEIC số 1 Việt Nam</p>
+    <div class="footer">
+      <p class="footer_name"> Anh ngữ SUNRISE - Đào tạo TOEIC số 1 Việt Nam</p>
       <div class="footer__addr">
         <h2>Liên hệ</h2>
         <address>
@@ -25,27 +25,27 @@ function Footer({ data }) {
 
           <ul class="nav__ul nav__ul--extra">
             <li>
-              <a href="#">CS1: 41 Tây Sơn, Q. Đống Đa, HN [94]</a>
+              <a>CS1: 41 Tây Sơn, Q. Đống Đa, HN [94]</a>
             </li>
 
             <li>
-              <a href="#">CS1: 41 Tây Sơn, Q. Đống Đa, HN [94]</a>
+              <a>CS2: 41 Tây Sơn, Q. Đống Đa, HN [94]</a>
             </li>
 
             <li>
-              <a href="#">CS1: 41 Tây Sơn, Q. Đống Đa, HN [94]</a>
+              <a>CS3: 41 Tây Sơn, Q. Đống Đa, HN [94]</a>
             </li>
 
             <li>
-              <a href="#">CS4: 40 Nguyễn Hoàng, Mỹ Đình, HN [91]</a>
+              <a>CS4: 40 Nguyễn Hoàng, Mỹ Đình, HN [91]</a>
             </li>
 
             <li>
-              <a href="#">CS5: 12 Nguyễn Văn Lộc, Hà Đông, HN [130]</a>
+              <a>CS5: 12 Nguyễn Văn Lộc, Hà Đông, HN [130]</a>
             </li>
 
             <li>
-              <a href="#">CS6: 18 Nguyễn Văn Cừ, Long Biên, HN [112]</a>
+              <a>CS6: 18 Nguyễn Văn Cừ, Long Biên, HN [112]</a>
             </li>
           </ul>
         </li>

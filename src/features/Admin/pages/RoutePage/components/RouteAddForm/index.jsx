@@ -12,6 +12,7 @@ import { addRoute, fetchRoutes, setRouteFormVisible } from '../../routeSlice';
 import routeAdminApi from 'api/routeAdminApi';
 import { routeValues } from '../../initialAndValidateValues';
 import EditorField from 'customfield/EditorField';
+import TextAreaField from 'customfield/TextAreaField';
 
 
 RouteAddForm.propTypes = {
@@ -134,7 +135,7 @@ function RouteAddForm(props) {
                                 />
                                 <FastField
                                     name='description'
-                                    component={EditorField}
+                                    component={TextAreaField}
                                     title="mô tả"
                                     titleCol={6}
                                     inputCol={18}

@@ -23,6 +23,7 @@ import DayPickerField from "customfield/DayPickerField";
 import { date } from "yup";
 import { getTimeProps } from "antd/lib/date-picker/generatePicker";
 import RouteSelectedField from "customfield/RouteSelectField";
+import TextAreaField from "customfield/TextAreaField";
 
 RouteAddForm.propTypes = {};
 const { Text } = Typography;
@@ -227,7 +228,7 @@ function RouteAddForm(props) {
                 />
                 <FastField
                   name="description"
-                  component={InputField}
+                  component={TextAreaField}
                   title="mô tả"
                   titleCol={6}
                   inputCol={18}

@@ -21,7 +21,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import IMAGE_ACCOUNT_PAGE from "./img/logo.png";
+import IMAGE_ACCOUNT_PAGE from "../../assets/images/header/logo_1.png";
 import "./style.scss";
 import Route from "components/Route";
 
@@ -79,7 +79,11 @@ function Header(props) {
   return (
     <div id="content">
       <div id="header-branches">
-        <img src={IMAGE_ACCOUNT_PAGE} alt="zelo_login"></img>
+        <img
+          src={IMAGE_ACCOUNT_PAGE}
+          style={{ width: "30%", height: "30%", objectFit: "contain" }}
+          alt="zelo_login"
+        ></img>
         <p class="name">TRUNG TÂM ANH NGỮ SUNRISE</p>
       </div>
       <div className="menu">
@@ -93,13 +97,18 @@ function Header(props) {
             justifyContent: "center",
             alignItems: "center",
             padding: "4px 0",
+            background: "#e7e5e5",
           }}
         >
           <Menu.Item key="HOME2" icon={<HomeOutlined />}>
             <Link to="/">Home</Link>
           </Menu.Item>
           {isLogin && (
-            <Menu.Item key="WORDNOTE" icon={<UnorderedListOutlined />}>
+            <Menu.Item
+              key="WORDNOTE"
+              className="modified-item"
+              icon={<UnorderedListOutlined />}
+            >
               <Link to="/wordnote">Word Note</Link>
             </Menu.Item>
           )}

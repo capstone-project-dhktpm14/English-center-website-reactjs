@@ -22,16 +22,19 @@
     display: flex;
     flex-flow: row wrap;
     padding: 30px 30px 20px 30px;
-    color: white;
-    background-color: gray;
-    //background-image: url(../../assets/images/footer/footer.png);
+    color: #f4f4f4;
+    background: linear-gradient(rgba(0, 0, 0, 0.275), rgba(149, 149, 149, 0.552)),
+    url(../../assets/image/servicesbg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
     border-top: 1px solid #e5e5e5;
   }
 
   .footer_name {
     font-family: 'Pacifico', cursive;
     color: red;
-    font-size: 20px;
+    font-size: 30px;
 
   }
   
@@ -42,6 +45,7 @@
   .footer__addr {
     margin-right: 1.25em;
     margin-bottom: 2em;
+    color: #f4f4f4;
   }
   
   .footer__logo {
@@ -53,19 +57,23 @@
   
   .footer__addr h2 {
     margin-top: 1.3em;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 400;
+    font-family: sans-serif;
+    color: #f4f4f4;
     
   }
   
   .nav__title {
     font-weight: 400;
-    font-size: 15px;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #f4f4f4;
   }
   
   .footer address {
     font-style: normal;
-    color: white;
+    color: #f4f4f4;
     align-items: center;
     justify-content: center;
   }
@@ -76,9 +84,9 @@
     justify-content: center;
     height: 36px;
     max-width: max-content;
-    background-color: rgb(33, 33, 33, 0.07);
+    background-color: rgba(255, 255, 255, 0.07);
     border-radius: 100px;
-    color: white;
+    color: #f4f4f4;
     line-height: 0;
     margin: 0.6em 210px;
     font-size: 1rem;
@@ -109,18 +117,19 @@
   }
   
   .nav__ul a {
-    color: white;
+    color: #f4f4f4;
   }
   
   .nav__ul--extra {
     column-count: 2;
     column-gap: 1.25em;
+    color: #f4f4f4;
   }  
   .heart {
-    color: white;
+    color: black;
   }
   h2 {
-    color: white;
+    color: black;
     font-size: 20px;
   }
   

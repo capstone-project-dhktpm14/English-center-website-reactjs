@@ -10,7 +10,6 @@ MainPage.propTypes = {};
 
 function MainPage(props) {
   const { setExam, isLoading } = useSelector((state) => state.onlineExam);
-  const [book,setBook] = useState([])
 
   useEffect(() => {
     document.title = "Luyện thi TOEIC";

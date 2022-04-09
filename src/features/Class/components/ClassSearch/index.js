@@ -1,5 +1,4 @@
-import { Col, Divider, Dropdown, Input, Row, Select, Typography } from "antd";
-import Checkbox from "antd/lib/checkbox/Checkbox";
+import { Col, DatePicker, Divider, Select, Typography, Row } from "antd";
 import PropTypes from "prop-types";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -17,7 +16,8 @@ ClassSearch.defaultProps = {
 };
 
 function ClassSearch({ routes, onChange }) {
-  const [name, setName] = useState("");
+  const [dateFrom, setDateFrom] = useState("");
+  const [dateTo, setDateTO] = useState("");
   const [routeSlug, setRouteSlug] = useState("");
   const typingTimeOutRef = useRef(null);
 
@@ -25,56 +25,107 @@ function ClassSearch({ routes, onChange }) {
     setRouteSlug(checkedValues === 0 ? "" : checkedValues);
   };
 
-  const handleDateChange = (e) => {
+  const handleDateFromChange = (e) => {
     const value = e.target.value;
     if (typingTimeOutRef.current) {
       clearTimeout(typingTimeOutRef.current);
     }
     typingTimeOutRef.current = setTimeout(() => {
-      setName(value);
+      setDateFrom(value);
+    }, 500);
+  };
+
+  const handleDateToChange = (e) => {
+    const value = e.target.value;
+    if (typingTimeOutRef.current) {
+      clearTimeout(typingTimeOutRef.current);
+    }
+    typingTimeOutRef.current = setTimeout(() => {
+      setDateTO(value);
     }, 500);
   };
 
   useEffect(() => {
-    onChange({ name, routeSlug });
-  }, [name, routeSlug]);
+    onChange({ routeSlug, dateFrom, dateTo });
+  }, [routeSlug, dateFrom, dateTo]);
 
   return (
     <>
-      <Divider></Divider>
-      <Col xs={0} sm={0} md={11} lg={11} xl={11}></Col>
+      <Col xs={0} sm={0} md={11} lg={11} xl={7}></Col>
       <Col xs={24} sm={4} md={3} lg={3} xl={3}>
         &#160;&#160;
         <Text
           strong
           style={{
             color: "white",
-            fontSize: "20px",
+            fontSize: "16px",
             textAlign: "right",
             alignItems: "right",
+            // marginTop: "-50px",
           }}
         >
-          Lọc Theo:
+          Tìm kiếm:
         </Text>
       </Col>
-      <Col xs={24} sm={24} md={24} lg={12} xl={5}>
-        <Select
-          defaultValue=""
-          style={{ width: "50%" }}
-          onChange={handleClassChange}
-        >
-          <Option value="" key={-1}>
-            -- Ngày bắt đầu --
-          </Option>
-          {routes.map((dateFrom, index) => {
-            const { name, slug } = dateFrom;
-            return (
-              <Option value={slug} key={index}>
-                {name}
-              </Option>
-            );
-          })}
-        </Select>
+
+      <Col xs={24} sm={24} md={24} lg={12} xl={4}>
+        <Row>
+          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+            <Text
+              strong
+              style={{
+                color: "white",
+                fontSize: "16px",
+                textAlign: "right",
+                alignItems: "right",
+              }}
+            >
+              Từ ngày
+            </Text>
+          </Col>
+          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+            <DatePicker
+              dateFormat="dd,MM, yyyy"
+              className="form-control"
+              name="dateFrom"
+              onChange={(value, e) =>
+                setDateFrom(value.format("DD/MM/yyyy")).then(
+                  console.log("eee" + value.format("DD/MM/yyyy"))
+                )
+              }
+            />
+          </Col>
+        </Row>
+      </Col>
+
+      <Col xs={24} sm={24} md={24} lg={12} xl={4}>
+        <Row>
+          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+            <Text
+              strong
+              style={{
+                color: "white",
+                fontSize: "16px",
+                textAlign: "right",
+                alignItems: "right",
+              }}
+            >
+              Đến ngày
+            </Text>
+          </Col>
+          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+            <DatePicker
+              dateFormat="dd,MM, yyyy"
+              className="form-control"
+              name="dateTo"
+              onChange={(value, e) =>
+                setDateTO(value.format("DD/MM/yyyy")).then(
+                  console.log("eee" + value.format("DD/MM/yyyy"))
+                )
+              }
+            />
+          </Col>
+        </Row>
       </Col>
 
       <Col xs={24} sm={24} md={24} lg={12} xl={5}>

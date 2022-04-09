@@ -44,6 +44,8 @@ function MainPage(props) {
 		setQuery({ ...query, page: page - 1 });
 	};
 
+	console.log("data"+ JSON.stringify(examsPage))
+
 	useEffect(() => {
 		dispatch(fetchExams(query));
 		dispatch(fetchBooks());
