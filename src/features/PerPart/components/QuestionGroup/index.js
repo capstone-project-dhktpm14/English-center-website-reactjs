@@ -1,8 +1,8 @@
-import { CheckOutlined, CloseOutlined } from "@ant-design/icons";
-import { Radio, Space, Typography } from "antd";
-import PropTypes from "prop-types";
-import React, { useState } from "react";
-import parse from "html-react-parser";
+import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
+import { Radio, Space, Typography } from 'antd';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import parse from 'html-react-parser';
 
 const { Text } = Typography;
 
@@ -31,7 +31,9 @@ function QuestionGroup({ questions, isChoice }) {
     // không tìm thấy
     if (searchIndex === -1) {
       radioValuesTempt.push({ stt: name, answer: value });
-    } else radioValuesTempt[searchIndex].answer = value;
+    } else {
+      radioValuesTempt[searchIndex].answer = value;
+    }
 
     setRadioValues(radioValuesTempt);
   };
@@ -60,12 +62,12 @@ function QuestionGroup({ questions, isChoice }) {
         const { stt, content, a, b, c, d, result, extra } = questionEle;
 
         const answerEle = radioValues.find((answerEle) => answerEle.stt == stt);
-        const answer = answerEle ? answerEle.answer : "";
+        const answer = answerEle ? answerEle.answer : '';
 
         return (
-          <div>
+          <div key={index}>
             <div>
-              <Text strong style={{ fontSize: "18px" }}>
+              <Text strong style={{ fontSize: '18px' }}>
                 {content}
               </Text>
             </div>
@@ -73,7 +75,7 @@ function QuestionGroup({ questions, isChoice }) {
             <div>
               {!isChoice ? (
                 <Radio.Group onChange={handleChange} name={`${stt}`}>
-                  <Space direction="vertical"  style={{ textAlign:"left"}}>
+                  <Space direction="vertical" style={{ textAlign: 'left' }}>
                     <Radio value="a">{a}</Radio>
                     <Radio value="b">{b}</Radio>
                     <Radio value="c">{c}</Radio>
@@ -81,11 +83,11 @@ function QuestionGroup({ questions, isChoice }) {
                   </Space>
                 </Radio.Group>
               ) : (
-                <Space direction="vertical"  style={{ textAlign:"left"}}>
-                  {renderQuestionAnswer("a", a, result, answer)}
-                  {renderQuestionAnswer("b", b, result, answer)}
-                  {renderQuestionAnswer("c", c, result, answer)}
-                  {renderQuestionAnswer("d", d, result, answer)}
+                <Space direction="vertical" style={{ textAlign: 'left' }}>
+                  {renderQuestionAnswer('a', a, result, answer)}
+                  {renderQuestionAnswer('b', b, result, answer)}
+                  {renderQuestionAnswer('c', c, result, answer)}
+                  {renderQuestionAnswer('d', d, result, answer)}
 
                   {extra && (
                     <div className="extras">

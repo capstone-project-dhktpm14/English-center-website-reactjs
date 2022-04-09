@@ -1,14 +1,14 @@
-import { Alert, Button, Col, Row, Space } from "antd";
-import Footer from "components/Footer";
-import Header from "components/Header";
-import AnswerSheet from "features/OnlineExam/components/AnswerSheet";
-import Timer from "features/OnlineExam/components/Timer";
-import ToeicPart from "features/OnlineExam/components/ToeicPart";
-import { refreshStore } from "features/OnlineExam/onlineExamSlice";
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Prompt, useParams } from "react-router";
-import "./style.scss";
+import { Alert, Button, Col, Row, Space } from 'antd';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
+import AnswerSheet from 'features/OnlineExam/components/AnswerSheet';
+import Timer from 'features/OnlineExam/components/Timer';
+import ToeicPart from 'features/OnlineExam/components/ToeicPart';
+import { refreshStore } from 'features/OnlineExam/onlineExamSlice';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Prompt, useParams } from 'react-router';
+import './style.scss';
 
 function Examining(props) {
   const { testId } = useParams();
@@ -17,15 +17,15 @@ function Examining(props) {
   const { isSubmit } = useSelector((state) => state.onlineExam);
 
   useEffect(() => {
-    document.title = "Thi online";
+    document.title = 'Thi online';
   }, []);
 
   return (
     <div className="wrapper">
       <Header></Header>
-     
+
       <Row gutter={[16, 16]}>
-        <Col span={24}>{isSubmit ? "" : <Timer />}</Col>
+        <Col span={24}>{isSubmit ? '' : <Timer />}</Col>
       </Row>
       <div className="examining">
         <Row gutter={[16, 16]}>

@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Col, Row, List, Typography } from "antd";
-import { Link } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Col, Row, List, Typography } from 'antd';
+import { Link } from 'react-router-dom';
 
 const { Title } = Typography;
 
@@ -12,7 +12,7 @@ TestPartList.propTypes = {
 
 TestPartList.defaultProps = {
   books: [],
-  numberPart: "1",
+  numberPart: '1',
 };
 
 function TestPartList({ books, numberPart }) {
@@ -21,9 +21,16 @@ function TestPartList({ books, numberPart }) {
       <Row gutter={[24, 24]}>
         {books.map((bookEle, index) => {
           const { name, exams } = bookEle;
-          
+
           return (
-            <Col xl={{ span: 12 }} lg={{ span: 12 }} md={{ span: 24 }} sm={{ span: 24 }} xs={{ span: 24 }} key={index}>
+            <Col
+              xl={{ span: 12 }}
+              lg={{ span: 12 }}
+              md={{ span: 24 }}
+              sm={{ span: 24 }}
+              xs={{ span: 24 }}
+              key={index}
+            >
               <List
                 header={<Title level={5}>{name}</Title>}
                 bordered
@@ -32,7 +39,7 @@ function TestPartList({ books, numberPart }) {
                   <List.Item>
                     <Link
                       to={`/parts/test/${item.slug}/${numberPart}`}
-                      style={{ fontWeight: "bold" }}
+                      style={{ fontWeight: 'bold' }}
                     >
                       {index + 1}. {`Part ${numberPart}`} - {item.name}
                     </Link>

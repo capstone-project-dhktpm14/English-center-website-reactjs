@@ -3,15 +3,15 @@ import {
   LinkOutlined,
   UserOutlined,
   LoginOutlined,
-} from "@ant-design/icons";
-import { Col, Menu, Modal, Row } from "antd";
-import Title from "antd/lib/typography/Title";
-import routeAdminApi from "api/routeAdminApi";
-import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router";
-import { Link } from "react-router-dom";
+} from '@ant-design/icons';
+import { Col, Menu, Modal, Row } from 'antd';
+import Title from 'antd/lib/typography/Title';
+import routeAdminApi from 'api/admin/routeAdminApi';
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 
 function Route(props) {
   const { title, icon } = props;
@@ -40,11 +40,10 @@ function Route(props) {
       data.push(temp);
     });
   }
- 
 
   return (
     <>
-      {" "}
+      {' '}
       <SubMenu key="Route" icon={icon} title={title}>
         {data.map((k) => (
           <Menu.Item key={k.key}>
@@ -65,7 +64,7 @@ Route.propTypes = {
   icon: PropTypes.object,
 };
 Route.defaultProps = {
-  title: "Khoá học",
+  title: 'Khoá học',
   icon: <LinkOutlined />,
 };
 export default Route;

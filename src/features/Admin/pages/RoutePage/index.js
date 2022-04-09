@@ -5,21 +5,18 @@ import { useSelector } from 'react-redux';
 import { Route, Routes, Switch, useRouteMatch } from 'react-router';
 import MainPage from './pages/MainPage';
 
-
-RoutePage.propTypes = {
-
-};
+RoutePage.propTypes = {};
 
 function RoutePage(props) {
-    const { isLoading } = useSelector((state) => state.route)
-    
-    return (
-        <Spin spinning={isLoading}>
-            <Routes>
-                <Route exact path="/" element={<MainPage/>} />
-            </Routes>
-         </Spin>
-    );
+  const { isLoading } = useSelector((state) => state.route);
+
+  return (
+    <Spin spinning={isLoading}>
+      <Routes>
+        <Route exact path="/" element={<MainPage />} />
+      </Routes>
+    </Spin>
+  );
 }
 
 export default RoutePage;

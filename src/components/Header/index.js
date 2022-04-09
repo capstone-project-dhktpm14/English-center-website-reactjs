@@ -1,29 +1,24 @@
 import {
-  HomeOutlined,
-  ProfileOutlined,
-  ShopOutlined,
-  ShoppingCartOutlined,
-  ScheduleOutlined,
-  FileProtectOutlined,
-  UnorderedListOutlined,
-  SolutionOutlined,
-  LoginOutlined,
-  TeamOutlined,
-  UserOutlined,
   BookOutlined,
-} from "@ant-design/icons";
-import { unwrapResult } from "@reduxjs/toolkit";
-import { Menu, message } from "antd";
-import meApi from "api/meApi";
-import { fetchUserProfile, setLogin, setUser } from "app/globalSlice";
-import ModalUpdateProfile from "components/ModalUpdateProfile";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import PropTypes from "prop-types";
-import IMAGE_ACCOUNT_PAGE from "../../assets/images/header/logo_1.png";
-import "./style.scss";
-import Route from "components/Route";
+  HomeOutlined,
+  LoginOutlined,
+  ProfileOutlined,
+  ScheduleOutlined,
+  SolutionOutlined,
+  TeamOutlined,
+  UnorderedListOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
+import { Menu, message } from 'antd';
+import meApi from 'api/meApi';
+import { setLogin } from 'app/globalSlice';
+import ModalUpdateProfile from 'components/ModalUpdateProfile';
+import Route from 'components/Route';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import IMAGE_ACCOUNT_PAGE from './img/logo.png';
+import './style.scss';
 
 Header.propTypes = {};
 
@@ -33,7 +28,7 @@ function Header(props) {
   const { SubMenu } = Menu;
   const dispatch = useDispatch();
   const history = useNavigate();
-  const [current, setCurrent] = useState("");
+  const [current, setCurrent] = useState('');
   const [isModalUpdateProfileVisible, setIsModalUpdateProfileVisible] =
     useState(false);
   const [avatar, setAvatar] = useState(null);
@@ -45,11 +40,11 @@ function Header(props) {
 
   const handleClick = (e) => {
     setCurrent(e.key);
-    if (e.key === "LOGOUT") {
-      localStorage.removeItem("token");
-      message.success("Bạn đã đăng xuất");
+    if (e.key === 'LOGOUT') {
+      localStorage.removeItem('token');
+      message.success('Bạn đã đăng xuất');
       dispatch(setLogin(false));
-      history("/");
+      history('/');
       window.location.reload();
     }
   };
@@ -79,12 +74,8 @@ function Header(props) {
   return (
     <div id="content">
       <div id="header-branches">
-        <img
-          src={IMAGE_ACCOUNT_PAGE}
-          style={{ width: "30%", height: "30%", objectFit: "contain" }}
-          alt="zelo_login"
-        ></img>
-        <p class="name">TRUNG TÂM ANH NGỮ SUNRISE</p>
+        <img src={IMAGE_ACCOUNT_PAGE} alt="zelo_login"></img>
+        <p className="name">TRUNG TÂM ANH NGỮ SUNRISE</p>
       </div>
       <div className="menu">
         <Menu
@@ -92,12 +83,11 @@ function Header(props) {
           selectedKeys={[current]}
           mode="horizontal"
           style={{
-            display: "flex",
-            fontSize: "15px",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "4px 0",
-            background: "#e7e5e5",
+            display: 'flex',
+            fontSize: '15px',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '4px 0',
           }}
         >
           <Menu.Item key="HOME2" icon={<HomeOutlined />}>
@@ -179,7 +169,7 @@ function Header(props) {
               <Menu.Item key="LOGOUT" icon={<LoginOutlined />}>
                 Đăng xuất
               </Menu.Item>
-              {isLogin && isLogin.roleType === "ADMIN" && (
+              {isLogin && isLogin.roleType === 'ADMIN' && (
                 <Menu.Item key="ADMIN" icon={<SolutionOutlined />}>
                   <Link to="/admin">Admin</Link>
                 </Menu.Item>

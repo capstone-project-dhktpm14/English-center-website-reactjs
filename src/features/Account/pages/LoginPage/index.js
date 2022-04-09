@@ -1,5 +1,5 @@
-import { CloseCircleOutlined, HomeOutlined } from "@ant-design/icons";
-import { unwrapResult } from "@reduxjs/toolkit";
+import { CloseCircleOutlined, HomeOutlined } from '@ant-design/icons';
+import { unwrapResult } from '@reduxjs/toolkit';
 import {
   Button,
   Col,
@@ -9,20 +9,20 @@ import {
   Row,
   Tag,
   Typography,
-} from "antd";
-import loginApi from "api/loginApi";
-import { fetchUserProfile, setLogin, setUser } from "app/globalSlice";
-import InputField from "customfield/InputField";
-import { setLoading } from "features/Account/accountSlice";
-import { loginValues } from "features/Account/initValues";
-import { FastField, Form, Formik } from "formik";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router";
-import { Link } from "react-router-dom";
-import IMAGE_ACCOUNT_PAGE from "assets/images/account/US-ENGLISH.png";
-import meApi from "api/meApi";
-import { date } from "yup";
+} from 'antd';
+import loginApi from 'api/loginApi';
+import { fetchUserProfile, setLogin, setUser } from 'app/globalSlice';
+import InputField from 'customfield/InputField';
+import { setLoading } from 'features/Account/accountSlice';
+import { loginValues } from 'features/Account/initValues';
+import { FastField, Form, Formik } from 'formik';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
+import IMAGE_ACCOUNT_PAGE from 'assets/images/account/US-ENGLISH.png';
+import meApi from 'api/meApi';
+import { date } from 'yup';
 
 const { Text, Title } = Typography;
 
@@ -40,23 +40,22 @@ function LoginPage(props) {
     try {
       dispatch(setLoading(true));
       const { accessToken } = await loginApi.login(username, password);
-      localStorage.setItem("token", accessToken);
+      localStorage.setItem('token', accessToken);
       dispatch(setLogin(true));
       const { roles } = unwrapResult(await dispatch(fetchUserProfile()));
-      console.log("role" + roles);
-      const index = roles.findIndex((roleEle) => roleEle === "ROLE_USER");
+      console.log('role' + roles);
+      const index = roles.findIndex((roleEle) => roleEle === 'ROLE_USER');
 
       await meApi.fetchProfile().then((data) => {
         dispatch(setUser(data));
       });
       if (index !== -1) {
-        console.log("la user"); 
+        console.log('la user');
         success();
-      }else{
-        console.log("la admin");
+      } else {
+        console.log('la admin');
         admin();
       }
-     
     } catch (error) {
       setError(true);
     }
@@ -65,17 +64,17 @@ function LoginPage(props) {
 
   function success() {
     Modal.success({
-      onOk: () => history("/"),
-      onCancel: () => history("/"),
-      content: "Login success",
+      onOk: () => history('/'),
+      onCancel: () => history('/'),
+      content: 'Login success',
     });
   }
 
   function admin() {
     Modal.success({
-      onOk: () => history("/admin"),
-      onCancel: () => history("/admin"),
-      content: "Login admin success",
+      onOk: () => history('/admin'),
+      onCancel: () => history('/admin'),
+      content: 'Login admin success',
     });
   }
   return (
@@ -86,8 +85,8 @@ function LoginPage(props) {
         </div>
 
         <div className="account_right">
-          <Title level={2} style={{ textAlign: "center" }}>
-            <Text style={{ color: "#4d93ff" }}>Đăng Nhập</Text>
+          <Title level={2} style={{ textAlign: 'center' }}>
+            <Text style={{ color: '#4d93ff' }}>Đăng Nhập</Text>
           </Title>
           <Divider />
           <div className="form-account">
@@ -131,7 +130,7 @@ function LoginPage(props) {
                           <Tag
                             color="error"
                             style={{
-                              fontWeight: "bold",
+                              fontWeight: 'bold',
                             }}
                             icon={<CloseCircleOutlined />}
                           >
@@ -139,7 +138,7 @@ function LoginPage(props) {
                           </Tag>
                         </Col>
                       ) : (
-                        ""
+                        ''
                       )}
 
                       <Col span={24}>

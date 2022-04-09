@@ -1,11 +1,11 @@
-import { Spin } from "antd";
-import Footer from "components/Footer";
-import Header from "components/Header";
-import NotFoundPage from "components/NotFoundPage";
-import React from "react";
-import { useSelector } from "react-redux";
-import { Route, Routes, useRouteMatch } from "react-router-dom";
-import RouteDetailPage from "./pages/RouteDetailPage";
+import { Spin } from 'antd';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
+import NotFoundPage from 'components/NotFoundPage';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Route, Routes, useRouteMatch } from 'react-router-dom';
+import RouteDetailPage from './pages/RouteDetailPage';
 
 function Route1(props) {
   const { isLoading } = useSelector((state) => state.routeClient);
@@ -20,7 +20,6 @@ function Route1(props) {
           <Route element={<NotFoundPage />} />
         </Routes>
       </div>
-      
     </Spin>
   );
 }

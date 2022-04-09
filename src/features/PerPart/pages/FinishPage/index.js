@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Button, Result } from "antd";
-import "./style.scss";
-import { Link, useRouteMatch,useParams } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Button, Result } from 'antd';
+import './style.scss';
+import { Link, useRouteMatch, useParams } from 'react-router-dom';
 
 FinishPage.propTypes = {};
 
@@ -10,10 +10,10 @@ function FinishPage(props) {
   const params = useParams();
   // const match = useRouteMatch();
   const { examSlug, numberPart } = params;
-console.log("finish",examSlug,numberPart);
+  console.log('finish', examSlug, numberPart);
   return (
     <div id="per-part-finish-page">
-      <div class="main">
+      <div className="main">
         <Result
           status="success"
           title="Bạn đã hoàn thành"

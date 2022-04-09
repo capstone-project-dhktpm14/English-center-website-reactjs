@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import { Menu, Dropdown, Button, Modal, Typography, message } from "antd";
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { Menu, Dropdown, Button, Modal, Typography, message } from 'antd';
 import {
   DeleteTwoTone,
   EditTwoTone,
   InfoCircleTwoTone,
   OrderedListOutlined,
-} from "@ant-design/icons";
-import { useDispatch, useSelector } from "react-redux";
+} from '@ant-design/icons';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { unwrapResult } from "@reduxjs/toolkit";
-import confirm from "antd/lib/modal/confirm";
+import { unwrapResult } from '@reduxjs/toolkit';
+import confirm from 'antd/lib/modal/confirm';
 
-import routeAdminApi from "api/routeAdminApi";
+import routeAdminApi from 'api/admin/routeAdminApi';
 import {
   deleteClass,
   setClassFormVisible,
   setClassUpdate,
-} from "../../classSlice";
-import classAdminApi from "api/classAdminApi";
-import { useNavigate } from "react-router";
-import { Link } from "react-router-dom";
+} from '../../classSlice';
+import classAdminApi from 'api/admin/classAdminApi';
+import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 
 ClassAction.propTypes = {
   classId: PropTypes.number.isRequired,
@@ -49,13 +49,13 @@ function ClassAction(props) {
 
   const handleDelete = () => {
     confirm({
-      content: "Bạn có chắc chắn xóa không ?",
+      content: 'Bạn có chắc chắn xóa không ?',
       async onOk() {
         try {
           unwrapResult(await dispatch(deleteClass({ classId })));
-          message.success(`Xóa thành công`);
+          message.success('Xóa thành công');
         } catch (error) {
-          message.error("Xóa thất bại");
+          message.error('Xóa thất bại');
         }
       },
     });

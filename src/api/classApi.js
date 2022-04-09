@@ -1,11 +1,11 @@
-import axiosClient from "./axiosClient";
-const BASE_URL = "/classes";
+import axiosClient from './axiosClient';
+const BASE_URL = '/classes';
 
 const classApi = {
   //class
   fetchClass: (params) => {
-    console.log("api h " + JSON.stringify(params));
-    return axiosClient.get("/classes", { params });
+    console.log('api h ' + JSON.stringify(params));
+    return axiosClient.get('/classes', params);
   },
 
   addSchedule: (params) => {

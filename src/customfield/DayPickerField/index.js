@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useField, useFormikContext } from "formik";
-import DatePicker from "react-datepicker";
-import { Col, Typography } from "antd";
-import PropTypes from "prop-types";
+import React, { useState } from 'react';
+import { useField, useFormikContext } from 'formik';
+import DatePicker from 'react-datepicker';
+import { Col, Typography } from 'antd';
+import PropTypes from 'prop-types';
 
 const { Text } = Typography;
 DayPickerField.propTypes = {
@@ -15,18 +15,19 @@ DayPickerField.propTypes = {
   titleCol: PropTypes.number,
   inputCol: PropTypes.number,
   size: PropTypes.string,
+  field: PropTypes.object,
 };
 
 DayPickerField.defaultProps = {
-  title: "",
-  type: "text",
-  placeholder: "",
+  title: '',
+  type: 'text',
+  placeholder: '',
   maxLength: 50,
   isRequire: false,
   disabled: false,
   titleCol: 24,
   inputCol: 24,
-  size: "middle",
+  size: 'middle',
 };
 
 function DayPickerField({ ...props }) {
@@ -46,7 +47,7 @@ function DayPickerField({ ...props }) {
 
   const [startDate, setStartDate] = useState(new Date());
 
-  console.log("fi" + JSON.stringify(field));
+  console.log('fi' + JSON.stringify(field));
   return (
     <>
       <Col span={titleCol}>

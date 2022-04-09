@@ -1,24 +1,28 @@
-import { Divider, Pagination, Row } from "antd";
+import { Carousel, Divider, Pagination, Row } from 'antd';
+import classApi from 'api/classApi';
+import routeApi from 'api/routeApi';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
+import {
+  fetchCourses,
+  fetchTopics,
+} from 'features/Admin/pages/CoursePage/courseSlice';
+import { fetchClasses } from 'features/Class/classSlice';
+import ClassList from 'features/Class/components/ClassList';
+import ClassSearch from 'features/Class/components/ClassSearch';
 
-import routeApi from "api/routeApi";
-import Footer from "components/Footer";
-
-import { fetchClasses } from "features/Class/classSlice";
-import ClassList from "features/Class/components/ClassList";
-import ClassSearch from "features/Class/components/ClassSearch";
-
-import queryString from "query-string";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import "./style.scss";
+import queryString from 'query-string';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import './style.scss';
 
 function MainPage(props) {
   const history = useNavigate();
   const [query, setQuery] = useState({
-    routeSlug: "",
-    dateFrom: "",
-    dateTo: "",
+    routeSlug: '',
+    dateFrom: '',
+    dateTo: '',
     page: 0,
     size: 12,
   });
@@ -31,22 +35,25 @@ function MainPage(props) {
     const { routeSlug, dateFrom, dateTo } = queryValue;
     let params = {};
 
-    if (routeSlug !== "") {
+    if (routeSlug !== '') {
       params.route = routeSlug;
     }
-    if (dateFrom !== "") {
+    if (dateFrom !== '') {
       params.dateFrom = dateFrom;
     }
-    if (dateTo !== "") {
+    if (dateTo !== '') {
       params.dateTo = dateTo;
     }
+    console.log('pểm ' + JSON.stringify(params));
     history({ search: queryString.stringify(params) });
     setQuery({
       ...query,
-      dateFrom: dateFrom,
-      dateTo: dateTo,
+      dateFrom: '',
+      dateTo: '',
       routeSlug: routeSlug,
     });
+    // setQuery({ routeSlug, dateFrom, dateTo, page: 0, size: 12 });
+    console.log('que' + JSON.stringify(query));
   };
 
   const handlePageChange = (page, pageSize) => {
@@ -62,6 +69,9 @@ function MainPage(props) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    // classApi.fetchClass(query).then((res) => setDataClass(res.data));
+    // console.log("quẻy " + JSON.stringify(query));
+    // console.log("data class " + JSON.stringify(dataClass));
     dispatch(fetchClasses(query));
   }, [query]);
   if (dataSource.length > 0) {

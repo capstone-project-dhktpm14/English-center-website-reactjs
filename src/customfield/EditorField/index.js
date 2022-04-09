@@ -1,10 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Button, Col, Input, Row, Space, Tag, Typography } from "antd";
-import { ErrorMessage } from "formik";
-import TagCustom from "components/TagCustom";
-import MyEditor from "components/MyEditor";
-import ReactQuill from "react-quill";
+import { Button, Col, Row, Space, Typography } from 'antd';
+import MyEditor from 'components/MyEditor';
+import TagCustom from 'components/TagCustom';
+import { ErrorMessage } from 'formik';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const { Text } = Typography;
 
@@ -14,11 +13,12 @@ EditorField.propTypes = {
   isRequire: PropTypes.bool,
   titleCol: PropTypes.number,
   inputCol: PropTypes.number,
+  field: PropTypes.object,
 };
 
 EditorField.defaultProps = {
-  title: "",
-  placeholder: "",
+  title: '',
+  placeholder: '',
   isRequire: false,
   titleCol: 24,
   inputCol: 24,
@@ -59,13 +59,13 @@ function EditorField({
         </Text>
       </Col>
       <Col span={inputCol}>
-        <Space direction="vertical" style={{ width: "100%" }}>
+        <Space direction="vertical" style={{ width: '100%' }}>
           <MyEditor
             content={value}
             onChange={handleContentChange}
             placeholder={placeholder}
           />
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: 'center' }}>
             <Button type="primary" ghost onClick={handleConfirm}>
               Lưu
             </Button>

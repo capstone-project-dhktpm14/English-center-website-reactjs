@@ -1,21 +1,21 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import classApi from "api/classApi";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import classApi from 'api/classApi';
 
-const KEY = "classes";
+const KEY = 'classes';
 
 export const fetchClasses = createAsyncThunk(
-  `fetchClasses`,
+  'fetchClasses',
   async (params, thunkApi) => {
-    console.log("api",+params)
+    console.log('api', +params);
     const data = await classApi.fetchClass(params);
     return data;
   }
 );
 export const deleteClass = createAsyncThunk(
-  "deleteClass",
+  'deleteClass',
   async (params, thunk) => {
     const { classesId } = params;
-    const data = await classApi.cancelSchedule(classesId, "CANCEL");
+    const data = await classApi.cancelSchedule(classesId, 'CANCEL');
     return classesId;
   }
 );

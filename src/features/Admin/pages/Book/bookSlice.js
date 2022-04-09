@@ -1,11 +1,11 @@
-import bookApi from "api/bookAdminApi";
-import { bookValues } from "./initialAndValidateValues";
+import bookApi from 'api/admin/bookAdminApi';
+import { bookValues } from './initialAndValidateValues';
 
-const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
-const KEY = "book";
+const { createSlice, createAsyncThunk } = require('@reduxjs/toolkit');
+const KEY = 'book';
 
 export const fetchBooks = createAsyncThunk(
-  "fetchBooks",
+  'fetchBooks',
   async (params, thunk) => {
     const data = await bookApi.fetchBook();
     return data;
@@ -13,7 +13,7 @@ export const fetchBooks = createAsyncThunk(
 );
 
 export const deleteBook = createAsyncThunk(
-  "deleteBook",
+  'deleteBook',
   async (params, thunk) => {
     const { bookId } = params;
     const data = await bookApi.deleteBook(bookId);

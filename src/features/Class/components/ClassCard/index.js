@@ -1,18 +1,18 @@
-import { Button, message, Modal, Tooltip } from "antd";
-import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import "./style.scss";
-import imageNotFound from "assets/images/image-not-found.svg";
+import { Button, message, Modal, Tooltip } from 'antd';
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import './style.scss';
+import imageNotFound from 'assets/images/image-not-found.svg';
 import {
   ScheduleOutlined,
   InsertRowAboveOutlined,
   DeleteOutlined,
   PlusOutlined,
   ExclamationCircleOutlined,
-} from "@ant-design/icons";
-import classApi from "api/classApi";
-import meApi from "api/meApi";
+} from '@ant-design/icons';
+import classApi from 'api/classApi';
+import meApi from 'api/meApi';
 const { confirm, Text } = Modal;
 
 function ClassCard(props) {
@@ -21,28 +21,28 @@ function ClassCard(props) {
   const [isTruncated, setIsTruncated] = useState(true);
   const [isRegistry, setIsRegistry] = useState(false);
   const [isFull, setIsFull] = useState(false);
-  const [params, setParams] = useState({ classesId: id, status: "NEW" });
+  const [params, setParams] = useState({ classesId: id, status: 'NEW' });
   const shortDescription = isTruncated
-    ? description.slice(0, maxCharacterCount) + "..."
+    ? description.slice(0, maxCharacterCount) + '...'
     : description;
 
   const cancelClass = async () => {
     confirm({
       icon: <ExclamationCircleOutlined />,
-      content: "Bạn có muốn huỷ khóa học này không ?",
+      content: 'Bạn có muốn huỷ khóa học này không ?',
       async onOk() {
         try {
-          setParams({ ...params, status: "CANCEL" });
+          setParams({ ...params, status: 'CANCEL' });
 
           await classApi.cancelSchedule(params);
           setIsRegistry(false);
-          message.success("Bạn đã huỷ khoá học");
+          message.success('Bạn đã huỷ khoá học');
         } catch (error) {
-          message.error("Xóa thất bại");
+          message.error('Xóa thất bại');
         }
       },
       onCancel() {
-        console.log("Cancel");
+        console.log('Cancel');
       },
     });
   };
@@ -50,32 +50,34 @@ function ClassCard(props) {
   const addClass = async () => {
     confirm({
       icon: <ExclamationCircleOutlined />,
-      content: "Bạn có muốn đăng ký khóa học này không ?",
+      content: 'Bạn có muốn đăng ký khóa học này không ?',
       async onOk() {
         try {
           await classApi.addSchedule(params);
           setIsRegistry(true);
-          message.success("Bạn đã đăng ký khoá học");
+          message.success('Bạn đã đăng ký khoá học');
         } catch (error) {
-          message.error("Xóa thất bại");
+          message.error('Xóa thất bại');
         }
       },
       onCancel() {
-        console.log("Cancel");
+        console.log('Cancel');
       },
     });
   };
   const fetchClass = async () => {
     const data = await meApi.fetchClassOfUser();
     for (let index = 0; index < data.length; index++) {
-      if (id === data[index].classesId) setIsRegistry(true);
+      if (id === data[index].classesId) {
+        setIsRegistry(true);
+      }
     }
 
     return data;
   };
 
   useEffect(() => {
-    if (status === "FULL") {
+    if (status === 'FULL') {
       setIsFull(true);
     }
     fetchClass();
@@ -85,7 +87,7 @@ function ClassCard(props) {
     <>
       <div className="class-card">
         <div className="class-card__image">
-          <Link to={``}>
+          <Link to={''}>
             <img
               src={img}
               alt="Oops ... Not found"
@@ -95,19 +97,19 @@ function ClassCard(props) {
         </div>
         <div className="class-card__content">
           <div className="class-card__title">
-            {"Route: "}
+            {'Route: '}
             {routeName}
           </div>
           <div className="class-card__additional-info">
             <ScheduleOutlined />
-            {"Ngày bắt đầu"}
-            {": "}
+            {'Ngày bắt đầu'}
+            {': '}
             {dateStart}
           </div>
           <div className="class-card__additional-info">
             <InsertRowAboveOutlined />
-            {"Trạng thái"}
-            {": "}
+            {'Trạng thái'}
+            {': '}
             {status}
           </div>
           {description.length > maxCharacterCount ? (
@@ -118,7 +120,7 @@ function ClassCard(props) {
                   type="link"
                   onClick={() => setIsTruncated(!isTruncated)}
                 >
-                  {isTruncated ? "Show more >" : "Hide <"}
+                  {isTruncated ? 'Show more >' : 'Hide <'}
                 </Button>
               </div>
             </>
@@ -127,16 +129,16 @@ function ClassCard(props) {
           )}
           <div className="class-card-header__right">
             {isFull ? (
-              <Tooltip title={"Không thể đăng ký"}>
+              <Tooltip title={'Không thể đăng ký'}>
                 <div className="class-card__full">
-                  {"Lớp đã đầy,không thể đăng ký"}
+                  {'Lớp đã đầy,không thể đăng ký'}
                 </div>
               </Tooltip>
             ) : (
-              <Tooltip title={isRegistry ? "Cancel" : "Đăng ký"}>
+              <Tooltip title={isRegistry ? 'Cancel' : 'Đăng ký'}>
                 <Button
-                  style={{ borderRadius: "50%" }}
-                  type={isRegistry ? "danger" : "primary"}
+                  style={{ borderRadius: '50%' }}
+                  type={isRegistry ? 'danger' : 'primary'}
                   icon={isRegistry ? <DeleteOutlined /> : <PlusOutlined />}
                   size="middle"
                   onClick={() => {
@@ -156,11 +158,12 @@ ClassCard.propTypes = {
   topic: PropTypes.object,
   maxCharacterCount: PropTypes.number,
   img: PropTypes.string,
+  classes: PropTypes.object,
 };
 ClassCard.defaultProps = {
   topic: {},
   maxCharacterCount: 140,
-  img: "",
+  img: '',
 };
 
 export default ClassCard;

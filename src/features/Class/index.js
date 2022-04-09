@@ -1,14 +1,13 @@
-
-import Header from "components/Header";
-import React, { useEffect } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
-import MainPage from "./pages/MainPage";
-import NotFoundPage from "components/NotFoundPage";
-import "./style.scss";
+import Header from 'components/Header';
+import React, { useEffect } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import MainPage from './pages/MainPage';
+import NotFoundPage from 'components/NotFoundPage';
+import './style.scss';
 
 function Account(props) {
   useEffect(() => {
-    document.title = "Lớp Học";
+    document.title = 'Lớp Học';
   }, []);
 
   return (

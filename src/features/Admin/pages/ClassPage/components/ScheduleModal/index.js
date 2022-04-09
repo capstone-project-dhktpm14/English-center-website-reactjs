@@ -1,4 +1,4 @@
-import { EditOutlined, LoadingOutlined, PlusOutlined } from "@ant-design/icons";
+import { EditOutlined, LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 import {
   Button,
   Col,
@@ -8,23 +8,23 @@ import {
   Space,
   Spin,
   Typography,
-} from "antd";
-import Modal from "antd/lib/modal/Modal";
-import classAdminApi from "api/classAdminApi";
-import examApi from "api/examAdminApi";
+} from 'antd';
+import Modal from 'antd/lib/modal/Modal';
+import classAdminApi from 'api/admin/classAdminApi';
+import examApi from 'api/admin/examAdminApi';
 
-import ModalTitle from "components/ModalTitle";
-import InputField from "customfield/InputField";
-import SelectedField from "customfield/SelectField";
-import UploadField from "customfield/UploadField";
+import ModalTitle from 'components/ModalTitle';
+import InputField from 'customfield/InputField';
+import SelectedField from 'customfield/SelectField';
+import UploadField from 'customfield/UploadField';
 
-import { FastField, Form, Formik } from "formik";
-import PropTypes from "prop-types";
-import React, { useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router";
-import { setClassFormVisible } from "../../classSlice";
-import { scheduleValues } from "../../initialAndValidateValues";
+import { FastField, Form, Formik } from 'formik';
+import PropTypes from 'prop-types';
+import React, { useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router';
+import { setClassFormVisible } from '../../classSlice';
+import { scheduleValues } from '../../initialAndValidateValues';
 
 const { Text } = Typography;
 function ScheduleModal(props) {
@@ -33,11 +33,11 @@ function ScheduleModal(props) {
   const options = [
     {
       key: 1,
-      value: "true",
+      value: 'true',
     },
     {
       key: 0,
-      value: "false",
+      value: 'false',
     },
   ];
 
@@ -46,7 +46,6 @@ function ScheduleModal(props) {
     (state) => state.classes
   );
   const location = useLocation();
- 
 
   const dispatch = useDispatch();
 
@@ -70,17 +69,17 @@ function ScheduleModal(props) {
     try {
       if (id) {
         await handleUpdate(schedule, actions);
-        console.log("update handle");
+        console.log('update handle');
       } else {
         schedule.classId = location.pathname.slice(15);
         routeIdWasSave = await handleAddSchedule(schedule, actions);
-        console.log("add handle");
+        console.log('add handle');
       }
     } catch (error) {
-      console.log("loi");
+      console.log('loi');
     }
     setConfirmLoading(false);
-    message.success("Thao tác thành công");
+    message.success('Thao tác thành công');
     dispatch(setIsModalVisible(false));
   };
 
@@ -95,8 +94,7 @@ function ScheduleModal(props) {
   };
 
   const handleUpdate = async (schedule, actions) => {
-    
-    console.log("uid " + schedule.id);
+    console.log('uid ' + schedule.id);
     const serverResult = await classAdminApi.updateSchedule(
       schedule.id,
       schedule
@@ -106,7 +104,7 @@ function ScheduleModal(props) {
       actions.setErrors(serverResult.errors);
       throw new Error();
     }
-    message.success("Cập nhật thành công");
+    message.success('Cập nhật thành công');
   };
 
   const formRef = useRef();
@@ -123,7 +121,7 @@ function ScheduleModal(props) {
       <Modal
         title={
           <ModalTitle
-            title={isAddMode ? "Thêm mới " : "Cập nhật "}
+            title={isAddMode ? 'Thêm mới ' : 'Cập nhật '}
             icon={isAddMode ? <PlusOutlined /> : <EditOutlined />}
           />
         }
@@ -146,23 +144,23 @@ function ScheduleModal(props) {
                 <Space
                   direction="vertical"
                   size="middle"
-                  style={{ width: "100%" }}
+                  style={{ width: '100%' }}
                 >
                   <FastField
                     component={InputField}
                     name="classId"
                     onChange={(value, e) =>
                       setFieldValue(
-                        "classId",
+                        'classId',
                         location.pathname.slice(15)
-                      ).then(console.log("eee" + location.pathname.slice(15)))
+                      ).then(console.log('eee' + location.pathname.slice(15)))
                     }
                     type="hidden"
                   />
                   <Row>
                     <Col span="6">
                       <Text strong>
-                        {"Ngày"}
+                        {'Ngày'}
 
                         {/* {isRequire && <Text type="danger"> *</Text>} */}
                       </Text>
@@ -174,8 +172,8 @@ function ScheduleModal(props) {
                       className="form-control"
                       name="date"
                       onChange={(value, e) =>
-                        setFieldValue("date", value.format("DD/MM/yyyy")).then(
-                          console.log("eee" + value.format("DD/MM/yyyy"))
+                        setFieldValue('date', value.format('DD/MM/yyyy')).then(
+                          console.log('eee' + value.format('DD/MM/yyyy'))
                         )
                       }
                     />
@@ -217,7 +215,7 @@ function ScheduleModal(props) {
                     isRequire={true}
                   />
                 </Space>
-                <Row justify="end" style={{ marginTop: "20px" }}>
+                <Row justify="end" style={{ marginTop: '20px' }}>
                   <Col>
                     <Space size="middle">
                       <Button onClick={handleCancel}>Hủy</Button>
@@ -227,13 +225,13 @@ function ScheduleModal(props) {
                           <Spin
                             indicator={
                               <LoadingOutlined
-                                style={{ color: "white" }}
+                                style={{ color: 'white' }}
                                 spin
                               />
                             }
                           />
                         )}
-                        {isAddMode ? "Thêm" : "Lưu"}
+                        {isAddMode ? 'Thêm' : 'Lưu'}
                       </Button>
                     </Space>
                   </Col>
@@ -260,8 +258,8 @@ ScheduleModal.defaultProps = {
   isAddMode: true,
   // initialValue: examValues.initial,
   query: {
-    dateFrom: "",
-    dateTo: "",
+    dateFrom: '',
+    dateTo: '',
     page: 0,
     size: 10,
   },

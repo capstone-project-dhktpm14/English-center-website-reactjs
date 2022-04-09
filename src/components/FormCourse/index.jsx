@@ -1,26 +1,34 @@
-import { Button, Carousel, Col, Divider, Form, Row, Tag, Typography } from "antd";
-import { CloseCircleOutlined } from "@ant-design/icons";
-import InputField from "customfield/InputField";
-import { registryValues } from "features/Account/initValues";
-import { FastField, Formik } from "formik";
-import React, { useState } from "react";
-import "./style.scss";
-
+import {
+  Button,
+  Carousel,
+  Col,
+  Divider,
+  Form,
+  Row,
+  Tag,
+  Typography,
+} from 'antd';
+import { CloseCircleOutlined } from '@ant-design/icons';
+import InputField from 'customfield/InputField';
+import { registryValues } from 'features/Account/initValues';
+import { FastField, Formik } from 'formik';
+import React, { useState } from 'react';
+import './style.scss';
 
 const { Text, Title } = Typography;
 function FormCourse() {
-  const [isError, setError] = useState("");
+  const [isError, setError] = useState('');
 
-  const handleRegistryCourse =()=>{
-        console.log("đk tư vấn");
-  }
+  const handleRegistryCourse = () => {
+    console.log('đk tư vấn');
+  };
 
   return (
     <div className="course-common-page">
       <div className="course-wrapper">
         <div className="course">
-          <Title level={2} style={{ textAlign: "center" }}>
-            <Text style={{ color: "#4d93ff" }}>ĐĂNG KÝ TƯ VẤN</Text>
+          <Title level={2} style={{ textAlign: 'center' }}>
+            <Text style={{ color: '#4d93ff' }}>ĐĂNG KÝ TƯ VẤN</Text>
           </Title>
           <Divider />
           <div className="form-course">
@@ -88,7 +96,7 @@ function FormCourse() {
                           <Tag
                             color="error"
                             style={{
-                              fontWeight: "bold",
+                              fontWeight: 'bold',
                             }}
                             icon={<CloseCircleOutlined />}
                           >
@@ -96,7 +104,7 @@ function FormCourse() {
                           </Tag>
                         </Col>
                       ) : (
-                        ""
+                        ''
                       )}
 
                       <Col span={24}>

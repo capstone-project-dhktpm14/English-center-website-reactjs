@@ -1,29 +1,38 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import "./style.scss";
-import { FacebookOutlined, GoogleOutlined } from "@ant-design/icons";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import './style.scss';
+import { FacebookOutlined, GoogleOutlined } from '@ant-design/icons';
+
+Footer.propTypes = {
+  data: PropTypes.object,
+};
+
+Footer.defaultProps = {};
 
 function Footer({ data }) {
   return (
-    <div class="footer">
-      <p class="footer_name"> Anh ngữ SUNRISE - Đào tạo TOEIC số 1 Việt Nam</p>
-      <div class="footer__addr">
+    <div className="footer">
+      <p className="footer_name">
+        {' '}
+        Anh ngữ SUNRISE - Đào tạo TOEIC số 1 Việt Nam
+      </p>
+      <div className="footer__addr">
         <h2>Liên hệ</h2>
         <address>
           5534 Somewhere In. The World 22193-10212
           <br />
-          <a class="footer__btn" href="mailto:khaivv123@gmail.com">
+          <a className="footer__btn" href="mailto:khaivv123@gmail.com">
             Email
           </a>
         </address>
       </div>
 
-      <ul class="footer__nav">
-        <li class="nav__item nav__item--extra">
-          <h2 class="nav__title">Chi Nhánh</h2>
+      <ul className="footer__nav">
+        <li className="nav__item nav__item--extra">
+          <h2 className="nav__title">Chi Nhánh</h2>
 
-          <ul class="nav__ul nav__ul--extra">
+          <ul className="nav__ul nav__ul--extra">
             <li>
               <a>CS1: 41 Tây Sơn, Q. Đống Đa, HN [94]</a>
             </li>
@@ -50,10 +59,10 @@ function Footer({ data }) {
           </ul>
         </li>
 
-        <li class="nav__item">
-          <h2 class="nav__title">Lối tắt</h2>
+        <li className="nav__item">
+          <h2 className="nav__title">Lối tắt</h2>
 
-          <ul class="nav__ul">
+          <ul className="nav__ul">
             <li>
               <a href="#">Tài khoản</a>
             </li>

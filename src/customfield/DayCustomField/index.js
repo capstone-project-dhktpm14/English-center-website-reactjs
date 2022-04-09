@@ -1,8 +1,8 @@
-import { Col, Select, Typography } from "antd";
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import dateUtils from "utils/dateUtils";
-import "./style.scss";
+import { Col, Select, Typography } from 'antd';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import dateUtils from 'utils/dateUtils';
+import './style.scss';
 const { Option } = Select;
 
 const { Text } = Typography;
@@ -17,18 +17,19 @@ DayCustomField.propTypes = {
   titleCol: PropTypes.number,
   inputCol: PropTypes.number,
   size: PropTypes.string,
+  field: PropTypes.object,
 };
 
 DayCustomField.defaultProps = {
-  title: "",
-  type: "text",
-  placeholder: "",
+  title: '',
+  type: 'text',
+  placeholder: '',
   maxLength: 50,
   isRequire: false,
   disabled: false,
   titleCol: 24,
   inputCol: 24,
-  size: "middle",
+  size: 'middle',
 };
 
 function DayCustomField(props) {
@@ -44,8 +45,8 @@ function DayCustomField(props) {
     inputCol = 16,
     size,
   } = props;
-  console.log("field" + JSON.stringify(field));
-  const { name, value = { day: "1", month: "1", year: "2000" } } = field;
+  console.log('field' + JSON.stringify(field));
+  const { name, value = { day: '1', month: '1', year: '2000' } } = field;
   const { day, month, year } = value;
   const [dayCustom, setDayCustom] = useState({ ...value });
 
@@ -53,11 +54,16 @@ function DayCustomField(props) {
     let end = 31;
 
     const { month, year } = dayCustom;
-    if (month === 4 || month === 6 || month === 9 || month === 11) end = 30;
+    if (month === 4 || month === 6 || month === 9 || month === 11) {
+      end = 30;
+    }
 
     if (month === 2) {
-      if (dateUtils.checkLeapYear(year)) end = 29;
-      else end = 28;
+      if (dateUtils.checkLeapYear(year)) {
+        end = 29;
+      } else {
+        end = 28;
+      }
     }
 
     const result = [];
@@ -91,14 +97,18 @@ function DayCustomField(props) {
         month === 6 ||
         month === 9 ||
         month === 11
-      )
+      ) {
         return true;
+      }
     }
 
-    if (day === 30 && month === 2) return true;
-
-    if (day === 29 && month === 2 && !dateUtils.checkLeapYear(year))
+    if (day === 30 && month === 2) {
       return true;
+    }
+
+    if (day === 29 && month === 2 && !dateUtils.checkLeapYear(year)) {
+      return true;
+    }
   };
 
   const renderYears = () => {
@@ -142,13 +152,13 @@ function DayCustomField(props) {
 
   return (
     <div className="day-of-birth_wrapper">
-        <Col span={titleCol}>
-                <Text strong>
-                    {title}
+      <Col span={titleCol}>
+        <Text strong>
+          {title}
 
-                    {isRequire && <Text type="danger"> *</Text>}
-                </Text>
-            </Col>
+          {isRequire && <Text type="danger"> *</Text>}
+        </Text>
+      </Col>
       <Select
         defaultValue={day}
         style={{ width: 120 }}

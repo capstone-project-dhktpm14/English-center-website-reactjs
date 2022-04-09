@@ -3,16 +3,16 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 const KEY = 'account';
 
 const accountSlice = createSlice({
-    name: KEY,
-    initialState: {
-        isLoading: false,
+  name: KEY,
+  initialState: {
+    isLoading: false,
+  },
+  reducers: {
+    setLoading: (state, action) => {
+      state.isLoading = action.payload;
     },
-    reducers: {
-        setLoading: (state, action) => {
-            state.isLoading = action.payload;
-        },
-    },
-    extraReducers: {},
+  },
+  extraReducers: {},
 });
 
 const { reducer, actions } = accountSlice;

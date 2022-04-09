@@ -1,16 +1,16 @@
-import { Divider } from "antd";
-import Title from "antd/lib/typography/Title";
-import NotFoundPage from "components/NotFoundPage";
+import { Divider } from 'antd';
+import Title from 'antd/lib/typography/Title';
+import NotFoundPage from 'components/NotFoundPage';
 
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import QuestionDetailModal from "../../components/QuestionDetailModal";
-import QuestionModal from "../../components/QuestionModal";
-import QuestionTable from "../../components/QuestionTable";
-import { fetchQuestions } from "../../examSlice";
-import { useQuery } from "../../hooks";
-import { questionValues } from "../../initialAndValidateValues";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import QuestionDetailModal from '../../components/QuestionDetailModal';
+import QuestionModal from '../../components/QuestionModal';
+import QuestionTable from '../../components/QuestionTable';
+import { fetchQuestions } from '../../examSlice';
+import { useQuery } from '../../hooks';
+import { questionValues } from '../../initialAndValidateValues';
 
 QuestionPage.propTypes = {};
 
@@ -25,15 +25,15 @@ function QuestionPage(props) {
   const [initialValue, setInitialValue] = useState(questionValues.initial);
   const [isDetailViewMode, setIsDetailViewMode] = useState(false);
 
-  const examId = +query.get("examId");
-  const type = +query.get("part");
-  const paragraphId = +query.get("paragraphId");
+  const examId = +query.get('examId');
+  const type = +query.get('part');
+  const paragraphId = +query.get('paragraphId');
 
   useEffect(() => {
     if (paragraphId) {
       dispatch(fetchQuestions({ examId, type }));
     } else {
-      if (typeof examId === "number" && typeof type === "number") {
+      if (typeof examId === 'number' && typeof type === 'number') {
         if (type < 1) {
           history(`/admin/exams/questions?examId=${examId}&part=1`);
           dispatch(fetchQuestions({ examId, type: 1 }));
@@ -53,7 +53,7 @@ function QuestionPage(props) {
   return examId && type ? (
     <div>
       <Divider orientation="left">
-        <Title level={3}>{`Part ${query.get("part")}`}</Title>
+        <Title level={3}>{`Part ${query.get('part')}`}</Title>
       </Divider>
 
       <QuestionTable

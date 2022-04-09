@@ -1,8 +1,8 @@
-import routeAdminApi from "api/routeAdminApi";
-import { routeValues } from "./initialAndValidateValues";
+import routeAdminApi from 'api/admin/routeAdminApi';
+import { routeValues } from './initialAndValidateValues';
 
-const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
-const KEY = "route";
+const { createSlice, createAsyncThunk } = require('@reduxjs/toolkit');
+const KEY = 'route';
 
 export const fetchRoutes = createAsyncThunk(
   `${KEY}/fetchRoutes`,
@@ -62,7 +62,6 @@ const routeSlice = createSlice({
     [fetchRoutes.fulfilled]: (state, action) => {
       state.routes = action.payload;
       state.isLoading = false;
-      
     },
     [deleteRoute.pending]: (state, action) => {
       state.isLoading = true;

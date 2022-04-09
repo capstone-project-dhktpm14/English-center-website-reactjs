@@ -1,16 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Routes, Route, useRouteMatch } from "react-router-dom";
-import { Spin } from "antd";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Routes, Route, useRouteMatch } from 'react-router-dom';
+import { Spin } from 'antd';
 
-import NotFoundPage from "components/NotFoundPage";
-import { useSelector } from "react-redux";
-import MainPage from "./pages/MainPage";
-import TestPage from "./pages/TestPage";
-import FinishPage from "./pages/FinishPage";
-import Header from "components/Header";
-import Footer from "components/Footer";
-
+import NotFoundPage from 'components/NotFoundPage';
+import { useSelector } from 'react-redux';
+import MainPage from './pages/MainPage';
+import TestPage from './pages/TestPage';
+import FinishPage from './pages/FinishPage';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 PerPart.propTypes = {};
 

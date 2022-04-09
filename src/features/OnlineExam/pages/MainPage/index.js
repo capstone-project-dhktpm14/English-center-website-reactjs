@@ -1,18 +1,18 @@
-import { Spin } from "antd";
-import bookApi from "api/bookApi";
-import Footer from "components/Footer";
-import Header from "components/Header";
-import ListExam from "features/OnlineExam/components/ListExam";
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import "./style.scss";
+import { Spin } from 'antd';
+import bookApi from 'api/bookApi';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
+import ListExam from 'features/OnlineExam/components/ListExam';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import './style.scss';
 MainPage.propTypes = {};
 
 function MainPage(props) {
   const { setExam, isLoading } = useSelector((state) => state.onlineExam);
 
   useEffect(() => {
-    document.title = "Luyện thi TOEIC";
+    document.title = 'Luyện thi TOEIC';
   }, []);
 
   return (

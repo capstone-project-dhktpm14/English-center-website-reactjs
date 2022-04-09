@@ -2,21 +2,21 @@ import {
   FieldTimeOutlined,
   MenuFoldOutlined,
   SolutionOutlined,
-} from "@ant-design/icons";
-import { Affix, Alert, Button, Col, Drawer, Modal, Row, Space } from "antd";
-import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import useWindowUnloadEffect from "utils/useWindowUnloadEffect";
-import { useDispatch } from "react-redux";
-import "./style.scss";
-import { setIsSubmit } from "features/OnlineExam/onlineExamSlice";
-import AnswerSheet from "../AnswerSheet";
+} from '@ant-design/icons';
+import { Affix, Alert, Button, Col, Drawer, Modal, Row, Space } from 'antd';
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import useWindowUnloadEffect from 'utils/useWindowUnloadEffect';
+import { useDispatch } from 'react-redux';
+import './style.scss';
+import { setIsSubmit } from 'features/OnlineExam/onlineExamSlice';
+import AnswerSheet from '../AnswerSheet';
 Timer.propTypes = {
   page: PropTypes.string,
 };
 Timer.defaultProps = {
-  page: "",
+  page: '',
 };
 
 function Timer(props) {
@@ -29,8 +29,8 @@ function Timer(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    let timeTemp = localStorage.getItem("timeRemain");
-    if (timeTemp != "undefined" && timeTemp != null) {
+    let timeTemp = localStorage.getItem('timeRemain');
+    if (timeTemp != 'undefined' && timeTemp != null) {
       let time = JSON.parse(timeTemp);
 
       setMinutes(time.minute);
@@ -66,7 +66,7 @@ function Timer(props) {
   const [modal, contextHolder] = Modal.useModal();
 
   const config = {
-    title: "TimeOut",
+    title: 'TimeOut',
     content: (
       <>
         <ReachableContext.Consumer>
@@ -77,12 +77,12 @@ function Timer(props) {
     onOk() {
       history(`/exams/${testId}/result`);
       dispatch(setIsSubmit(true));
-      localStorage.setItem("isSubmit", true);
+      localStorage.setItem('isSubmit', true);
     },
     onCancel() {
       history(`/exams/${testId}/result`);
       dispatch(setIsSubmit(true));
-      localStorage.setItem("isSubmit", true);
+      localStorage.setItem('isSubmit', true);
     },
   };
 
@@ -91,7 +91,7 @@ function Timer(props) {
       minute: minutes,
       second: seconds,
     };
-    localStorage.setItem("timeRemain", JSON.stringify(timeRemain));
+    localStorage.setItem('timeRemain', JSON.stringify(timeRemain));
   }, true);
 
   const history = useNavigate();
@@ -99,12 +99,12 @@ function Timer(props) {
   const { testId } = param;
 
   const accept = {
-    title: "Do you really want to leave the test ?",
-    content: "Time is still",
+    title: 'Do you really want to leave the test ?',
+    content: 'Time is still',
     onOk() {
-        history(`/exams/${testId}/checkout`);
+      history(`/exams/${testId}/checkout`);
     },
-};
+  };
 
   const handleOnClick = () => {
     history(`/exams/${testId}/checkout`);
@@ -131,7 +131,7 @@ function Timer(props) {
             <AnswerSheet />
           </Drawer>
 
-          {page !== "checkout" ? (
+          {page !== 'checkout' ? (
             <>
               <Col
                 xl={{ span: 0 }}
@@ -157,8 +157,8 @@ function Timer(props) {
                     <span className="countdown_timer timeout">Time Out</span>
                   ) : (
                     <div className="countdown_timer">
-                      {" "}
-                      <FieldTimeOutlined style={{ fontSize: "3rem" }} />
+                      {' '}
+                      <FieldTimeOutlined style={{ fontSize: '3rem' }} />
                       {minutes > 10 ? minutes : `0${minutes}`}
                       <span>m</span>
                       {seconds < 10 ? `0${seconds}` : seconds}
@@ -175,7 +175,12 @@ function Timer(props) {
                 sm={{ span: 8 }}
                 xs={{ span: 0 }}
               >
-                <Button style={{borderRadius:"5px"}} onClick={handleOnClick} size="large" block>
+                <Button
+                  style={{ borderRadius: '5px' }}
+                  onClick={handleOnClick}
+                  size="large"
+                  block
+                >
                   <SolutionOutlined /> <b>Checkout</b>
                 </Button>
               </Col>
@@ -187,11 +192,11 @@ function Timer(props) {
                   <span className="countdown_timer timeout">Time Out</span>
                 ) : (
                   <span className="countdown_timer">
-                    {" "}
-                    <FieldTimeOutlined style={{ fontSize: "3rem" }} />{" "}
+                    {' '}
+                    <FieldTimeOutlined style={{ fontSize: '3rem' }} />{' '}
                     {minutes > 10 ? minutes : `0${minutes}`}
                     <span>m</span> {seconds < 10 ? `0${seconds}` : seconds}
-                    <span>s</span>{" "}
+                    <span>s</span>{' '}
                   </span>
                 )}
               </div>

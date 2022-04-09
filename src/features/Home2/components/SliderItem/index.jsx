@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./style.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import './style.scss';
 import {
   AppstoreOutlined,
   CarryOutOutlined,
@@ -9,7 +9,7 @@ import {
   PlayCircleOutlined,
   ReadOutlined,
   StarOutlined,
-} from "@ant-design/icons";
+} from '@ant-design/icons';
 
 SliderItem.propTypes = {
   src: PropTypes.string,
@@ -18,9 +18,9 @@ SliderItem.propTypes = {
 };
 
 SliderItem.defaultProps = {
-  src: "",
-  title: "",
-  detail: "",
+  src: '',
+  title: '',
+  detail: '',
 };
 
 function SliderItem({ src, title, detail }) {

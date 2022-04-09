@@ -1,6 +1,7 @@
-import { Col, DatePicker, Divider, Select, Typography, Row } from "antd";
-import PropTypes from "prop-types";
-import React, { useEffect, useRef, useState } from "react";
+import { Col, DatePicker, Divider, Dropdown, Input, Row, Select, Typography } from 'antd';
+import Checkbox from 'antd/lib/checkbox/Checkbox';
+import PropTypes from 'prop-types';
+import React, { useEffect, useRef, useState } from 'react';
 
 const { Text } = Typography;
 const { Option } = Select;
@@ -16,13 +17,13 @@ ClassSearch.defaultProps = {
 };
 
 function ClassSearch({ routes, onChange }) {
-  const [dateFrom, setDateFrom] = useState("");
-  const [dateTo, setDateTO] = useState("");
-  const [routeSlug, setRouteSlug] = useState("");
+  const [dateFrom, setDateFrom] = useState('');
+  const [dateTo, setDateTO] = useState('');
+  const [routeSlug, setRouteSlug] = useState('');
   const typingTimeOutRef = useRef(null);
 
   const handleClassChange = (checkedValues) => {
-    setRouteSlug(checkedValues === 0 ? "" : checkedValues);
+    setRouteSlug(checkedValues === 0 ? '' : checkedValues);
   };
 
   const handleDateFromChange = (e) => {
@@ -57,11 +58,10 @@ function ClassSearch({ routes, onChange }) {
         <Text
           strong
           style={{
-            color: "white",
-            fontSize: "16px",
-            textAlign: "right",
-            alignItems: "right",
-            // marginTop: "-50px",
+            color: 'white',
+            fontSize: '20px',
+            textAlign: 'right',
+            alignItems: 'right',
           }}
         >
           Tìm kiếm:
@@ -74,10 +74,10 @@ function ClassSearch({ routes, onChange }) {
             <Text
               strong
               style={{
-                color: "white",
-                fontSize: "16px",
-                textAlign: "right",
-                alignItems: "right",
+                color: 'white',
+                fontSize: '16px',
+                textAlign: 'right',
+                alignItems: 'right',
               }}
             >
               Từ ngày
@@ -89,8 +89,8 @@ function ClassSearch({ routes, onChange }) {
               className="form-control"
               name="dateFrom"
               onChange={(value, e) =>
-                setDateFrom(value.format("DD/MM/yyyy")).then(
-                  console.log("eee" + value.format("DD/MM/yyyy"))
+                setDateFrom(value.format('DD/MM/yyyy')).then(
+                  console.log('eee' + value.format('DD/MM/yyyy'))
                 )
               }
             />
@@ -104,10 +104,10 @@ function ClassSearch({ routes, onChange }) {
             <Text
               strong
               style={{
-                color: "white",
-                fontSize: "16px",
-                textAlign: "right",
-                alignItems: "right",
+                color: 'white',
+                fontSize: '16px',
+                textAlign: 'right',
+                alignItems: 'right',
               }}
             >
               Đến ngày
@@ -119,8 +119,8 @@ function ClassSearch({ routes, onChange }) {
               className="form-control"
               name="dateTo"
               onChange={(value, e) =>
-                setDateTO(value.format("DD/MM/yyyy")).then(
-                  console.log("eee" + value.format("DD/MM/yyyy"))
+                setDateTO(value.format('DD/MM/yyyy')).then(
+                  console.log('eee' + value.format('DD/MM/yyyy'))
                 )
               }
             />
@@ -131,7 +131,7 @@ function ClassSearch({ routes, onChange }) {
       <Col xs={24} sm={24} md={24} lg={12} xl={5}>
         <Select
           defaultValue=""
-          style={{ width: "50%" }}
+          style={{ width: '50%' }}
           onChange={handleClassChange}
         >
           <Option value="" key={-1}>

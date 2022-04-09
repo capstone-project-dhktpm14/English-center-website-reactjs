@@ -1,6 +1,6 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const KEY = "home";
+const KEY = 'home';
 
 const homeSlice = createSlice({
   name: KEY,

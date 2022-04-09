@@ -1,80 +1,67 @@
-import React, { useEffect, useRef, useState } from "react";
-import PropTypes from "prop-types";
-import ModalTitle from "components/ModalTitle";
-import { FastField, Form, Formik, useFormikContext } from "formik";
-import InputField from "customfield/InputField";
-import { useDispatch, useSelector } from "react-redux";
-import { Modal, message, Space, DatePicker, Row, Col, Typography } from "antd";
-import { format, compareAsc } from "date-fns/esm";
-
-import ImageField from "customfield/ImageField";
-import {
-  addRoute,
-  fetchClasses,
-  fetchRoutes,
-  setClassFormVisible,
-  setRouteFormVisible,
-} from "../../classSlice";
-import routeAdminApi from "api/routeAdminApi";
-import { classValues, routeValues } from "../../initialAndValidateValues";
-import SelectedField from "customfield/SelectField";
-import classAdminApi from "api/classAdminApi";
-import DayPickerField from "customfield/DayPickerField";
-import { date } from "yup";
-import { getTimeProps } from "antd/lib/date-picker/generatePicker";
-import RouteSelectedField from "customfield/RouteSelectField";
-import TextAreaField from "customfield/TextAreaField";
+import { Col, DatePicker, message, Modal, Row, Space, Typography } from 'antd';
+import classAdminApi from 'api/admin/classAdminApi';
+import routeAdminApi from 'api/admin/routeAdminApi';
+import ModalTitle from 'components/ModalTitle';
+import InputField from 'customfield/InputField';
+import RouteSelectedField from 'customfield/RouteSelectField';
+import SelectedField from 'customfield/SelectField';
+import TextAreaField from 'customfield/TextAreaField';
+import { FastField, Form, Formik } from 'formik';
+import React, { useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchClasses, setClassFormVisible } from '../../classSlice';
+import { classValues } from '../../initialAndValidateValues';
 
 RouteAddForm.propTypes = {};
 const { Text } = Typography;
 function RouteAddForm(props) {
   const options = [
     {
-      key: "ONGOING",
-      value: "ONGOING",
+      key: 'ONGOING',
+      value: 'ONGOING',
     },
     {
-      key: "FULL",
-      value: "FULL",
+      key: 'FULL',
+      value: 'FULL',
     },
     {
-      key: "CANCEL",
-      value: "CANCEL",
+      key: 'CANCEL',
+      value: 'CANCEL',
     },
     {
-      key: "ACCEPT",
-      value: "ACCEPT",
+      key: 'ACCEPT',
+      value: 'ACCEPT',
     },
   ];
 
   const days = [
     {
-      key: "MONDAY",
-      value: "MONDAY",
+      key: 'MONDAY',
+      value: 'MONDAY',
     },
     {
-      key: "TUESDAY",
-      value: "TUESDAY",
+      key: 'TUESDAY',
+      value: 'TUESDAY',
     },
     {
-      key: "WEDNESDAY",
-      value: "WEDNESDAY",
+      key: 'WEDNESDAY',
+      value: 'WEDNESDAY',
     },
     {
-      key: "THURSDAY",
-      value: "THURSDAY",
+      key: 'THURSDAY',
+      value: 'THURSDAY',
     },
     {
-      key: "FRIDAY",
-      value: "FRIDAY",
+      key: 'FRIDAY',
+      value: 'FRIDAY',
     },
     {
-      key: "SATURDAY",
-      value: "SATURDAY",
+      key: 'SATURDAY',
+      value: 'SATURDAY',
     },
     {
-      key: "SUNDAY",
-      value: "SUNDAY",
+      key: 'SUNDAY',
+      value: 'SUNDAY',
     },
   ];
 
@@ -96,16 +83,16 @@ function RouteAddForm(props) {
     try {
       if (id) {
         await handleUpdate(classes, actions);
-        console.log("update handle");
+        console.log('update handle');
       } else {
         routeIdWasSave = await handleAddClass(classes, actions);
-        console.log("add handle");
+        console.log('add handle');
       }
     } catch (error) {
-      console.log("loi");
+      console.log('loi');
     }
     setConfirmLoading(false);
-    message.success("Thao tác thành công");
+    message.success('Thao tác thành công');
     dispatch(setClassFormVisible(false));
     dispatch(fetchClasses());
   };
@@ -128,7 +115,7 @@ function RouteAddForm(props) {
       actions.setErrors(serverResult.errors);
       throw new Error();
     }
-    message.success("Cập nhật thành công");
+    message.success('Cập nhật thành công');
 
     // dispatch(setCategoryFormVisible(false));
   };
@@ -143,7 +130,7 @@ function RouteAddForm(props) {
 
   return (
     <Modal
-      title={<ModalTitle title={selectedClass.id && "Cập nhật"} />}
+      title={<ModalTitle title={selectedClass.id && 'Cập nhật'} />}
       visible={true}
       confirmLoading={confirmLoading}
       onCancel={handleCancel}
@@ -166,7 +153,7 @@ function RouteAddForm(props) {
               <Space
                 size="large"
                 direction="vertical"
-                style={{ width: "100%" }}
+                style={{ width: '100%' }}
               >
                 <FastField
                   name="amount"
@@ -180,7 +167,7 @@ function RouteAddForm(props) {
                 <Row>
                   <Col span="6">
                     <Text strong>
-                      {"Ngày bắt đầu"}
+                      {'Ngày bắt đầu'}
 
                       {/* {isRequire && <Text type="danger"> *</Text>} */}
                     </Text>
@@ -193,9 +180,9 @@ function RouteAddForm(props) {
                     name="dateStart"
                     onChange={(value, e) =>
                       setFieldValue(
-                        "dateStart",
-                        value.format("DD/MM/yyyy")
-                      ).then(console.log("eee" + value.format("DD/MM/yyyy")))
+                        'dateStart',
+                        value.format('DD/MM/yyyy')
+                      ).then(console.log('eee' + value.format('DD/MM/yyyy')))
                     }
                   />
                 </Row>

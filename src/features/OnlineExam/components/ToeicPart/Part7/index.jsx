@@ -4,27 +4,32 @@ import { useDispatch } from 'react-redux';
 import ShortPart from '../ShortPart';
 
 Part7.propTypes = {
-    data: PropTypes.array,
-    onAnswerSheetClick: PropTypes.func,
-    name: PropTypes.string,
+  data: PropTypes.array,
+  onAnswerSheetClick: PropTypes.func,
+  name: PropTypes.string,
+  scrollId: PropTypes.number,
 };
 
 Part7.defaultProps = {
-    data: [],
-    onAnswerSheetClick: null,
-    name: ''
-}
+  data: [],
+  onAnswerSheetClick: null,
+  name: '',
+};
 
 function Part7(props) {
-    const { data, onAnswerSheetClick, name, scrollId } = props;
-    const dispatch = useDispatch();
+  const { data, onAnswerSheetClick, name, scrollId } = props;
+  const dispatch = useDispatch();
 
-
-    return (
-        <div id='top'>
-            <ShortPart data={data} onAnswerSheetClick={onAnswerSheetClick} name={name} /> :
-        </div>
-    );
+  return (
+    <div id="top">
+      <ShortPart
+        data={data}
+        onAnswerSheetClick={onAnswerSheetClick}
+        name={name}
+      />{' '}
+      :
+    </div>
+  );
 }
 
 export default Part7;

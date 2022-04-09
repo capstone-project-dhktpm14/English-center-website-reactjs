@@ -1,12 +1,12 @@
-import { Button } from "antd";
-import PropTypes from "prop-types";
-import ImageUploader from "quill-image-uploader";
-import React, { useEffect, useState } from "react";
-import ReactQuill, { Quill } from "react-quill";
+import { Button } from 'antd';
+import PropTypes from 'prop-types';
+import ImageUploader from 'quill-image-uploader';
+import React, { useEffect, useState } from 'react';
+import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import 'react-quill/dist/quill.bubble.css';
 
-Quill.register("modules/imageUploader", ImageUploader);
+Quill.register('modules/imageUploader', ImageUploader);
 
 MyEditor.propTypes = {
   content: PropTypes.string,
@@ -15,8 +15,8 @@ MyEditor.propTypes = {
 };
 
 MyEditor.defaultProps = {
-  content: "",
-  placeholder: "",
+  content: '',
+  placeholder: '',
   onChange: null,
 };
 
@@ -24,7 +24,9 @@ function MyEditor({ content, placeholder, onChange }) {
   let quillObj;
 
   const handleChange = (content) => {
-    if (!onChange) return;
+    if (!onChange) {
+      return;
+    }
     onChange(content);
   };
 
@@ -38,35 +40,35 @@ function MyEditor({ content, placeholder, onChange }) {
         modules={{
           toolbar: {
             container: [
-              ["bold", "italic", "underline", "strike"],
-              ["blockquote", "code-block"],
+              ['bold', 'italic', 'underline', 'strike'],
+              ['blockquote', 'code-block'],
 
               [{ header: 1 }, { header: 2 }],
-              [{ list: "ordered" }, { list: "bullet" }],
-              [{ script: "sub" }, { script: "super" }],
-              [{ indent: "-1" }, { indent: "+1" }],
-              [{ direction: "rtl" }],
+              [{ list: 'ordered' }, { list: 'bullet' }],
+              [{ script: 'sub' }, { script: 'super' }],
+              [{ indent: '-1' }, { indent: '+1' }],
+              [{ direction: 'rtl' }],
 
-              [{ size: ["small", false, "large", "huge"] }],
+              [{ size: ['small', false, 'large', 'huge'] }],
               [{ header: [1, 2, 3, 4, 5, 6, false] }],
 
               [{ color: [] }, { background: [] }],
               [{ font: [] }],
               [{ align: [] }],
-              ["link", "image"],
-              ["clean"],
+              ['link', 'image'],
+              ['clean'],
             ],
           },
           imageUploader: {
             upload: (file) => {
               return new Promise((resolve, reject) => {
                 const formData = new FormData();
-                formData.append("image", file);
+                formData.append('image', file);
 
                 fetch(
-                  "https://api.imgbb.com/1/upload?key=d36eb6591370ae7f9089d85875e56b22",
+                  'https://api.imgbb.com/1/upload?key=d36eb6591370ae7f9089d85875e56b22',
                   {
-                    method: "POST",
+                    method: 'POST',
                     body: formData,
                   }
                 )
@@ -76,8 +78,8 @@ function MyEditor({ content, placeholder, onChange }) {
                     resolve(result.data.url);
                   })
                   .catch((error) => {
-                    reject("Upload failed");
-                    console.error("Error:", error);
+                    reject('Upload failed');
+                    console.error('Error:', error);
                   });
               });
             },
