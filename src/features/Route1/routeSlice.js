@@ -4,7 +4,7 @@ import routeApi from 'api/routeApi';
 const KEY = 'route';
 
 export const fetchRoutes = createAsyncThunk(
-  `${KEY}/fetchBlogs`,
+  `${KEY}/fetchRoutes`,
   async (params, thunkApi) => {
     const data = await routeApi.getRoutes(params);
     return data;
@@ -24,7 +24,7 @@ const courseSlice = createSlice({
   name: KEY,
   initialState: {
     isLoading: false,
-    routes: {},
+    routes: [],
     routeDetail: {},
   },
   reducers: {
@@ -38,7 +38,10 @@ const courseSlice = createSlice({
       state.isLoading = true;
     },
     [fetchRoutes.fulfilled]: (state, action) => {
+
+      // console.log('Route 1 fetch: ', action.payload);
       state.routes = action.payload;
+      
       state.isLoading = false;
     },
     [fetchRoutes.rejected]: (state, action) => {

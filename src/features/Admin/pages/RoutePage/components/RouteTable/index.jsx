@@ -6,6 +6,7 @@ import { Table, Tag, Space, Image } from 'antd';
 import { errorImage } from 'constants/defaultImage';
 import { fetchRoutes, setRoutes } from '../../routeSlice';
 import routeAdminApi from 'api/admin/routeAdminApi';
+import commonFuc from 'utils/commonFuc';
 
 RouteTable.propTypes = {};
 
@@ -19,16 +20,6 @@ const columns = [
     title: 'Tên Route ',
     dataIndex: 'name',
     key: 'name',
-  },
-  {
-    title: 'mô tả ',
-    dataIndex: 'description',
-    key: 'description',
-  },
-  {
-    title: 'nội dung ',
-    dataIndex: 'content',
-    key: 'content',
   },
   {
     title: 'Hình ảnh ',
@@ -58,30 +49,20 @@ function RouteTable(props) {
   const dispatch = useDispatch();
   const [dataRaw, setData] = useState([]);
   const [dataSource, setDataSource] = useState({});
+
+  // Lấy ữ liệu từ store
   const { routes } = useSelector((state) => state.route);
   const data = [];
 
-  useEffect(() => {
-    routeAdminApi.fetchRoute().then((res) => setDataSource(res.data));
-  }, [routes]);
 
-  if (dataSource.length > 0) {
-    dataSource.forEach((element, index) => {
-      let temp = {
-        key: element.id,
-        name: element.name,
-        description: element.description,
-        content: element.content,
-        image: element.image,
-        stt: index + 1,
-      };
-      data.push(temp);
-    });
-  }
+
+  // Hàm commonFuc.addSTTForList() này là để thêm số thứ tự vào dữ liẹu
+  //  ko cần phải làm như cách cũ  nữa
+  
   return (
     <Table
       columns={columns}
-      dataSource={data}
+      dataSource={commonFuc.addSTTForList(routes, 0)}
       pagination={false}
       scroll={{ y: 420 }}
       style={{ height: '490px' }}

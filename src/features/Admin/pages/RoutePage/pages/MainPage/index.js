@@ -13,10 +13,17 @@ import RouteAddForm from '../../components/RouteAddForm';
 MainPage.propTypes = {};
 
 function MainPage(props) {
+
+  // Chỗ này dugf để lấy dữ liệu từ store ra
   const { isRouteFormVisible, routes } = useSelector((state) => state.route);
+
+
+
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // M chỉ cần dispatch cái hàm lúc nãy, là dữ liệu sẽ  tự động get về và lưu vào trong store
+    // ko cần phải fetch giống như cách m dang làm
     dispatch(fetchRoutes());
   }, []);
 

@@ -1,10 +1,10 @@
 import axiosClient from 'api/axiosClient';
 
-const BASE_URL = '/admin/routes';
+const BASE_URL = '/admin/levels';
 
 const routeAdminApi = {
   fetchRoute: () => {
-    return axiosClient.get('/routes');
+    return axiosClient.get('/levels');
   },
 
   addRoute: (route) => {

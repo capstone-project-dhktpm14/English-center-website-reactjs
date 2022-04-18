@@ -4,7 +4,7 @@ const BASE_URL = '/classes';
 const classApi = {
   //class
   fetchClass: (params) => {
-    console.log('api h ' + JSON.stringify(params));
+    // console.log('api h ' + JSON.stringify(axiosClient.get('/classes', {params})));
     return axiosClient.get('/classes', {params});
   },
 

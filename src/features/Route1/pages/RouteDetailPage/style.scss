@@ -1,5 +1,5 @@
 #blog-detail-page {
-	background-image: url(../../../../assets/images/bg-translate.png);
+	// background-image: url(../../../../assets/images/bg-translate.png);
 	.topic-thumbnail {
 		position: relative;
 		min-height: 40vh;
@@ -61,6 +61,7 @@
 
 .content-blog {
 	font-size: 18px;
+	// margin-left: -15%;
 }
 
 @media only screen and (min-width: 740px) and (max-width: 1024px) {

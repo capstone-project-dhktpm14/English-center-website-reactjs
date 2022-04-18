@@ -6,7 +6,8 @@ const KEY = 'course';
 export const fetchCourses = createAsyncThunk(
   `${KEY}/fetchCourses`,
   async (params, thunkApi) => {
-    const data = await courseApi.igetCourses(params);
+    const data = await courseApi.getCourses(params);
+  
     return data;
   }
 );

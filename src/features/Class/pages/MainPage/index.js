@@ -1,108 +1,77 @@
-import { Carousel, Divider, Pagination, Row } from 'antd';
-import classApi from 'api/classApi';
-import routeApi from 'api/routeApi';
-import Footer from 'components/Footer';
-import Header from 'components/Header';
-import {
-  fetchCourses,
-  fetchTopics,
-} from 'features/Admin/pages/CoursePage/courseSlice';
+import {  Pagination, Row, Space } from 'antd';
 import { fetchClasses } from 'features/Class/classSlice';
-import ClassList from 'features/Class/components/ClassList';
-import ClassSearch from 'features/Class/components/ClassSearch';
+import ClassesSearch from 'features/Class/components/ClassesSearch';
+import ClassesTable from 'features/Class/components/ClassesTable';
 
-import queryString from 'query-string';
+import { fetchRoutes } from 'features/Route1/routeSlice';
+
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+
+import commonFuc from 'utils/commonFuc';
 import './style.scss';
 
 function MainPage(props) {
-  const history = useNavigate();
+  const dispatch = useDispatch();
+
+  const { routes } = useSelector((state) => state.routeClient);
+  const { classes } = useSelector((state) => state.classClient);
+  const { data, page, totalPages } = classes;
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isAddMode, setIsAddMode] = useState(true);
+  // const [initialValue, setInitialValue] = useState(classesValues.initial);
+
   const [query, setQuery] = useState({
-    routeSlug: '',
+    levelSlug: '',
+    status: '',
     dateFrom: '',
     dateTo: '',
     page: 0,
-    size: 12,
+    size: 10,
   });
 
-  const dispatch = useDispatch();
-  const { classes } = useSelector((state) => state.classClient);
-  const { data = [], page = 1, size = 1, totalPages = 1 } = classes;
-
   const handleSearchChange = (queryValue) => {
-    const { routeSlug, dateFrom, dateTo } = queryValue;
-    let params = {};
+    const { levelSlug, status, dateFrom, dateTo } = queryValue;
 
-    if (routeSlug !== '') {
-      params.route = routeSlug;
-    }
-    if (dateFrom !== '') {
-      params.dateFrom = dateFrom;
-    }
-    if (dateTo !== '') {
-      params.dateTo = dateTo;
-    }
-    history({ search: queryString.stringify(params) });
-    setQuery({
-      ...query,
-      dateFrom: dateFrom,
-      dateTo: dateTo,
-      routeSlug: routeSlug,
-    });
+    setQuery({ levelSlug, status, dateFrom, dateTo, page: 0, size: 10 });
   };
 
-  const handlePageChange = (page, pageSize) => {
+  const handlePageChange = (page) => {
     setQuery({ ...query, page: page - 1 });
   };
 
-  const [dataSource, setDataSource] = useState({});
-  const { routes } = useSelector((state) => state.route);
-  const dataOption = [];
   useEffect(() => {
-    routeApi.getRoutes(query).then((res) => setDataSource(res.data));
-  }, [routes]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
     dispatch(fetchClasses(query));
+    dispatch(fetchRoutes());
   }, [query]);
-  if (dataSource.length > 0) {
-    dataSource.forEach((element, index) => {
-      let temp = {
-        key: element.id,
-        name: element.name,
-        slug: element.slug,
-      };
-      dataOption.push(temp);
-    });
-  }
+
   return (
-    <div className="course-wrapper">
-      <div id="course-main-page">
-        <Row justify="start" gutter={[8, 8]}>
-          <ClassSearch routes={dataOption} onChange={handleSearchChange} />
-        </Row>
+    <div id="class-main-page">
+      <Row justify="center" >
+        <ClassesSearch levels={routes} onChange={handleSearchChange} />
+      </Row>
 
-        <Divider />
-
-        <ClassList classes={data} />
-
-        {totalPages > 1 && (
-          <Row justify="center">
-            <Pagination
-              total={totalPages * size}
-              showQuickJumper
-              pageSize={size}
-              onChange={handlePageChange}
-              showSizeChanger={false}
-              current={page + 1}
-            />
-          </Row>
-        )}
-      </div>
-      <Footer></Footer>
+      <Space direction="vertical" style={{ width: '100%' }}>
+        <div className="class-main-page__table">
+          <ClassesTable
+            classes={commonFuc.addSTTForList(data, query.page * query.size)}
+            // setInitialValue={setInitialValue}
+            setIsModalVisible={setIsModalVisible}
+            setIsAddMode={setIsAddMode}
+            query={query}
+          />
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          <Pagination
+            current={page + 1}
+            total={totalPages * 10}
+            onChange={handlePageChange}
+            showSizeChanger={false}
+          />
+        </div>
+      </Space>
+     
     </div>
   );
 }

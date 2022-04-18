@@ -4,6 +4,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import NotFoundPage from 'components/NotFoundPage';
 import './style.scss';
+import Footer from 'components/Footer';
 
 function Account(props) {
   useEffect(() => {
@@ -21,6 +22,7 @@ function Account(props) {
           </Routes>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

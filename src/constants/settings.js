@@ -1,4 +1,5 @@
-export const settings = {
+import constants from 'utils/constants';
+const settings = {
   api: {
     admin: '/admin',
     endpoint: {
@@ -52,4 +53,6 @@ export const settings = {
       },
     },
   },
+  constants,
 };
+export default settings;

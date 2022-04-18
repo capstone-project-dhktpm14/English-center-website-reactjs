@@ -2,12 +2,12 @@ import axiosClient from './axiosClient';
 
 const routeApi = {
   getRoutes: (params) => {
-    const url = '/routes';
+    const url = '/levels';
     return axiosClient.get(url, { params });
   },
 
   getRouteDetail: (slug) => {
-    const url = `/routes/${slug}`;
+    const url = `/levels/${slug}`;
     return axiosClient.get(url);
   },
 };

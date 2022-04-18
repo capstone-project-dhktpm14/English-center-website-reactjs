@@ -6,8 +6,9 @@ const KEY = 'classes';
 export const fetchClasses = createAsyncThunk(
   'fetchClasses',
   async (params, thunkApi) => {
-    console.log('api', +params);
+    // console.log('api', +params);
     const data = await classApi.fetchClass(params);
+    // console.log('data class'+data);
     return data;
   }
 );
@@ -24,7 +25,7 @@ const classSlice = createSlice({
   name: KEY,
   initialState: {
     isLoading: false,
-    classes: {},
+    classes: [],
   },
   reducers: {
     setLoading: (state, action) => {

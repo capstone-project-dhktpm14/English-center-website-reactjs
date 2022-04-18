@@ -10,6 +10,13 @@ export const fetchUserProfile = createAsyncThunk(
     return user;
   }
 );
+export const fetchUserClass = createAsyncThunk(
+  `${KEY}/fetchUserClass`,
+  async (params, thunkApi) => {
+    const data = await meApi.fetchClassOfUser();
+    return data;
+  }
+);
 
 const globalSlice = createSlice({
   name: KEY,
@@ -17,6 +24,7 @@ const globalSlice = createSlice({
     isLoading: false,
     isLogin: false,
     user: null,
+    classUser:[],
     tabActive: 0,
   },
 
@@ -29,6 +37,9 @@ const globalSlice = createSlice({
     },
     setUser: (state, action) => {
       state.user = action.payload;
+    },
+    setClassUser:(state, action)=>{
+      state.classUser = action.payload;
     },
     setTabActive: (state, action) => {
       state.tabActive = action.payload;
@@ -54,10 +65,25 @@ const globalSlice = createSlice({
       state.isLogin = false;
       localStorage.removeItem('token');
     },
+
+
+
+    [fetchUserClass.pending]: (state, action) => {
+      state.isLoading = false;
+    },
+
+    [fetchUserClass.fulfilled]: (state, action) => {
+      state.isLoading = true;
+      state.classUser = action.payload;
+    },
+
+    [fetchUserClass.rejected]: (state, action) => {
+      state.isLoading = true;
+    },
   },
 });
 
 const { reducer, actions } = globalSlice;
-export const { setLoading, setLogin, setTabActive, setUser, setAvatarProfile } =
+export const { setLoading, setLogin, setTabActive,setClassUser, setUser, setAvatarProfile } =
   actions;
 export default reducer;
